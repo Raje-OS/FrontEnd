@@ -35,12 +35,12 @@ export class FavoritosComponent implements OnInit {
       const userDetail = details.find((d: any) => d.userId === user.id);
       if (!userDetail) return;
 
-      // Elimina el id del array de favoritos
+
       userDetail.favorites = userDetail.favorites.filter((favId: string) => favId !== id);
 
-      // Actualiza en el backend
+
       this.userDetailService.updateUserDetails(userDetail).subscribe(() => {
-        // Actualiza la lista local de favoritos
+
         this.favoritos = this.favoritos.filter(fav => fav.id !== id);
       });
     });
@@ -73,7 +73,7 @@ export class FavoritosComponent implements OnInit {
         }
       });
 
-      // Espera un poco para que se llenen los favs (mejor usar forkJoin en producción)
+
       setTimeout(() => {
         this.favoritos = favs;
       }, 500);
