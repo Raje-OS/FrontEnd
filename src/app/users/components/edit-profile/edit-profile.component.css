@@ -70,5 +70,14 @@ input {
   cursor: pointer;
   align-self: center;
 }
+.back-button {
+  background: none;
+  border: none;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  cursor: pointer;
+  padding-top: 50px;
+}
 
 
