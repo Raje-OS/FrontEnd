@@ -3,10 +3,11 @@
   flex-direction: column;
   align-items: center;
   padding: 40px 20px;
-  background: linear-gradient(to bottom, #0d0d0d, #1a0e0e);
+  background: linear-gradient(to bottom, #111111, #361717);
   color: #fff;
   gap: 40px;
   margin-top: 60px;
+  min-height: 80vh;
 }
 
 .main-title {
@@ -17,6 +18,20 @@
   padding-bottom: 10px;
   margin-top: 40px;
   margin-bottom: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  position: relative;
+}
+
+.main-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #a4161a, #e71d36);
+  border-radius: 2px;
 }
 
 .favoritos-list {
@@ -26,6 +41,7 @@
   gap: 40px;
   width: 100%;
   max-width: 1200px;
+  padding: 20px;
 }
 
 .favorito-card {
@@ -33,33 +49,80 @@
   flex-direction: column;
   align-items: center;
   width: 160px;
-  background-color: #141414;
-  padding: 10px;
+  background-color: #121212;
+  padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .favorito-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(164, 22, 26, 0.3);
 }
 
 .eliminar-btn {
-  margin-top: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.5rem;
-  color: white;
-  background: none;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   border: none;
+  border-radius: 50%;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 10;
+}
+
+.favorito-card:hover .eliminar-btn {
+  opacity: 1;
 }
 
 .eliminar-btn:hover {
-  color: #ff4d4d;
+  color: #ffffff;
+  background-color: #a4161a;
+  transform: scale(1.1);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.favorito-item {
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: calc(0.1s * var(--index, 0));
+  opacity: 0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .main-title {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+
+  .favoritos-list {
+    gap: 25px;
+  }
+
+  .favorito-card {
+    width: 140px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
   .favoritos-list {
     flex-direction: column;
     align-items: center;
@@ -69,30 +132,41 @@
     width: 100%;
     max-width: 280px;
   }
+
+  .main-title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
 }
+
 /* Estilo para cuando no hay favoritos */
 .favoritos-container + div {
-  background-color: #1a0e0e;
+  background: linear-gradient(135deg, #121212, #2a1215);
   color: #fff;
   text-align: center;
   padding: 80px 20px;
   margin-top: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Lexend Mega', sans-serif;
+  font-family: 'Arial', sans-serif;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 .favoritos-container + div h2 {
-  font-size: 2rem;
-  color: #a4161a;
+  font-size: 2.2rem;
+  color: #e71d36;
   margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .favoritos-container + div p {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #ddd;
+  color: #b6b6b6;
+  max-width: 450px;
+  margin: 0 auto;
 }

@@ -4,43 +4,67 @@
       "id": "PL001",
       "nombre": "Netflix",
       "descripcion": "Servicio de streaming global que ofrece una amplia variedad de películas, series, documentales y contenido original.",
-      "imagen": "https://www.infobae.com/resizer/v2/2YOXQKHBEREMFFBTFX73ALCUAY.jpg?auth=8379202e0b7defe6c4989d5331e6d87cfbb5170cea07bf3b149d8b1a42194b2a&smart=true&width=1200&height=675&quality=85"
+      "imagen": "https://www.infobae.com/resizer/v2/2YOXQKHBEREMFFBTFX73ALCUAY.jpg?auth=8379202e0b7defe6c4989d5331e6d87cfbb5170cea07bf3b149d8b1a42194b2a&smart=true&width=1200&height=675&quality=85",
+      "email": "netflix@example.com",
+      "password": "netflix123",
+      "catalog": []
     },
     {
       "id": "PL002",
       "nombre": "Amazon Prime Video",
       "descripcion": "Plataforma de streaming de Amazon que incluye películas, series y contenido original, además de acceso a otros canales premium.",
-      "imagen": "https://media.revistagq.com/photos/61570a628052a49b36a0342d/master/w_1600%2Cc_limit/amazon-prime-video.jpeg"
+      "imagen": "https://media.revistagq.com/photos/61570a628052a49b36a0342d/master/w_1600%2Cc_limit/amazon-prime-video.jpeg",
+      "email": "amazon@example.com",
+      "password": "amazon123",
+      "catalog": []
     },
     {
       "id": "PL003",
       "nombre": "Disney+",
       "descripcion": "Servicio de streaming de The Walt Disney Company con contenido de Disney, Pixar, Marvel, Star Wars y National Geographic.",
-      "imagen": "https://giftcardoferta.com/tienda/wp-content/uploads/2022/07/disneyplus-1200x675-1.jpg"
+      "imagen": "https://giftcardoferta.com/tienda/wp-content/uploads/2022/07/disneyplus-1200x675-1.jpg",
+      "email": "disney@example.com",
+      "password": "disney123",
+      "catalog": []
     },
     {
       "id": "PL004",
       "nombre": "HBO Max",
       "descripcion": "Plataforma de streaming que ofrece contenido de HBO, Warner Bros., DC, Cartoon Network y otros estudios.",
-      "imagen": "https://teinvitoalcine.com/download/multimedia.normal.857c9387a69eba51.TG9nbyBwbGF0YWZvcm1hICBNYXhfbm9ybWFsLndlYnA%3D.webp"
+      "imagen": "https://teinvitoalcine.com/download/multimedia.normal.857c9387a69eba51.TG9nbyBwbGF0YWZvcm1hICBNYXhfbm9ybWFsLndlYnA%3D.webp",
+      "email": "hbo@example.com",
+      "password": "hbo123",
+      "catalog": []
     },
     {
       "id": "PL005",
       "nombre": "Apple TV+",
       "descripcion": "Servicio de streaming de Apple con contenido original, incluyendo series, películas y documentales exclusivos.",
-      "imagen": "https://www.apple.com/v/apple-tv-plus/ak/images/meta/apple-tv__e7aqjl2rqzau_og.png"
+      "imagen": "https://www.apple.com/v/apple-tv-plus/ak/images/meta/apple-tv__e7aqjl2rqzau_og.png",
+      "email": "apple@example.com",
+      "password": "apple123",
+      "catalog": [
+        "MV002",
+        "MV008"
+      ]
     },
     {
       "id": "PL006",
       "nombre": "Hulu",
       "descripcion": "Servicio de streaming estadounidense que ofrece contenido de televisión, películas, series originales y eventos deportivos en vivo.",
-      "imagen": "https://deadline.com/wp-content/uploads/2022/08/hulu-Green-digital-logo-1.jpg?w=1024"
+      "imagen": "https://deadline.com/wp-content/uploads/2022/08/hulu-Green-digital-logo-1.jpg?w=1024",
+      "email": "hulu@example.com",
+      "password": "hulu123",
+      "catalog": []
     },
     {
       "id": "PL007",
       "nombre": "Crunchyroll",
       "descripcion": "Plataforma de streaming especializada en anime y series asiáticas, con una amplia selección de contenido subtitulado y doblado.",
-      "imagen": "https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000042000/e965921d2670a197008fe9403e50aaa0b150eabcaab4ce8b0c860d75ba4d1ee6"
+      "imagen": "https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000042000/e965921d2670a197008fe9403e50aaa0b150eabcaab4ce8b0c860d75ba4d1ee6",
+      "email": "crunchyroll@example.com",
+      "password": "crunchyroll123",
+      "catalog": []
     }
   ],
   "directors": [

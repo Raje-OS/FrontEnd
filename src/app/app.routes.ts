@@ -10,11 +10,13 @@ import {ActorProfileComponent} from './persons/actors/components/actor-profile/a
 import {DirectorProfileComponent} from './persons/directors/components/director-profile/director-profile.component';
 import {AuthorProfileComponent} from './persons/authors/components/author-profile/author-profile.component';
 import {PlatformListComponent} from './contents/platforms/components/platform-list/platform-list.component';
+import {PlatformDashboardComponent} from './contents/platforms/components/platform-dashboard/platform-dashboard.component';
 import {EditProfileComponent}  from './users/components/edit-profile/edit-profile.component';
 import {ContentDetailComponent} from './contents/pages/content-detail/content-detail.component';
 import {ListsPageComponent} from './lists/pages/lists.page/lists.page.component';
 import {ListDetailComponent} from './lists/components/list-detail/list-detail.component';
 import {TopCategoryComponent} from './public/components/top-category/top-category.component';
+import {PlatformStatisticsComponent} from './contents/platforms/components/platform-statistics/platform-statistics.component';
 
 
 export const routes: Routes = [
@@ -43,6 +45,8 @@ export const routes: Routes = [
 
   // 💻 Plataformas
   { path: 'platforms', component: PlatformListComponent },
+  { path: 'platform-dashboard', component: PlatformDashboardComponent },
+  { path: 'platform-statistics', component: PlatformStatisticsComponent },
 
   // 📂 Rutas de listas personalizadas
   { path: 'lists', component: ListsPageComponent },

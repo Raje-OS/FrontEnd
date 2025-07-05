@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -17,26 +18,42 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    NgIf
   ]
 })
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  email: string = '';
+  isPlatformLogin: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
-    this.authService.login(this.username, this.password).subscribe({
-      next: (user) => {
-        if (user) {
-          this.router.navigate(['/tendencies']);
-        } else {
-          alert('Usuario o contraseña incorrectos');
-        }
-      },
-      error: (error) => console.error(error)
-    });
+    if (this.isPlatformLogin) {
+      this.authService.platformLogin(this.email, this.password).subscribe({
+        next: (platform) => {
+          if (platform) {
+            this.router.navigate(['/platform-dashboard']);
+          } else {
+            alert('Email o contraseña incorrectos');
+          }
+        },
+        error: (error) => console.error(error)
+      });
+    } else {
+      this.authService.login(this.username, this.password).subscribe({
+        next: (user) => {
+          if (user) {
+            this.router.navigate(['/tendencies']);
+          } else {
+            alert('Usuario o contraseña incorrectos');
+          }
+        },
+        error: (error) => console.error(error)
+      });
+    }
   }
 
   register() {
