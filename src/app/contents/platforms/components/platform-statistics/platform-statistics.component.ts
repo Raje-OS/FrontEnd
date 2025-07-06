@@ -10,6 +10,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgIf, NgFor, CommonModule } from '@angular/common';
+import {SerieService} from '../../../series/services/serie.service.service';
+import {MovieCardComponent} from '../../../movies/components/movie-card/movie-card.component';
+import {SerieCardComponent} from '../../../series/components/serie-card/serie-card.component';
 
 @Component({
   selector: 'app-platform-statistics',
@@ -24,12 +27,16 @@ import { NgIf, NgFor, CommonModule } from '@angular/common';
     MatProgressSpinnerModule,
     NgIf,
     NgFor,
-    CommonModule
+    CommonModule,
+    MovieCardComponent,
+    SerieCardComponent
   ]
 })
 export class PlatformStatisticsComponent implements OnInit {
   currentPlatform: Platform | null = null;
   catalogMovies: any[] = [];
+  topMovies: any[] = [];
+  topSeries: any[] = [];
   loading: boolean = false;
   statistics: any = {
     totalMovies: 0,
@@ -41,6 +48,7 @@ export class PlatformStatisticsComponent implements OnInit {
     private authService: AuthService,
     private platformService: PlatformService,
     private movieService: MovieService,
+    private serieService: SerieService,
     private router: Router
   ) {}
 
@@ -50,8 +58,24 @@ export class PlatformStatisticsComponent implements OnInit {
       this.router.navigate(['/login']);
       return;
     }
-
     this.loadCatalogMovies();
+    this.loadTopContent();
+  }
+
+
+  loadTopContent(): void {
+    // Películas top del catálogo de la plataforma
+    this.movieService.getMoviesOrderedByRating().subscribe(movies => {
+      this.topMovies = movies.filter(m =>
+        this.currentPlatform?.catalog.includes(m.id)
+      ) // Top 5
+    });
+    // Series top del catálogo de la plataforma
+    this.serieService.getSeriesOrderedByRating().subscribe(series => {
+      this.topSeries = series.filter(s =>
+        this.currentPlatform?.catalog.includes(s.id)
+      ) // Top 5
+    });
   }
 
   loadCatalogMovies(): void {
