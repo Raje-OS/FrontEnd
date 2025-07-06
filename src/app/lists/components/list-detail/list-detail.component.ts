@@ -54,6 +54,34 @@ export class ListDetailComponent implements OnInit {
     });
   }
 
+  eliminarContenido(contenidoId: string): void {
+    if (!this.list) return;
+    // Quita el contenido del array
+    this.list.list_content = this.list.list_content.filter(id => id !== contenidoId);
+
+    // Actualiza la lista en el backend
+    this.listService.update(this.list.id, this.list).subscribe({
+      next: () => {
+        // Recarga los contenidos en pantalla
+        this.loadContent(this.list!.list_content);
+      },
+      error: () => alert('No se pudo eliminar el contenido de la lista')
+    });
+  }
+
+  eliminarLista(): void {
+    if (!this.list) return;
+    if (confirm('¿Estás seguro de que deseas eliminar esta lista?')) {
+      this.listService.deletelist(this.list.id).subscribe({
+        next: () => {
+          alert('Lista eliminada correctamente');
+          this.router.navigate(['/lists']); // Redirige a la vista de todas las listas
+        },
+        error: () => alert('No se pudo eliminar la lista')
+      });
+    }
+  }
+
   loadContent(ids: string[]): void {
     Promise.all([
       this.movieService.getMovies().toPromise(),

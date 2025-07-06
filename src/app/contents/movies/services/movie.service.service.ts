@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {environment} from '../../../../environments/environment';
-import {map} from 'rxjs/operators';
+import {map, switchMap} from 'rxjs/operators';
 import {Movie} from '../model/movie.entity';
 
 
@@ -33,4 +33,6 @@ export class MovieService {
       map(movies => movies.sort((a, b) => b.calificacion - a.calificacion))
     );
   }
+
+
 }

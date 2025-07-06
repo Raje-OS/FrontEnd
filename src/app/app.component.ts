@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Router, RouterOutlet} from '@angular/router';
 import {AuthService} from './users/pages/login-form/services/auth.service';
 import { ToolbarComponent } from './public/components/toolbar/toolbar.component';
 import {NgIf} from '@angular/common';
@@ -13,9 +13,13 @@ import {NgIf} from '@angular/common';
 export class AppComponent {
   title = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   get isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
+    const noToolbarRoutes = ['/login', '/register'];
+    return (
+      this.authService.getCurrentUser() !== null &&
+      !noToolbarRoutes.includes(this.router.url)
+    );
   }
 }

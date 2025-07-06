@@ -63,7 +63,7 @@
                     [ngClass]="{'raje-primary-btn': !isInCatalog(movie.id), 'warn': isInCatalog(movie.id)}"
                     [disabled]="isInCatalog(movie.id)"
                     (click)="addMovieToCatalog(movie.id)">
-                    <mat-icon>{{ isInCatalog(movie.id) ? 'check_circle' : 'add_circle' }}</mat-icon>
+
                     {{ isInCatalog(movie.id) ? 'Agregada' : 'Agregar' }}
                   </button>
                 </mat-card-actions>

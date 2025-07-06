@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { Platform } from '../model/platform.entity';
-import { map } from 'rxjs/operators';
+import {map, switchMap} from 'rxjs/operators';
+import {MovieService} from '../../movies/services/movie.service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,9 @@ import { map } from 'rxjs/operators';
 export class PlatformService {
   private baseUrl = environment.serverBaseUrl + environment.platformEndpointPath;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+  private movieService: MovieService
+  ) {}
 
   getAllPlatforms(): Observable<Platform[]> {
     return this.http.get<Platform[]>(this.baseUrl);
@@ -32,37 +35,71 @@ export class PlatformService {
 
   addMovieToCatalog(platformId: string, movieId: string): Observable<Platform> {
     return new Observable<Platform>(observer => {
-      this.getPlatformById(platformId).subscribe(platform => {
-        if (!platform.catalog.includes(movieId)) {
-          platform.catalog.push(movieId);
-          this.updatePlatform(platform).subscribe(updatedPlatform => {
-            observer.next(updatedPlatform);
-            observer.complete();
-          }, error => {
-            observer.error(error);
-          });
-        } else {
-          observer.next(platform);
+      this.getPlatformById(platformId).pipe(
+        switchMap(platform => {
+          if (!platform.catalog.includes(movieId)) {
+            platform.catalog.push(movieId);
+
+            return this.movieService.getMovieById(movieId).pipe(
+              switchMap(movie => {
+                if (!movie.plataformas_id) movie.plataformas_id = [];
+                if (!movie.plataformas_id.includes(platformId)) {
+                  movie.plataformas_id.push(platformId);
+                  // Actualiza la película en el backend
+                  return this.http.put<any>(`${this.movieService['baseUrl']}/${movieId}`, movie).pipe(
+                    switchMap(() => this.updatePlatform(platform))
+                  );
+                }
+                return this.updatePlatform(platform);
+              })
+            );
+          } else {
+            return this.updatePlatform(platform);
+          }
+        })
+      ).subscribe({
+        next: updatedPlatform => {
+          observer.next(updatedPlatform);
           observer.complete();
-        }
-      }, error => {
-        observer.error(error);
+        },
+        error: error => observer.error(error)
       });
     });
   }
 
   removeMovieFromCatalog(platformId: string, movieId: string): Observable<Platform> {
     return new Observable<Platform>(observer => {
-      this.getPlatformById(platformId).subscribe(platform => {
-        platform.catalog = platform.catalog.filter(id => id !== movieId);
-        this.updatePlatform(platform).subscribe(updatedPlatform => {
+      this.getPlatformById(platformId).pipe(
+        switchMap(platform => {
+          const movieIndex = platform.catalog.indexOf(movieId);
+          if (movieIndex !== -1) {
+            platform.catalog.splice(movieIndex, 1);
+
+            return this.movieService.getMovieById(movieId).pipe(
+              switchMap(movie => {
+                if (movie.plataformas_id) {
+                  const platformIndex = movie.plataformas_id.indexOf(platformId);
+                  if (platformIndex !== -1) {
+                    movie.plataformas_id.splice(platformIndex, 1);
+
+                    return this.http.put<any>(`${this.movieService['baseUrl']}/${movieId}`, movie).pipe(
+                      switchMap(() => this.updatePlatform(platform))
+                    );
+                  }
+                }
+                return this.updatePlatform(platform);
+              })
+            );
+          } else {
+            return this.updatePlatform(platform);
+          }
+        })
+      ).subscribe({
+        next: updatedPlatform => {
           observer.next(updatedPlatform);
           observer.complete();
-        }, error => {
-          observer.error(error);
-        });
-      }, error => {
-        observer.error(error);
+        },
+        error: error => observer.error(error)
       });
     });
   }

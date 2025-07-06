@@ -35,11 +35,8 @@
       "email": "hbo@example.com",
       "password": "hbo123",
       "catalog": [
-        "MV003",
-        "MV004",
-        "MV005",
-        "MV009",
-        "MV019"
+        "MV001",
+        "MV002"
       ]
     },
     {
@@ -877,7 +874,8 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL003"
+        "PL003",
+        "PL004"
       ],
       "calificacion": 3.7,
       "sinopsis": "Un joven huérfano descubre que es un mago famoso y asiste a una escuela mágica donde se enfrenta a un oscuro poder que amenaza su mundo.",
@@ -903,7 +901,8 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL003"
+        "PL003",
+        "PL004"
       ],
       "calificacion": 4,
       "sinopsis": "Harry regresa para su segundo año en Hogwarts, donde debe enfrentarse a un misterio oscuro y antiguo que amenaza a los estudiantes de la escuela.",
@@ -2855,6 +2854,14 @@
       "rating": 2,
       "text": "no me gusta",
       "createdAt": "2025-06-18T02:38:56.560Z"
+    },
+    {
+      "id": "RV035",
+      "userId": "US003",
+      "contenidoId": "MV001",
+      "rating": 5,
+      "text": "",
+      "createdAt": "2025-07-06T19:49:44.794Z"
     }
   ],
   "userDetails": [
@@ -2873,7 +2880,9 @@
     {
       "id": "UD003",
       "userId": "US003",
-      "favorites": [],
+      "favorites": [
+        "MV001"
+      ],
       "viewed": []
     },
     {
@@ -3043,7 +3052,7 @@
       "name": "Favoritas de Anhos",
       "description": " ",
       "list_content": [
-        "MV003"
+        "MV001"
       ]
     },
     {

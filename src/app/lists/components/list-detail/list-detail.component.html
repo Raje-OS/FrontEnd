@@ -3,24 +3,35 @@
   <p class="list-description" *ngIf="list?.description">{{ list?.description }}</p>
 
   <button routerLink="/lists" class="back-btn">←</button>
-
+  <button (click)="eliminarLista()" class="delete-list-btn">
+    <i class="fas fa-trash-alt"></i> Eliminar lista
+  </button>
   <div class="list-content-section">
     <h2>Contenidos</h2>
     <div class="content-grid">
-      <!-- Movie cards -->
-      <a *ngFor="let movie of peliculas" [routerLink]="['/content', 'movie', movie.id]">
-        <app-movie-card [movie]="movie" [titulo]="movie.titulo" [imagen]="movie.imagen"></app-movie-card>
-      </a>
+      <!-- Películas -->
+      <div *ngFor="let movie of peliculas" class="content-item">
+        <a [routerLink]="['/content', 'movie', movie.id]">
+          <app-movie-card [movie]="movie" [titulo]="movie.titulo" [imagen]="movie.imagen"></app-movie-card>
+        </a>
+        <button (click)="eliminarContenido(movie.id); $event.stopPropagation()">Eliminar</button>
+      </div>
 
-      <!-- Series cards -->
-      <a *ngFor="let serie of series" [routerLink]="['/content', 'serie', serie.id]">
-        <app-serie-card [serie]="serie" [titulo]="serie.titulo" [imagen]="serie.imagen"></app-serie-card>
-      </a>
+      <!-- Series -->
+      <div *ngFor="let serie of series" class="content-item">
+        <a [routerLink]="['/content', 'serie', serie.id]">
+          <app-serie-card [serie]="serie" [titulo]="serie.titulo" [imagen]="serie.imagen"></app-serie-card>
+        </a>
+        <button (click)="eliminarContenido(serie.id); $event.stopPropagation()">Eliminar</button>
+      </div>
 
-      <!-- Book cards -->
-      <a *ngFor="let libro of libros" [routerLink]="['/content', 'book', libro.id]">
-        <app-book-card [book]="libro" [titulo]="libro.titulo" [imagen]="libro.imagen"></app-book-card>
-      </a>
+      <!-- Libros -->
+      <div *ngFor="let libro of libros" class="content-item">
+        <a [routerLink]="['/content', 'book', libro.id]">
+          <app-book-card [book]="libro" [titulo]="libro.titulo" [imagen]="libro.imagen"></app-book-card>
+        </a>
+        <button (click)="eliminarContenido(libro.id); $event.stopPropagation()">Eliminar</button>
+      </div>
     </div>
   </div>
 </div>

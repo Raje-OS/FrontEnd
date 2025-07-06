@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {BaseService} from '../../shared/services/base.service';
 import {User} from '../model/user/user.entity';
 import {environment} from '../../../environments/environment';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {forkJoin, Observable} from 'rxjs';
+import {map, switchMap} from 'rxjs/operators';
 
 const userResourceEndpoint=environment.userEndpointPath;
 
@@ -41,4 +41,7 @@ export class UserService extends BaseService<User>{
       })
     );
   }
+
+
+
 }

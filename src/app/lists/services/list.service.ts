@@ -28,7 +28,9 @@ export class ListService extends BaseService<ListEntity> {
     };
     return this.update(list.id, updatedList);
   }
-
+  deletelist(id: string): Observable<any> {
+    return this.http.delete(`${this.resourcePath()}/${id}`);
+  }
   /** Elimina contenido de una lista */
   removeContentFromList(list: ListEntity, contenidoId: string): Observable<ListEntity> {
     const updatedList = {
