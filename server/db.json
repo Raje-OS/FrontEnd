@@ -34,7 +34,13 @@
       "imagen": "https://teinvitoalcine.com/download/multimedia.normal.857c9387a69eba51.TG9nbyBwbGF0YWZvcm1hICBNYXhfbm9ybWFsLndlYnA%3D.webp",
       "email": "hbo@example.com",
       "password": "hbo123",
-      "catalog": []
+      "catalog": [
+        "MV003",
+        "MV004",
+        "MV005",
+        "MV009",
+        "MV019"
+      ]
     },
     {
       "id": "PL005",
@@ -45,7 +51,8 @@
       "password": "apple123",
       "catalog": [
         "MV002",
-        "MV008"
+        "MV024",
+        "MV007"
       ]
     },
     {
@@ -1308,7 +1315,7 @@
       ],
       "calificacion": 4.1,
       "sinopsis": "El origen de Bruce Wayne como Batman, desde su entrenamiento hasta su lucha para limpiar Gotham City del crimen.",
-      "imagen": "https://pics.filmaffinity.com/Batman_Begins-413277928-large.jpg"
+      "imagen": "https://upload.wikimedia.org/wikipedia/en/a/af/Batman_Begins_Poster.jpg"
     },
     {
       "id": "MV019",
