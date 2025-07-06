@@ -1,13 +1,14 @@
 <div class="statistics-container">
   <mat-toolbar color="primary">
-    <div class="platform-header">
+    <div class="platform-header-left">
       <img *ngIf="currentPlatform?.imagen" [src]="currentPlatform?.imagen" alt="Logo" class="platform-logo">
-      <span>{{ currentPlatform?.nombre }}</span>
+      <span class="platform-name">{{ currentPlatform?.nombre }}</span>
     </div>
     <span class="toolbar-spacer"></span>
     <button mat-button (click)="navigateToDashboard()">Contenidos</button>
     <button mat-button class="active">Estadísticas</button>
     <button mat-button (click)="logout()">Cerrar sesión</button>
+
   </mat-toolbar>
 
   <div class="statistics-content">

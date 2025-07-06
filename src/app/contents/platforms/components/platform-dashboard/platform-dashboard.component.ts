@@ -103,13 +103,15 @@ export class PlatformDashboardComponent implements OnInit {
         localStorage.setItem('currentPlatform', JSON.stringify(updatedPlatform));
         this.loadCatalogMovies();
         this.snackBar.open('Película agregada al catálogo', 'Cerrar', {
-          duration: 3000
+          duration: 3000,
+          panelClass: ['custom-snackbar']
         });
       }, error => {
         console.error('Error adding movie to catalog', error);
         this.loading = false;
         this.snackBar.open('Error al agregar la película', 'Cerrar', {
-          duration: 3000
+          duration: 3000,
+          panelClass: ['custom-snackbar']
         });
       });
   }
@@ -125,13 +127,15 @@ export class PlatformDashboardComponent implements OnInit {
         localStorage.setItem('currentPlatform', JSON.stringify(updatedPlatform));
         this.loadCatalogMovies();
         this.snackBar.open('Película eliminada del catálogo', 'Cerrar', {
-          duration: 3000
+          duration: 3000,
+          panelClass: ['custom-snackbar']
         });
       }, error => {
         console.error('Error removing movie from catalog', error);
         this.loading = false;
         this.snackBar.open('Error al eliminar la película', 'Cerrar', {
-          duration: 3000
+          duration: 3000,
+          panelClass: ['custom-snackbar']
         });
       });
   }

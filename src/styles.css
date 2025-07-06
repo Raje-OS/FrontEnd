@@ -4,3 +4,11 @@ body {
   margin: 0;
   color: #fff;
 }
+
+.custom-snackbar {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 4px;
+}

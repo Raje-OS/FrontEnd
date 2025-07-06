@@ -10,6 +10,8 @@
   flex: 1 1 auto;
 }
 
+
+
 mat-toolbar button.active {
   background-color: rgba(255, 255, 255, 0.2);
   font-weight: bold;
@@ -185,3 +187,28 @@ button.active {
 .raje-primary-btn:hover {
   background-color: #801010 !important;
 }
+
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.platform-logo {
+  height: 90px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.platform-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+

@@ -108,3 +108,49 @@ button.active {
   width: 100%;
   display: block;
 }
+
+.platform-header-centered {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.platform-logo-large {
+  height: 50px;
+  border-radius: 6px;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.platform-logo {
+  height: 90px;
+  width: auto;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.platform-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.platform-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+

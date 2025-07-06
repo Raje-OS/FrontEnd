@@ -2,8 +2,9 @@
   <mat-toolbar color="primary">
     <div class="platform-header">
       <img *ngIf="currentPlatform?.imagen" [src]="currentPlatform?.imagen" alt="Logo" class="platform-logo">
-      <span>{{ currentPlatform?.nombre }}</span>
+      <span class="platform-name">{{ currentPlatform?.nombre }}</span>
     </div>
+
     <span class="toolbar-spacer"></span>
     <button mat-button (click)="setActiveTab('content')" [class.active]="activeTab === 'content'">Contenidos</button>
     <button mat-button (click)="navigateToStatistics()">Estadísticas</button>
