@@ -35,8 +35,9 @@
       "email": "hbo@example.com",
       "password": "hbo123",
       "catalog": [
+        "SR013",
         "MV001",
-        "MV002"
+        "MV009"
       ]
     },
     {
@@ -901,8 +902,7 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL003",
-        "PL004"
+        "PL003"
       ],
       "calificacion": 4,
       "sinopsis": "Harry regresa para su segundo año en Hogwarts, donde debe enfrentarse a un misterio oscuro y antiguo que amenaza a los estudiantes de la escuela.",
@@ -929,7 +929,8 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL003"
+        "PL003",
+        "PL004"
       ],
       "calificacion": 3,
       "sinopsis": "Harry descubre la verdad sobre el peligroso prisionero Sirius Black y su conexión con el pasado de sus padres.",
@@ -2158,7 +2159,8 @@
       "idioma_original": "Japonés",
       "pais_origen": "Japón",
       "plataformas_id": [
-        "PL007"
+        "PL007",
+        "PL004"
       ],
       "calificacion": 3,
       "sinopsis": "En un mundo donde la humanidad vive dentro de enormes murallas para protegerse de gigantescos seres conocidos como Titanes, Eren Yeager jura exterminar a estas criaturas después de que un Titán Colosal destruya su hogar. Con la ayuda de sus amigos Mikasa y Armin, se une al Cuerpo de Exploración para enfrentar los horrores de este mundo brutal y descubrir la verdad detrás de los Titanes.",

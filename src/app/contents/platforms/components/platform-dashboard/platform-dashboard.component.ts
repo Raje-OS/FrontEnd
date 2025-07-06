@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import {SerieService} from '../../../series/services/serie.service.service';
 
 @Component({
   selector: 'app-platform-dashboard',
@@ -34,6 +35,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 export class PlatformDashboardComponent implements OnInit {
   currentPlatform: Platform | null = null;
   activeTab: string = 'content';
+  allSeries: any[] = [];
+  catalogSeries: any[] = [];
   allMovies: any[] = [];
   catalogMovies: any[] = [];
   loading: boolean = false;
@@ -42,6 +45,7 @@ export class PlatformDashboardComponent implements OnInit {
     private authService: AuthService,
     private platformService: PlatformService,
     private movieService: MovieService,
+    private seriesService: SerieService,
     private router: Router,
     private snackBar: MatSnackBar
   ) {}
@@ -52,9 +56,43 @@ export class PlatformDashboardComponent implements OnInit {
       this.router.navigate(['/login']);
       return;
     }
-
     this.loadMovies();
+    this.loadSeries();
   }
+  loadSeries(): void {
+    this.loading = true;
+
+    this.seriesService.getAllSeries().subscribe(series => {
+      this.allSeries = series;
+
+      if (this.currentPlatform && this.currentPlatform.catalog && this.currentPlatform.catalog.length > 0) {
+        this.loadCatalogSeries();
+      } else {
+        this.catalogSeries = [];
+        this.loading = false;
+      }
+    });
+  }
+
+  loadCatalogSeries(): void {
+    if (!this.currentPlatform || !this.currentPlatform.catalog) {
+      this.loading = false;
+      return;
+    }
+
+    const catalogIds = this.currentPlatform.catalog;
+    if (catalogIds.length === 0) {
+      this.catalogSeries = [];
+      this.loading = false;
+      return;
+    }
+
+    this.catalogSeries = this.allSeries.filter(serie =>
+      catalogIds.includes(serie.id)
+    );
+    this.loading = false;
+  }
+
 
   loadMovies(): void {
     this.loading = true;
@@ -72,6 +110,8 @@ export class PlatformDashboardComponent implements OnInit {
       }
     });
   }
+
+
 
   loadCatalogMovies(): void {
     if (!this.currentPlatform || !this.currentPlatform.catalog) {
@@ -91,6 +131,11 @@ export class PlatformDashboardComponent implements OnInit {
     );
     this.loading = false;
   }
+
+  isSerieInCatalog(serieId: string): boolean {
+    return this.currentPlatform?.catalog?.includes(serieId) || false;
+  }
+
 
   addMovieToCatalog(movieId: string): void {
     if (!this.currentPlatform) return;
@@ -139,6 +184,55 @@ export class PlatformDashboardComponent implements OnInit {
         });
       });
   }
+
+  addSerieToCatalog(serieId: string): void {
+    if (!this.currentPlatform) return;
+
+    this.loading = true;
+    this.platformService.addSerieToCatalog(this.currentPlatform.id, serieId)
+      .subscribe(updatedPlatform => {
+        this.currentPlatform = updatedPlatform;
+        this.authService.platformLogout();
+        localStorage.setItem('currentPlatform', JSON.stringify(updatedPlatform));
+        this.loadCatalogSeries();
+        this.snackBar.open('Serie agregada al catálogo', 'Cerrar', {
+          duration: 3000,
+          panelClass: ['custom-snackbar']
+        });
+      }, error => {
+        console.error('Error adding serie to catalog', error);
+        this.loading = false;
+        this.snackBar.open('Error al agregar la serie', 'Cerrar', {
+          duration: 3000,
+          panelClass: ['custom-snackbar']
+        });
+      });
+  }
+
+  removeSerieFromCatalog(serieId: string): void {
+    if (!this.currentPlatform) return;
+
+    this.loading = true;
+    this.platformService.removeSerieFromCatalog(this.currentPlatform.id, serieId)
+      .subscribe(updatedPlatform => {
+        this.currentPlatform = updatedPlatform;
+        this.authService.platformLogout();
+        localStorage.setItem('currentPlatform', JSON.stringify(updatedPlatform));
+        this.loadCatalogSeries();
+        this.snackBar.open('Serie eliminada del catálogo', 'Cerrar', {
+          duration: 3000,
+          panelClass: ['custom-snackbar']
+        });
+      }, error => {
+        console.error('Error removing serie from catalog', error);
+        this.loading = false;
+        this.snackBar.open('Error al eliminar la serie', 'Cerrar', {
+          duration: 3000,
+          panelClass: ['custom-snackbar']
+        });
+      });
+  }
+
 
   isInCatalog(movieId: string): boolean {
     return this.currentPlatform?.catalog?.includes(movieId) || false;

@@ -11,18 +11,21 @@
     <button mat-button (click)="logout()">Cerrar sesión</button>
   </mat-toolbar>
 
+  <!-- ...tu toolbar y contenedor ya están definidos arriba... -->
+
   <div class="dashboard-content">
     <div *ngIf="activeTab === 'content'" class="content-tab">
       <h2>Gestión de Contenidos</h2>
-      <p>Aquí puedes agregar películas a tu catálogo.</p>
+      <p>Aquí puedes agregar películas o series a tu catálogo.</p>
 
       <div class="content-management">
         <div *ngIf="loading" class="loading-spinner">
           <mat-spinner diameter="40"></mat-spinner>
         </div>
 
+        <!-- Catálogo de Películas -->
         <div class="catalog-section">
-          <h3>Tu Catálogo Actual</h3>
+          <h3>Películas en tu Catálogo</h3>
           <div *ngIf="!loading" class="platform-catalog">
             <div *ngIf="catalogMovies.length === 0" class="empty-catalog">
               <p>No tienes películas en tu catálogo. Agrega películas desde la sección de abajo.</p>
@@ -36,7 +39,7 @@
                 </mat-card-content>
                 <mat-card-actions>
                   <button mat-button class="raje-primary-btn" (click)="removeMovieFromCatalog(movie.id)">
-                    <mat-icon>remove_circle</mat-icon> Quitar
+                    Quitar
                   </button>
                 </mat-card-actions>
               </mat-card>
@@ -44,6 +47,31 @@
           </div>
         </div>
 
+        <!-- Catálogo de Series -->
+        <div class="catalog-section">
+          <h3>Series en tu Catálogo</h3>
+          <div *ngIf="!loading" class="platform-catalog">
+            <div *ngIf="catalogSeries.length === 0" class="empty-catalog">
+              <p>No tienes series en tu catálogo.</p>
+            </div>
+            <div *ngIf="catalogSeries.length > 0" class="catalog-grid">
+              <mat-card *ngFor="let serie of catalogSeries" class="movie-card">
+                <img mat-card-image [src]="serie.imagen" alt="{{ serie.titulo }}">
+                <mat-card-content>
+                  <h3>{{ serie.titulo }}</h3>
+                  <p>{{ serie.anio }}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button class="raje-primary-btn" (click)="removeSerieFromCatalog(serie.id)">
+                    Quitar
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+
+        <!-- Películas disponibles -->
         <div class="available-movies-section">
           <h3>Películas Disponibles</h3>
           <div *ngIf="!loading" class="available-movies">
@@ -63,7 +91,6 @@
                     [ngClass]="{'raje-primary-btn': !isInCatalog(movie.id), 'warn': isInCatalog(movie.id)}"
                     [disabled]="isInCatalog(movie.id)"
                     (click)="addMovieToCatalog(movie.id)">
-
                     {{ isInCatalog(movie.id) ? 'Agregada' : 'Agregar' }}
                   </button>
                 </mat-card-actions>
@@ -71,7 +98,37 @@
             </div>
           </div>
         </div>
+
+        <!-- Series disponibles -->
+        <div class="available-movies-section">
+          <h3>Series Disponibles</h3>
+          <div *ngIf="!loading" class="available-movies">
+            <div *ngIf="allSeries.length === 0" class="empty-movies">
+              <p>No hay series disponibles para agregar.</p>
+            </div>
+            <div *ngIf="allSeries.length > 0" class="movies-grid">
+              <mat-card *ngFor="let serie of allSeries" class="movie-card">
+                <img mat-card-image [src]="serie.imagen" alt="{{ serie.titulo }}">
+                <mat-card-content>
+                  <h3>{{ serie.titulo }}</h3>
+                  <p>{{ serie.anio }}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button
+                    mat-button
+                    [ngClass]="{'raje-primary-btn': !isSerieInCatalog(serie.id), 'warn': isSerieInCatalog(serie.id)}"
+                    [disabled]="isSerieInCatalog(serie.id)"
+                    (click)="addSerieToCatalog(serie.id)">
+                    {{ isSerieInCatalog(serie.id) ? 'Agregada' : 'Agregar' }}
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
+
 </div>

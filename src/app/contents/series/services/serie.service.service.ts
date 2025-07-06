@@ -18,6 +18,10 @@ export class SerieService {
     return this.http.get<any[]>(this.baseUrl);
   }
 
+  getAllSeries(): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl);
+  }
+
   // Obtener una serie por su ID
   getSerieById(id: string): Observable<Serie> {
     return this.http.get<any[]>(`${this.baseUrl}?id=${id}`).pipe(

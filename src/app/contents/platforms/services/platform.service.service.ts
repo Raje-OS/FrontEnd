@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 import { Platform } from '../model/platform.entity';
 import {map, switchMap} from 'rxjs/operators';
 import {MovieService} from '../../movies/services/movie.service.service';
+import {SerieService} from '../../series/services/serie.service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class PlatformService {
   private baseUrl = environment.serverBaseUrl + environment.platformEndpointPath;
 
   constructor(private http: HttpClient,
-  private movieService: MovieService
+  private movieService: MovieService,
+              private seriesService: SerieService
   ) {}
 
   getAllPlatforms(): Observable<Platform[]> {
@@ -32,6 +34,41 @@ export class PlatformService {
   updatePlatform(platform: Platform): Observable<Platform> {
     return this.http.put<Platform>(`${this.baseUrl}/${platform.id}`, platform);
   }
+
+  addSerieToCatalog(platformId: string, serieId: string): Observable<Platform> {
+    return new Observable<Platform>(observer => {
+      this.getPlatformById(platformId).pipe(
+        switchMap(platform => {
+          if (!platform.catalog.includes(serieId)) {
+            platform.catalog.push(serieId);
+
+            return this.seriesService.getSerieById(serieId).pipe(
+              switchMap(serie => {
+                if (!serie.plataformas_id) serie.plataformas_id = [];
+                if (!serie.plataformas_id.includes(platformId)) {
+                  serie.plataformas_id.push(platformId);
+
+                  return this.http.put<any>(`${this.seriesService['baseUrl']}/${serieId}`, serie).pipe(
+                    switchMap(() => this.updatePlatform(platform))
+                  );
+                }
+                return this.updatePlatform(platform);
+              })
+            );
+          } else {
+            return this.updatePlatform(platform);
+          }
+        })
+      ).subscribe({
+        next: updatedPlatform => {
+          observer.next(updatedPlatform);
+          observer.complete();
+        },
+        error: error => observer.error(error)
+      });
+    });
+  }
+
 
   addMovieToCatalog(platformId: string, movieId: string): Observable<Platform> {
     return new Observable<Platform>(observer => {
@@ -103,4 +140,41 @@ export class PlatformService {
       });
     });
   }
+  removeSerieFromCatalog(platformId: string, serieId: string): Observable<Platform> {
+    return new Observable<Platform>(observer => {
+      this.getPlatformById(platformId).pipe(
+        switchMap(platform => {
+          const serieIndex = platform.catalog.indexOf(serieId);
+          if (serieIndex !== -1) {
+            platform.catalog.splice(serieIndex, 1);
+
+            return this.seriesService.getSerieById(serieId).pipe(
+              switchMap(serie => {
+                if (serie.plataformas_id) {
+                  const platformIndex = serie.plataformas_id.indexOf(platformId);
+                  if (platformIndex !== -1) {
+                    serie.plataformas_id.splice(platformIndex, 1);
+
+                    return this.http.put<any>(`${this.seriesService['baseUrl']}/${serieId}`, serie).pipe(
+                      switchMap(() => this.updatePlatform(platform))
+                    );
+                  }
+                }
+                return this.updatePlatform(platform);
+              })
+            );
+          } else {
+            return this.updatePlatform(platform);
+          }
+        })
+      ).subscribe({
+        next: updatedPlatform => {
+          observer.next(updatedPlatform);
+          observer.complete();
+        },
+        error: error => observer.error(error)
+      });
+    });
+  }
+
 }
