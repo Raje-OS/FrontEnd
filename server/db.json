@@ -37,7 +37,8 @@
       "catalog": [
         "SR013",
         "MV001",
-        "MV009"
+        "MV009",
+        "MV008"
       ]
     },
     {
@@ -1063,7 +1064,8 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL003"
+        "PL003",
+        "PL004"
       ],
       "calificacion": 4,
       "sinopsis": "La batalla final entre Harry y Voldemort se libra en Hogwarts, donde se decide el destino del mundo mágico.",
