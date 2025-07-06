@@ -1,0 +1,66 @@
+<div class="statistics-container">
+  <mat-toolbar color="primary">
+    <div class="platform-header">
+      <img *ngIf="currentPlatform?.imagen" [src]="currentPlatform?.imagen" alt="Logo" class="platform-logo">
+      <span>{{ currentPlatform?.nombre }}</span>
+    </div>
+    <span class="toolbar-spacer"></span>
+    <button mat-button (click)="navigateToDashboard()">Contenidos</button>
+    <button mat-button class="active">Estadísticas</button>
+    <button mat-button (click)="logout()">Cerrar sesión</button>
+  </mat-toolbar>
+
+  <div class="statistics-content">
+    <h2>Estadísticas de la Plataforma</h2>
+    <p>Aquí puedes ver estadísticas sobre tu catálogo de películas.</p>
+
+    <div *ngIf="loading" class="loading-spinner">
+      <mat-spinner diameter="40"></mat-spinner>
+    </div>
+
+    <div *ngIf="!loading" class="statistics-cards">
+      <mat-card class="stat-card total-movies">
+        <mat-card-header>
+          <mat-card-title class="card-title-centered">Total de Películas</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+          <div class="stat-value">{{ statistics.totalMovies }}</div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="stat-card genre-distribution" *ngIf="statistics.totalMovies > 0">
+        <mat-card-header>
+          <mat-card-title class="card-title-centered">Distribución por Género</mat-card-title>
+
+        </mat-card-header>
+        <br> <br>
+        <mat-card-content>
+          <div *ngIf="Object.keys(statistics.genreDistribution).length === 0" class="empty-stat">
+            No hay información de géneros disponible.
+          </div>
+          <div *ngFor="let genre of getGenreKeys()" class="stat-item">
+            <span class="stat-label">{{ genre }}</span>
+            <span class="stat-count">{{ statistics.genreDistribution[genre] }}</span>
+            <div class="stat-bar" [style.width.%]="getPercentage(statistics.genreDistribution[genre], statistics.totalMovies)"></div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+
+      <mat-card class="stat-card empty-catalog" *ngIf="statistics.totalMovies === 0">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>info</mat-icon>
+          <mat-card-title>Catálogo Vacío</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>No tienes películas en tu catálogo. Agrega películas desde la sección de Contenidos para ver estadísticas.</p>
+          <button mat-raised-button color="primary" (click)="navigateToDashboard()">
+            <mat-icon>add_circle</mat-icon> Agregar Películas
+          </button>
+        </mat-card-content>
+      </mat-card>
+      <br> <br><br> <br><br> <br><br> <br><br> <br><br> <br>
+    </div>
+  </div>
+</div>
