@@ -25,7 +25,9 @@
       "imagen": "https://giftcardoferta.com/tienda/wp-content/uploads/2022/07/disneyplus-1200x675-1.jpg",
       "email": "disney@example.com",
       "password": "disney123",
-      "catalog": []
+      "catalog": [
+        "MV007"
+      ]
     },
     {
       "id": "PL004",
@@ -1578,6 +1580,7 @@
       "pais_origen": "Estados Unidos",
       "editorial": "Chilton Books",
       "isbn": "978-0441172719",
+      "calificacion": 4.3,
       "sinopsis": "La historia de Paul Atreides, un joven noble que se convierte en el líder de un planeta desértico donde se produce la especia más valiosa del universo.",
       "imagen": "https://www.penguinlibros.com/pe/1681400/dune-nueva-edicion-las-cronicas-de-dune-1.jpg"
     },
@@ -2903,9 +2906,7 @@
     {
       "id": "UD003",
       "userId": "US003",
-      "favorites": [
-        "MV001"
-      ],
+      "favorites": [],
       "viewed": []
     },
     {
@@ -3159,6 +3160,85 @@
       "description": "safdasfsa",
       "list_content": [
         "MV001"
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "id": "LI001",
+      "nombre": "Crisol",
+      "descripcion": "Somos la cadena de librerías con la oferta más amplia y variada de productos de entretenimiento cultural, brindando el mejor nivel de servicio en el mercado peruano.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsnpbe1RXpr9E8bzzdiy-i4aKZEiDs2axmpA&s",
+      "email": "crisol@example.com",
+      "password": "crisol123",
+      "catalog": [
+        "BK001",
+        "BK004",
+        "BK005",
+        "BK007"
+      ],
+      "ubicaciones": [
+        {
+          "lat": -12.0464,
+          "lng": -77.0428,
+          "direccion": "Crisol Lima Centro"
+        },
+        {
+          "lat": -12.1191,
+          "lng": -77.032,
+          "direccion": "Crisol Larcomar"
+        }
+      ]
+    },
+    {
+      "id": "LI002",
+      "nombre": "Ibero",
+      "descripcion": "Librerías Ibero trae lo mejor de la literatura internacional con una experiencia de compra amigable y moderna.",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw9amhu3RdHK6VxiQSewgYdrNy4WMGSVBokg&s",
+      "email": "ibero@example.com",
+      "password": "ibero123",
+      "catalog": [
+        "BK002",
+        "BK003",
+        "BK006"
+      ],
+      "ubicaciones": [
+        {
+          "lat": -12.1327,
+          "lng": -76.9918,
+          "direccion": "Ibero San Borja"
+        },
+        {
+          "lat": -12.0972,
+          "lng": -77.0365,
+          "direccion": "Ibero San Isidro"
+        }
+      ]
+    },
+    {
+      "id": "LI003",
+      "nombre": "SBS",
+      "descripcion": "SBS Librerías está especializada en libros educativos, técnicos y de idiomas. Una fuente confiable para estudiantes y profesionales.",
+      "imagen": "https://media.licdn.com/dms/image/v2/C4D0BAQEsyCFgIArCrw/company-logo_200_200/company-logo_200_200/0/1630531705713/sbs_librer_a_internacional_logo?e=2147483647&v=beta&t=JbVanxB8hHdenl7ruqcqEjiiJv-hPtgzsH4mTFN1tMU",
+      "email": "sbs@example.com",
+      "password": "sbs123",
+      "catalog": [
+        "BK008",
+        "BK009",
+        "BK010",
+        "BK006"
+      ],
+      "ubicaciones": [
+        {
+          "lat": -12.0905,
+          "lng": -77.0378,
+          "direccion": "SBS Miraflores"
+        },
+        {
+          "lat": -12.0703,
+          "lng": -77.1338,
+          "direccion": "SBS Los Olivos"
+        }
       ]
     }
   ]

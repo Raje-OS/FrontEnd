@@ -12,12 +12,13 @@
 
   <mat-card class="login-card">
     <div class="login-toggle">
-      <button mat-button [class.active]="!isPlatformLogin" (click)="isPlatformLogin = false">Usuario</button>
-      <button mat-button [class.active]="isPlatformLogin" (click)="isPlatformLogin = true">Plataforma</button>
+      <button mat-button [class.active]="loginMode === 'user'" (click)="loginMode = 'user'">Usuario</button>
+      <button mat-button [class.active]="loginMode === 'platform'" (click)="loginMode = 'platform'">Plataforma</button>
+      <button mat-button [class.active]="loginMode === 'library'" (click)="loginMode = 'library'">Librería</button>
     </div>
 
     <form (ngSubmit)="login()" class="login-form">
-      <div *ngIf="!isPlatformLogin">
+      <div *ngIf="loginMode === 'user'">
         <mat-form-field appearance="fill" class="login-input">
           <mat-label>Usuario</mat-label>
           <input matInput [(ngModel)]="username" name="username" required>
@@ -29,9 +30,9 @@
         </mat-form-field>
       </div>
 
-      <div *ngIf="isPlatformLogin">
+      <div *ngIf="loginMode === 'platform'">
         <mat-form-field appearance="fill" class="login-input">
-          <mat-label>Email</mat-label>
+          <mat-label>Email de plataforma</mat-label>
           <input matInput [(ngModel)]="email" name="email" required>
         </mat-form-field>
 
@@ -40,13 +41,35 @@
           <input matInput [(ngModel)]="password" name="password" type="password" required>
         </mat-form-field>
       </div>
+      <div *ngIf="loginMode === 'library'">
+        <mat-form-field appearance="fill" class="login-input">
+          <mat-label>Email de libreria</mat-label>
+          <input matInput [(ngModel)]="email" name="libraryEmail" required>
+        </mat-form-field>
 
+        <mat-form-field appearance="fill" class="login-input">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [(ngModel)]="password" name="libraryPassword" type="password" required>
+        </mat-form-field>
+      </div>
       <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
 
       <div class="button-group">
-        <button mat-raised-button color="warn" class="login-button">Iniciar sesión</button>
-        <button *ngIf="!isPlatformLogin" mat-raised-button color="warn" class="register-button" (click)="register()">Registrarse</button>
+        <button mat-raised-button color="warn" class="login-button">
+          Iniciar sesión
+        </button>
+
+        <button
+          *ngIf="loginMode === 'user'"
+          mat-raised-button
+          color="warn"
+          class="register-button"
+          (click)="register()"
+        >
+          Registrarse
+        </button>
       </div>
+
     </form>
   </mat-card>
 </div>

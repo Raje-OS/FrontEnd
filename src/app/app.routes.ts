@@ -17,6 +17,12 @@ import {ListsPageComponent} from './lists/pages/lists.page/lists.page.component'
 import {ListDetailComponent} from './lists/components/list-detail/list-detail.component';
 import {TopCategoryComponent} from './public/components/top-category/top-category.component';
 import {PlatformStatisticsComponent} from './contents/platforms/components/platform-statistics/platform-statistics.component';
+import {SearchContentComponent} from './contents/pages/search-content/search-content.component';
+import {LibraryDashboardComponent} from './contents/libraries/components/library-dashboard/library-dashboard.component';
+import {
+  LibraryStatisticsComponent
+} from './contents/libraries/components/library-statistics/library-statistics.component';
+import {LibraryMapComponent} from './contents/libraries/components/library-map/library-map.component';
 
 
 export const routes: Routes = [
@@ -35,6 +41,7 @@ export const routes: Routes = [
   { path: 'favorites', component: FavoritosComponent },
   { path: 'content/:type/:id', component: ContentDetailComponent },
   { path: 'top/:type', component: TopCategoryComponent },
+  { path: 'busqueda', component:SearchContentComponent  },
   // 🎬 Detalle de contenido
   { path: 'movies/:id', component: MovieDetailComponent },
 
@@ -52,7 +59,10 @@ export const routes: Routes = [
   { path: 'lists', component: ListsPageComponent },
   {path: 'lists/:id', component: ListDetailComponent},
 
-
+  //librerias rutas
+  { path: 'library-dashboard', component: LibraryDashboardComponent },
+  {path: 'library-statistics', component: LibraryStatisticsComponent },
+  {path: 'library-map', component: LibraryMapComponent },
   // ⚠️ Fallback
   { path: '**', redirectTo: 'login' }
 

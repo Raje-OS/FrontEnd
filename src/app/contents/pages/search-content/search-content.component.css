@@ -1,106 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400&display=swap');
-.top-category-wrapper {
-  padding: 90px 40px 40px;
+/* 🧠 General */
+body {
+  font-family: 'Lexend Mega', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: white;
+}
+
+/* 🧭 Sección centrada */
+.search-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Lexend Mega', sans-serif;
-}
-
-.top-header {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 140px;
   margin-bottom: 40px;
 }
 
-.top-title {
-  font-size: 3rem;
-  color: white;
-  margin: 0;
-  text-align: center;
-}
-
-.back-button {
-  position: absolute;
-  left: 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.back-button img {
-  width: 50px;
-  height: 50px;
-}
-
-
-.top-title {
-  font-size: 2rem;
-  color: white;
-  margin: 0;
-}
-
-.top-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 24px;
-  width: 100%;
-  max-width: 1300px;
-}
-
-.top-item {
-  background-color: #222;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.top-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-.top-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
-  margin-bottom: 24px;
-}
-
-.top-title {
+/* 🆎 Título */
+.search-title {
   font-size: 32px;
   font-weight: bold;
-  text-align: center;
-  flex-grow: 1;
-  color: white;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
 }
 
-.back-button {
+/* 🔍 Input + Filtro */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #3c3c3c;
+  border-radius: 30px;
+  padding: 8px 16px;
+  width: 500px;
+  gap: 12px;
+}
+
+.search-input {
+  flex: 1;
   background: transparent;
   border: none;
-  cursor: pointer;
-  margin-right: 16px;
+  color: white;
+  font-size: 16px;
+  font-family: 'Lexend Mega', sans-serif;
+  outline: none;
 }
 
 .filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-icon {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+/* 🎯 Botón buscar */
+.search-button {
+  margin-top: 16px;
   background-color: #891010;
   color: white;
   border: none;
   padding: 10px 24px;
   border-radius: 20px;
-  font-family: 'Lexend Mega', sans-serif;
+  font-size: 16px;
   cursor: pointer;
+  font-family: 'Lexend Mega', sans-serif;
 }
 
-/* ================== MODAL ================== */
+/* 🎞 Resultados grid */
+.resultados {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  padding: 32px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🎛 Modal */
 .modal {
   position: fixed;
   top: 0;
@@ -123,9 +105,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  font-family: 'Lexend Mega', sans-serif;
   position: relative;
   color: #0c0c0c;
+  font-family: 'Lexend Mega', sans-serif;
 }
 
 .cerrar {
@@ -136,12 +118,10 @@
   cursor: pointer;
 }
 
-/* ================== FORMULARIO ================== */
 .formulario-filtro {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-family: 'Lexend Mega', sans-serif;
 }
 
 label {
@@ -150,7 +130,6 @@ label {
   font-size: 14px;
 }
 
-/* ================== SELECT ================== */
 select {
   padding: 10px;
   border-radius: 12px;
@@ -160,7 +139,6 @@ select {
   font-size: 14px;
 }
 
-/* ================== BOTONES ================== */
 button[type="button"]:not(.star-button) {
   background-color: #891010;
   color: white;
@@ -172,7 +150,7 @@ button[type="button"]:not(.star-button) {
   align-self: center;
 }
 
-/* ================== ESTRELLAS ================== */
+/* ⭐ Estrellas */
 .estrellas-container {
   display: flex;
   flex-direction: row;

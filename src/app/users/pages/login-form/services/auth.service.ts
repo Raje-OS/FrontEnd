@@ -5,6 +5,8 @@ import {environment} from '../../../../../environments/environment';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Platform } from '../../../../contents/platforms/model/platform.entity';
+import {Library} from '../../../../contents/libraries/model/library.entity';
+import { LibraryService } from '../../../../contents/libraries/services/library.service'; // Asegúrate que el path sea correcto
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class AuthService {
   private usersUrl = `${environment.serverBaseUrl}${environment.userEndpointPath}`;
   private platformsUrl = `${environment.serverBaseUrl}${environment.platformEndpointPath}`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private libraryService: LibraryService) {}
 
   login(username: string, password: string): Observable<User | null> {
     return this.http.get<User[]>(this.usersUrl).pipe(
@@ -90,5 +92,36 @@ export class AuthService {
 
   platformLogout() {
     localStorage.removeItem('currentPlatform');
+  }
+
+  //LIBRERIAS
+  libraryLogin(email: string, password: string): Observable<Library | null> {
+    return this.libraryService.getByEmail(email).pipe(
+      map(library => {
+        if (library && library.password === password) {
+          localStorage.setItem('currentLibrary', JSON.stringify(library));
+          return library;
+        }
+        return null;
+      }),
+      catchError(error => {
+        console.error('Library login failed', error);
+        return throwError(() => new Error('Library login failed'));
+      })
+    );
+  }
+
+
+  getCurrentLibrary(): Library | null {
+    const lib = localStorage.getItem('currentLibrary');
+    return lib ? JSON.parse(lib) : null;
+  }
+
+  isLibraryLoggedIn(): boolean {
+    return localStorage.getItem('currentLibrary') !== null;
+  }
+
+  libraryLogout() {
+    localStorage.removeItem('currentLibrary');
   }
 }

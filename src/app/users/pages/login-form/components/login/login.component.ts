@@ -26,35 +26,44 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   email: string = '';
-  isPlatformLogin: boolean = false;
+  loginMode: 'user' | 'platform' | 'library' = 'user';
 
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
-    if (this.isPlatformLogin) {
+    if (this.loginMode === 'user') {
+      this.authService.login(this.username, this.password).subscribe({
+        next: user => {
+          if (user) this.router.navigate(['/tendencies']);
+          else alert('Usuario o contraseña incorrectos');
+        },
+        error: err => console.error(err)
+      });
+
+    } else if (this.loginMode === 'platform') {
       this.authService.platformLogin(this.email, this.password).subscribe({
-        next: (platform) => {
-          if (platform) {
-            this.router.navigate(['/platform-dashboard']);
+        next: platform => {
+          if (platform) this.router.navigate(['/platform-dashboard']);
+          else alert('Email o contraseña incorrectos');
+        },
+        error: err => console.error(err)
+      });
+
+    } else if (this.loginMode === 'library') {
+      this.authService.libraryLogin(this.email, this.password).subscribe({
+        next: (library) => {
+          if (library) {
+            this.router.navigate(['/library-dashboard']);
           } else {
             alert('Email o contraseña incorrectos');
           }
         },
         error: (error) => console.error(error)
       });
-    } else {
-      this.authService.login(this.username, this.password).subscribe({
-        next: (user) => {
-          if (user) {
-            this.router.navigate(['/tendencies']);
-          } else {
-            alert('Usuario o contraseña incorrectos');
-          }
-        },
-        error: (error) => console.error(error)
-      });
+
     }
   }
+
 
   register() {
     this.router.navigate(['/register']);

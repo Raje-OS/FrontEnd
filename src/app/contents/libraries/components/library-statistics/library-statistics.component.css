@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400&display=swap');
+
+.statistics-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Lexend Mega', sans-serif;
+  color: white;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 3px solid #a4161a;
+  padding-bottom: 10px;
+}
+
+.empty-msg {
+  text-align: center;
+  font-style: italic;
+  color: #ccc;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.stat-card {
+  background-color: #1a1a1a;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #ffcc00;
+}
+
+.genre-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.genre-count {
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+mat-card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+mat-card-content h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+mat-card-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+img {
+  object-fit: cover;
+  height: 250px;
+
+}
+mat-card img {
+  height: 180px; /* altura menor para ver la portada completa */
+  object-fit: contain; /* para que no recorte y se vea entera */
+  background-color: transparent; /* o hereda el fondo del card */
+  padding: 8px;
+}

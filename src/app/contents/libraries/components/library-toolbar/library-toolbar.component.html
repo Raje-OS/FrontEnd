@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="toolbar-nav">
+  <div class="library-header-left">
+    <img *ngIf="currentLibrary?.imagen" [src]="currentLibrary?.imagen" alt="Logo" class="library-logo">
+    <span class="library-name">{{ currentLibrary?.nombre }}</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <button mat-button routerLink="/library-dashboard" routerLinkActive="active">Catálogo</button>
+  <button mat-button routerLink="/library-statistics" routerLinkActive="active">Estadísticas</button>
+  <button mat-button routerLink="/library-map" routerLinkActive="active">Ubicaciones</button>
+  <button mat-button (click)="logout()">Cerrar sesión</button>
+</mat-toolbar>
