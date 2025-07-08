@@ -2916,8 +2916,14 @@
     {
       "id": "UD003",
       "userId": "US003",
-      "favorites": [],
-      "viewed": []
+      "favorites": [
+        "MV001"
+      ],
+      "viewed": [
+        "SR001",
+        "BK003",
+        "MV001"
+      ]
     },
     {
       "id": "UD004",
