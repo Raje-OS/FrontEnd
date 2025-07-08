@@ -23,6 +23,7 @@ import {
   LibraryStatisticsComponent
 } from './contents/libraries/components/library-statistics/library-statistics.component';
 import {LibraryMapComponent} from './contents/libraries/components/library-map/library-map.component';
+import {LibraryDetailComponent} from './contents/libraries/components/library-detail/library-detail.component';
 
 
 export const routes: Routes = [
@@ -63,6 +64,7 @@ export const routes: Routes = [
   { path: 'library-dashboard', component: LibraryDashboardComponent },
   {path: 'library-statistics', component: LibraryStatisticsComponent },
   {path: 'library-map', component: LibraryMapComponent },
+  { path: 'libraries/:id', component: LibraryDetailComponent },
   // ⚠️ Fallback
   { path: '**', redirectTo: 'login' }
 
