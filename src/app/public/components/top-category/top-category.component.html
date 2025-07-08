@@ -4,37 +4,67 @@
       <img src="assets/ArrowBack.png" alt="Volver">
     </button>
     <h1 class="top-title">TOP {{ type | uppercase }}</h1>
+    <button class="filter-button" (click)="abrirModal()">Filtrar</button>
   </div>
 
   <div class="top-grid">
-    <!-- Películas -->
-    <ng-container *ngIf="type === 'movie'">
+    <ng-container *ngFor="let item of items">
       <app-movie-card
-        *ngFor="let item of items"
+        *ngIf="item.type === 'movie'"
         [titulo]="item.titulo"
         [imagen]="item.imagen"
         [movie]="item">
       </app-movie-card>
-    </ng-container>
 
-    <!-- Series -->
-    <ng-container *ngIf="type === 'serie'">
       <app-serie-card
-        *ngFor="let item of items"
+        *ngIf="item.type === 'serie'"
         [titulo]="item.titulo"
         [imagen]="item.imagen"
         [serie]="item">
       </app-serie-card>
-    </ng-container>
 
-    <!-- Libros -->
-    <ng-container *ngIf="type === 'book'">
       <app-book-card
-        *ngFor="let item of items"
+        *ngIf="item.type === 'book'"
         [titulo]="item.titulo"
         [imagen]="item.imagen"
         [book]="item">
       </app-book-card>
     </ng-container>
+  </div>
+
+  <!-- Modal -->
+  <div *ngIf="modalAbierto" class="modal">
+    <div class="contenido-modal">
+      <span class="cerrar" (click)="cerrarModal()">&times;</span>
+      <form class="formulario-filtro">
+        <label>Estrellas:</label>
+        <div class="estrellas-container">
+          <button
+            *ngFor="let star of stars; let i = index"
+            (click)="selectStar(i + 1)"
+            class="star-button"
+            [class.active]="i < selectedRating"
+            type="button">
+            <img
+              [src]="i < selectedRating ? 'assets/star.png' : 'assets/starnorellena.png'"
+              alt="Estrella"
+              class="star-icon"
+            />
+          </button>
+        </div>
+
+        <label for="genre">Género</label>
+        <select id="genre" [(ngModel)]="selectedGenre" name="genre">
+          <option value="">Todos</option>
+          <option value="Fantasía">Fantasía</option>
+          <option value="Aventura">Aventura</option>
+          <option value="Drama">Drama</option>
+          <option value="Ciencia ficción">Ciencia ficción</option>
+          <option value="Psicológico">Psicológico</option>
+        </select>
+
+        <button type="button" (click)="aplicarFiltro()">Aplicar Filtro</button>
+      </form>
+    </div>
   </div>
 </div>

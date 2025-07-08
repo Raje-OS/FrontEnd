@@ -13,5 +13,6 @@ export const environment = {
   reviewEndPointPath: '/reviews',
   userDetailEndpointPath: '/userDetails',
   listEndpointPath: '/lists',
+  libraryEndpointPath: '/libraries',
 
 };
