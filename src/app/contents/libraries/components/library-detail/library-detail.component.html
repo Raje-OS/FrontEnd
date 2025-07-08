@@ -1,0 +1,16 @@
+<button class="back-button" (click)="goBack()">
+  <img src="assets/ArrowBack.png" alt="Volver">
+</button>
+<div class="library-detail-container" *ngIf="library">
+  <div class="library-header">
+    <img [src]="library.imagen" alt="{{library.nombre}}" />
+    <div class="info">
+      <h2>{{ library.nombre }}</h2>
+      <p>{{ library.descripcion }}</p>
+    </div>
+  </div>
+
+  <div class="map-container">
+    <div id="map-detail"></div>
+  </div>
+</div>
