@@ -6,7 +6,7 @@ body {
   color: #fff;
   overflow-x: hidden;
   min-height: 100vh;
-  padding-top: 30px;
+  padding-top:80px;
 }
 
 /* Contenedor Principal */
@@ -188,4 +188,11 @@ body {
 
 h2, h3, p {
   margin: 5px 0;
+}
+.viewed-items {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: center;
 }

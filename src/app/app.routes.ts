@@ -24,6 +24,7 @@ import {
 } from './contents/libraries/components/library-statistics/library-statistics.component';
 import {LibraryMapComponent} from './contents/libraries/components/library-map/library-map.component';
 import {LibraryDetailComponent} from './contents/libraries/components/library-detail/library-detail.component';
+import {HistoryViewComponent} from './users/components/history-view/history-view.component';
 
 
 export const routes: Routes = [
@@ -35,6 +36,10 @@ export const routes: Routes = [
   // 👤 Usuario
   { path: 'profile', component: UserProfileComponent },
   {path: 'editmode', component: EditProfileComponent},
+  {
+    path: 'viewed-history',
+    component: HistoryViewComponent
+  },
 
   // 📚 Contenidos
   { path: 'tendencies', component: TendenciasComponent },
