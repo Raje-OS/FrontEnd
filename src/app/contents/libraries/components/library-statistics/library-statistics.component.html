@@ -1,0 +1,60 @@
+<app-library-toolbar></app-library-toolbar>
+
+<div class="statistics-container">
+  <h2> Estadísticas de tu Catálogo</h2>
+
+  <div *ngIf="statistics.totalBooks === 0" class="empty-msg">
+    No tienes libros en tu catálogo para mostrar estadísticas.
+  </div>
+
+  <div *ngIf="statistics.totalBooks > 0" class="stats-grid">
+
+    <!-- Total Libros -->
+    <mat-card class="stat-card total-books">
+      <mat-card-header>
+        <mat-card-title>Total de Libros</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="stat-value">{{ statistics.totalBooks }}</div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Distribución por Género -->
+    <mat-card class="stat-card genre-distribution">
+      <mat-card-header>
+        <mat-card-title>Distribución por Género</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let genre of getGenreKeys()" class="genre-item">
+          <span>{{ genre }}</span>
+          <span class="genre-count">{{ statistics.genreDistribution[genre] }}</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Mejor Libro -->
+    <mat-card class="stat-card best-book" *ngIf="statistics.topBook">
+      <mat-card-header>
+        <mat-card-title> Mejor Calificado</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="statistics.topBook.imagen" alt="{{ statistics.topBook.titulo }}">
+      <mat-card-content>
+        <h3>{{ statistics.topBook.titulo }}</h3>
+        <p>Calificación: {{ statistics.topBook.calificacion }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Peor Libro -->
+    <mat-card class="stat-card worst-book" *ngIf="statistics.worstBook">
+      <mat-card-header>
+        <mat-card-title> Peor Calificado</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="statistics.worstBook.imagen" alt="{{ statistics.worstBook.titulo }}">
+      <mat-card-content>
+        <h3>{{ statistics.worstBook.titulo }}</h3>
+        <p>Calificación: {{ statistics.worstBook.calificacion }}</p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>

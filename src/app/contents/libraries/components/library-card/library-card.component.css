@@ -1,0 +1,13 @@
+.library-card {
+  width: 100px;
+  margin: 5px;
+}
+
+.library-card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.library-card img:hover {
+  transform: scale(1.05);
+}
