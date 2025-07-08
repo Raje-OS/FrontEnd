@@ -9,9 +9,10 @@ export class Book {
   pais_origen: string;
   editorial: string;
   isbn: string;
-  calificacion:number;
+  calificacion: number;
   sinopsis: string;
   imagen: string;
+  librerias_id: string[];  // ✅ Nuevo campo agregado
 
   constructor(book: Partial<Book>) {
     this.id = book.id || '';
@@ -24,8 +25,9 @@ export class Book {
     this.pais_origen = book.pais_origen || '';
     this.editorial = book.editorial || '';
     this.isbn = book.isbn || '';
-    this.calificacion= book.calificacion || 0;
+    this.calificacion = book.calificacion || 0;
     this.sinopsis = book.sinopsis || '';
     this.imagen = book.imagen || '';
+    this.librerias_id = book.librerias_id || [];  // ✅ Inicialización
   }
 }

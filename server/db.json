@@ -1528,7 +1528,8 @@
       "isbn": "978-0060850524",
       "calificacion": 2.6,
       "sinopsis": "En un futuro distópico, la humanidad vive bajo un estricto control social que elimina las emociones y la libertad individual.",
-      "imagen": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9781784870140_z0qrmjlzprwn2vln.jpg"
+      "imagen": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9781784870140_z0qrmjlzprwn2vln.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK002",
@@ -1546,7 +1547,11 @@
       "isbn": "978-1451673319",
       "calificacion": 5,
       "sinopsis": "En un futuro opresivo, los bomberos queman libros para suprimir el conocimiento y el pensamiento crítico.",
-      "imagen": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9786124262234_pvbpckmo3v8lkhvu.jpg"
+      "imagen": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9786124262234_pvbpckmo3v8lkhvu.jpg",
+      "librerias_id": [
+        "LI001",
+        "LI003"
+      ]
     },
     {
       "id": "BK003",
@@ -1564,7 +1569,8 @@
       "isbn": "978-0618391110",
       "calificacion": 4.5,
       "sinopsis": "Una colección de historias que relatan los orígenes y las primeras edades del mundo de la Tierra Media.",
-      "imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/86/44/864433ce26b854c45a844910736c1baf.jpg"
+      "imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/86/44/864433ce26b854c45a844910736c1baf.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK004",
@@ -1582,7 +1588,8 @@
       "isbn": "978-0441172719",
       "calificacion": 4.3,
       "sinopsis": "La historia de Paul Atreides, un joven noble que se convierte en el líder de un planeta desértico donde se produce la especia más valiosa del universo.",
-      "imagen": "https://www.penguinlibros.com/pe/1681400/dune-nueva-edicion-las-cronicas-de-dune-1.jpg"
+      "imagen": "https://www.penguinlibros.com/pe/1681400/dune-nueva-edicion-las-cronicas-de-dune-1.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK005",
@@ -1601,7 +1608,10 @@
       "isbn": "978-0486415871",
       "calificacion": 4.3,
       "sinopsis": "Un joven estudiante lucha con su conciencia después de cometer un asesinato en busca de justicia personal.",
-      "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/55/27/5527f9efda8f1efe32107609c1117ca8.jpg"
+      "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/55/27/5527f9efda8f1efe32107609c1117ca8.jpg",
+      "librerias_id": [
+        "LI001"
+      ]
     },
     {
       "id": "BK006",
@@ -1619,7 +1629,8 @@
       "isbn": "978-0140449266",
       "calificacion": 4.6,
       "sinopsis": "Un hombre es traicionado y encarcelado injustamente, y luego busca vengarse de quienes lo traicionaron.",
-      "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/e6/8c/e68c2b03eeeaa8cb4493f8803d784642.jpg"
+      "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/e6/8c/e68c2b03eeeaa8cb4493f8803d784642.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK007",
@@ -1637,7 +1648,8 @@
       "isbn": "978-0156012195",
       "calificacion": 4.7,
       "sinopsis": "Un piloto perdido en el desierto se encuentra con un joven príncipe de otro planeta que le cuenta sus aventuras.",
-      "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/db/bf/dbbf18663c14d51fcee5aa1b346a1ccb.jpg"
+      "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/db/bf/dbbf18663c14d51fcee5aa1b346a1ccb.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK008",
@@ -1656,7 +1668,10 @@
       "isbn": "978-1401245252",
       "calificacion": 4,
       "sinopsis": "En un mundo alternativo donde los superhéroes son reales, una conspiración global amenaza la paz mundial.",
-      "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/6a/2a/6a2a2509db395260a809ccfa368e7845.jpg"
+      "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/6a/2a/6a2a2509db395260a809ccfa368e7845.jpg",
+      "librerias_id": [
+        "LI001"
+      ]
     },
     {
       "id": "BK009",
@@ -1675,7 +1690,8 @@
       "isbn": "978-1401216672",
       "calificacion": 4,
       "sinopsis": "Mientras Batman persigue al Guasón, el payasezco criminal planea un ataque a la família Gordon reflejando así su caída en la locura total.",
-      "imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/c3/07/c307babb69c4c5425b48ebe6a6762a31.jpg"
+      "imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/c3/07/c307babb69c4c5425b48ebe6a6762a31.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK010",
@@ -1694,7 +1710,10 @@
       "isbn": "978-1401208417",
       "calificacion": 4.4,
       "sinopsis": "En un futuro distópico, un vigilante enmascarado lucha contra un gobierno totalitario para liberar a la sociedad.",
-      "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/46/70/4670d6ac966abce7595163b261711497.jpg"
+      "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/46/70/4670d6ac966abce7595163b261711497.jpg",
+      "librerias_id": [
+        "LI001"
+      ]
     },
     {
       "id": "BK011",
@@ -1713,7 +1732,8 @@
       "isbn": "978-0394747231",
       "calificacion": 4,
       "sinopsis": "Una novela gráfica que relata las experiencias de un sobreviviente del Holocausto a través de personajes animales.",
-      "imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/80/4e/804ed121ede17e60a01761da5149f893.jpg"
+      "imagen": "https://images.cdn1.buscalibre.com/fit-in/360x360/80/4e/804ed121ede17e60a01761da5149f893.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK012",
@@ -1732,7 +1752,8 @@
       "isbn": "978-1593070205",
       "calificacion": 4,
       "sinopsis": "La historia de Guts, un guerrero solitario que busca venganza en un mundo oscuro y brutal.",
-      "imagen": "https://cdn.kobo.com/book-images/b7ccda5d-c44e-4041-a1d4-382e69c641a1/1200/1200/False/berserk-volume-1.jpg"
+      "imagen": "https://cdn.kobo.com/book-images/b7ccda5d-c44e-4041-a1d4-382e69c641a1/1200/1200/False/berserk-volume-1.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK013",
@@ -1751,7 +1772,8 @@
       "isbn": "978-1612620244",
       "calificacion": 5,
       "sinopsis": "La humanidad lucha por sobrevivir en un mundo asediado por gigantes devoradores de humanos.",
-      "imagen": "https://m.media-amazon.com/images/I/81qPzeEO5IL.jpg"
+      "imagen": "https://m.media-amazon.com/images/I/81qPzeEO5IL.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK014",
@@ -1770,7 +1792,8 @@
       "isbn": "978-1421520544",
       "calificacion": 4.6,
       "sinopsis": "La historia épica del legendario espadachín Miyamoto Musashi, basado en la novela 'Musashi' de Eiji Yoshikawa.",
-      "imagen": "https://m.media-amazon.com/images/I/71TY7kJBo9L.AC_UF1000,1000_QL80.jpg"
+      "imagen": "https://m.media-amazon.com/images/I/71TY7kJBo9L.AC_UF1000,1000_QL80.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK015",
@@ -1789,7 +1812,8 @@
       "isbn": "978-1421580364",
       "calificacion": 5,
       "sinopsis": "En un mundo donde los ghouls cazan humanos para sobrevivir, un joven se convierte en mitad humano, mitad ghoul.",
-      "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/59/42/59427b708e8938fd44e18c6b211e6602.jpg"
+      "imagen": "https://images.cdn3.buscalibre.com/fit-in/360x360/59/42/59427b708e8938fd44e18c6b211e6602.jpg",
+      "librerias_id": []
     },
     {
       "id": "BK016",
@@ -1808,7 +1832,10 @@
       "isbn": "978-1421539645",
       "calificacion": 4,
       "sinopsis": "Un estudiante de secundaria encuentra un cuaderno que le permite matar a cualquier persona cuyo nombre escriba en él.",
-      "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/3d/12/3d12214797234717eaae5bbc8d093276.jpg"
+      "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/3d/12/3d12214797234717eaae5bbc8d093276.jpg",
+      "librerias_id": [
+        "LI003"
+      ]
     },
     {
       "id": "BK017",
@@ -1827,7 +1854,8 @@
       "isbn": "978-0061122415",
       "calificacion": 4.5,
       "sinopsis": "La historia de un joven pastor en busca de un tesoro personal que aprende sobre la vida y la felicidad.",
-      "imagen": "https://i5.walmartimages.com/seo/The-Alchemist-by-Paulo-Coelho-9780062355300_d01c97e5-ac11-4b29-8b99-a903925a5408.850bafbe56c24bb1497526818d832288.jpeg"
+      "imagen": "https://i5.walmartimages.com/seo/The-Alchemist-by-Paulo-Coelho-9780062355300_d01c97e5-ac11-4b29-8b99-a903925a5408.850bafbe56c24bb1497526818d832288.jpeg",
+      "librerias_id": []
     },
     {
       "id": "BK018",
@@ -1846,7 +1874,8 @@
       "isbn": "978-1935429005",
       "calificacion": 4.7,
       "sinopsis": "En un Tokio post-apocalíptico, un grupo de jóvenes descubre poderes psíquicos que podrían destruir el mundo.",
-      "imagen": "https://store.crunchyroll.com/on/demandware.static/-/Sites-crunchyroll-master-catalog/default/dw3469e6de/rightstuf/9781935429067_manga-Akira-Graphic-Novel-4-primary.jpg"
+      "imagen": "https://store.crunchyroll.com/on/demandware.static/-/Sites-crunchyroll-master-catalog/default/dw3469e6de/rightstuf/9781935429067_manga-Akira-Graphic-Novel-4-primary.jpg",
+      "librerias_id": []
     }
   ],
   "series": [
@@ -3172,10 +3201,10 @@
       "email": "crisol@example.com",
       "password": "crisol123",
       "catalog": [
-        "BK001",
-        "BK004",
+        "BK002",
         "BK005",
-        "BK007"
+        "BK010",
+        "BK008"
       ],
       "ubicaciones": [
         {
@@ -3197,11 +3226,7 @@
       "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw9amhu3RdHK6VxiQSewgYdrNy4WMGSVBokg&s",
       "email": "ibero@example.com",
       "password": "ibero123",
-      "catalog": [
-        "BK002",
-        "BK003",
-        "BK006"
-      ],
+      "catalog": [],
       "ubicaciones": [
         {
           "lat": -12.1327,
@@ -3223,10 +3248,8 @@
       "email": "sbs@example.com",
       "password": "sbs123",
       "catalog": [
-        "BK008",
-        "BK009",
-        "BK010",
-        "BK006"
+        "BK002",
+        "BK016"
       ],
       "ubicaciones": [
         {

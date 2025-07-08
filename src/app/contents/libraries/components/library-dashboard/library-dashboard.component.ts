@@ -65,22 +65,42 @@ export class LibraryDashboardComponent implements OnInit {
   addBookToCatalog(bookId: string): void {
     if (!this.currentLibrary) return;
 
-    this.libraryService.addBookToCatalog(this.currentLibrary.id, bookId).subscribe(updated => {
-      this.currentLibrary = updated;
-      localStorage.setItem('currentLibrary', JSON.stringify(updated));
-      this.loadBooks();
+    this.libraryService.addBookToCatalog(this.currentLibrary.id, bookId).subscribe({
+      next: updatedLibrary => {
+        this.currentLibrary = updatedLibrary;
+        localStorage.setItem('currentLibrary', JSON.stringify(updatedLibrary));
+        this.loadBooks();
+
+        // 🔥 También actualizar el libro
+        this.bookService.getBookById(bookId).subscribe(book => {
+          if (!book.librerias_id) book.librerias_id = [];
+          if (!book.librerias_id.includes(this.currentLibrary!.id)) {
+            book.librerias_id.push(this.currentLibrary!.id);
+            this.bookService.updateBook(book).subscribe(); // actualiza el JSON
+          }
+        });
+      }
     });
   }
-
 
   removeBookFromCatalog(bookId: string): void {
     if (!this.currentLibrary) return;
 
-    this.libraryService.removeBookFromCatalog(this.currentLibrary.id, bookId).subscribe(updated => {
-      this.currentLibrary = updated;
-      localStorage.setItem('currentLibrary', JSON.stringify(updated));
-      this.loadBooks();
+    this.libraryService.removeBookFromCatalog(this.currentLibrary.id, bookId).subscribe({
+      next: updatedLibrary => {
+        this.currentLibrary = updatedLibrary;
+        localStorage.setItem('currentLibrary', JSON.stringify(updatedLibrary));
+        this.loadBooks();
+
+        this.bookService.getBookById(bookId).subscribe(book => {
+          if (book.librerias_id) {
+            book.librerias_id = book.librerias_id.filter(id => id !== this.currentLibrary!.id);
+            this.bookService.updateBook(book).subscribe(); // actualiza el JSON
+          }
+        });
+      }
     });
   }
+
 
 }
