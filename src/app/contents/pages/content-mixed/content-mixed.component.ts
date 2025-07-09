@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MovieService} from '../../movies/services/movie.service.service';
-import {BookService} from '../../books/services/book.service.service';
-import {SerieService} from '../../series/services/serie.service.service';
-import {CreateReviewComponent} from '../../../reviews/components/create-review/create-review.component';
-import {
-  OtherUserReviewCardComponent
-} from '../../../reviews/components/other-user-review-card/other-user-review-card.component';
-import {SerieDetailComponent} from '../../series/components/serie-detail/serie-detail.component';
-import {BookDetailComponent} from '../../books/components/book-detail/book-detail.component';
-import {MovieDetailComponent} from '../../movies/components/movie-detail/movie-detail.component';
-import {Serie} from '../../series/model/serie.entity';
-import {Book} from '../../books/model/book.entity';
-import {Movie} from '../../movies/model/movie.entity';
-import {Review} from '../../../reviews/model/review.entity';
-import {ReviewService} from '../../../reviews/services/review.service';
-import {AddToListComponent} from '../../../lists/components/add-to-list/add-to-list.component';
+
+import { MovieService } from '../../movies/services/movie.service.service';
+import { BookService } from '../../books/services/book.service.service';
+import { SerieService } from '../../series/services/serie.service.service';
+import { CreateReviewComponent } from '../../../reviews/components/create-review/create-review.component';
+import { OtherUserReviewCardComponent } from '../../../reviews/components/other-user-review-card/other-user-review-card.component';
+import { SerieDetailComponent } from '../../series/components/serie-detail/serie-detail.component';
+import { BookDetailComponent } from '../../books/components/book-detail/book-detail.component';
+import { MovieDetailComponent } from '../../movies/components/movie-detail/movie-detail.component';
+import { Serie } from '../../series/model/serie.entity';
+import { Book } from '../../books/model/book.entity';
+import { Movie } from '../../movies/model/movie.entity';
+import { Review } from '../../../reviews/model/review.entity';
+import { ReviewService } from '../../../reviews/services/review.service';
+import { AddToListComponent } from '../../../lists/components/add-to-list/add-to-list.component';
+import {AuthService} from '../../../users/pages/login-form/services/auth.service';
+import {UserDetailService} from '../../../users/services/user-detail/user-detail.service';
 
 @Component({
   selector: 'app-content-mixed',
@@ -36,7 +37,12 @@ export class ContentMixedComponent implements OnInit {
   mixedContent: (Movie | Book | Serie)[] = [];
   reviewsByContent: { [key: string]: Review[] } = {};
 
+  favoriteIds: string[] = [];
+  viewedIds: string[] = [];
+
   constructor(
+    private authService: AuthService,
+    private userDetailService: UserDetailService,
     private movieService: MovieService,
     private bookService: BookService,
     private serieService: SerieService,
@@ -44,27 +50,25 @@ export class ContentMixedComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadContent();
-  }
+    const user = this.authService.getCurrentUser();
+    if (!user) return;
 
-  mixContent(movies: Movie[], books: Book[], series: Serie[]): (Movie | Book | Serie)[] {
-    const mixed: (Movie | Book | Serie)[] = [];
-    const maxLength = Math.max(movies.length, books.length, series.length);
+    this.userDetailService.getAll().subscribe(details => {
+      const userDetail = details.find(d => d.userId === user.id);
+      if (!userDetail) return;
 
-    for (let i = 0; i < maxLength; i++) {
-      if (i < movies.length) mixed.push(new Movie(movies[i]));
-      if (i < books.length) mixed.push(new Book(books[i]));
-      if (i < series.length) mixed.push(new Serie(series[i]));
-    }
+      this.favoriteIds = userDetail.favorites || [];
+      this.viewedIds = userDetail.viewed || [];
 
-    return mixed;
+      this.loadContent();
+    });
   }
 
   loadContent(): void {
     this.movieService.getMovies().subscribe(movies => {
       this.bookService.getBooks().subscribe(books => {
         this.serieService.getSeries().subscribe(series => {
-          this.mixedContent = this.mixContent(movies, books, series);
+          this.mixedContent = this.mixContentSmart(movies, books, series);
           this.loadReviews();
         });
       });
@@ -96,4 +100,79 @@ export class ContentMixedComponent implements OnInit {
   isSerie(item: any): item is Serie {
     return item instanceof Serie;
   }
+
+  shuffle<T>(array: T[]): T[] {
+    return array
+      .map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
+  }
+
+  getGenresAndActorsFromFavorites(
+    movies: Movie[],
+    series: Serie[]
+  ): { genres: Set<string>, actors: Set<string> } {
+    const genres = new Set<string>();
+    const actors = new Set<string>();
+
+    const all = [...movies, ...series];
+
+    all
+      .filter(item => this.favoriteIds.includes(item.id) || this.viewedIds.includes(item.id))
+      .forEach(item => {
+        item.genero?.forEach(g => genres.add(g));
+        item.actores_id?.forEach(a => actors.add(a));
+      });
+
+    return { genres, actors };
+  }
+
+
+  mixContentSmart(movies: Movie[], books: Book[], series: Serie[]): (Movie | Book | Serie)[] {
+    const { genres, actors } = this.getGenresAndActorsFromFavorites(movies,series);
+
+    // --- PELÍCULAS ---
+    const unseenMovies = movies.filter(m => !this.favoriteIds.includes(m.id) && !this.viewedIds.includes(m.id));
+    const recoMoviesByActors = unseenMovies.filter(m => m.actores_id?.some(a => actors.has(a))).map(m => new Movie(m));
+    const recoMoviesByGenres = unseenMovies
+      .filter(m => !recoMoviesByActors.includes(m) && m.genero?.some(g => genres.has(g)))
+      .map(m => new Movie(m));
+    const recoMoviesOthers = unseenMovies
+      .filter(m => !recoMoviesByActors.includes(m) && !recoMoviesByGenres.includes(m))
+      .map(m => new Movie(m));
+
+    // --- SERIES ---
+    const unseenSeries = series.filter(s => !this.favoriteIds.includes(s.id) && !this.viewedIds.includes(s.id));
+    const recoSeriesByActors = unseenSeries.filter(s => s.actores_id?.some(a => actors.has(a))).map(s => new Serie(s));
+    const recoSeriesByGenres = unseenSeries
+      .filter(s => !recoSeriesByActors.includes(s) && s.genero?.some(g => genres.has(g)))
+      .map(s => new Serie(s));
+    const recoSeriesOthers = unseenSeries
+      .filter(s => !recoSeriesByActors.includes(s) && !recoSeriesByGenres.includes(s))
+      .map(s => new Serie(s));
+
+    // --- LIBROS ---
+    const unseenBooks = books.filter(b => !this.favoriteIds.includes(b.id) && !this.viewedIds.includes(b.id));
+    const recoBooksByGenres = unseenBooks
+      .filter(b => b.genero?.some(g => genres.has(g)))
+      .map(b => new Book(b));
+    const recoBooksOthers = unseenBooks
+      .filter(b => !recoBooksByGenres.includes(b))
+      .map(b => new Book(b));
+
+    // --- CONTENIDO YA VISTO O FAVORITO ---
+    const seenOrFavMovies = movies.filter(m => this.favoriteIds.includes(m.id) || this.viewedIds.includes(m.id)).map(m => new Movie(m));
+    const seenOrFavSeries = series.filter(s => this.favoriteIds.includes(s.id) || this.viewedIds.includes(s.id)).map(s => new Serie(s));
+    const seenOrFavBooks = books.filter(b => this.favoriteIds.includes(b.id) || this.viewedIds.includes(b.id)).map(b => new Book(b));
+
+    // --- MEZCLAS ---
+    const recoByActors = this.shuffle([...recoMoviesByActors, ...recoSeriesByActors]);
+    const recoByGenres = this.shuffle([...recoMoviesByGenres, ...recoSeriesByGenres, ...recoBooksByGenres]);
+    const recoOthers = this.shuffle([...recoMoviesOthers, ...recoSeriesOthers, ...recoBooksOthers]);
+    const seenOrFav = this.shuffle([...seenOrFavMovies, ...seenOrFavSeries, ...seenOrFavBooks]);
+
+    return [...recoByActors, ...recoByGenres, ...recoOthers, ...seenOrFav];
+  }
+
+
 }
