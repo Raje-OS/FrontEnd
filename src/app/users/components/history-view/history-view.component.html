@@ -1,0 +1,37 @@
+<div class="history-container">
+  <button class="back-button" (click)="goBack()">
+    <img src="assets/ArrowBack.png" alt="Volver">
+  </button>
+
+  <h2 class="main-title">MI HISTORIAL</h2>
+
+  <div class="viewed-list">
+    <div class="viewed-item" *ngFor="let item of viewedItems; let i = index">
+      <div class="viewed-card">
+        <button class="eliminar-btn" (click)="eliminarDelHistorial(item.id)" title="Eliminar del historial">×</button>
+
+        <app-movie-card
+          *ngIf="item.id && item.id.startsWith('MV')"
+          [titulo]="item.titulo"
+          [imagen]="item.imagen"
+          [movie]="item">
+        </app-movie-card>        <app-book-card
+          *ngIf="item.id && item.id.startsWith('BK')"
+          [titulo]="item.titulo"
+          [imagen]="item.imagen"
+          [book]="item">
+        </app-book-card>
+        <app-serie-card
+          *ngIf="item.id && item.id.startsWith('SR')"
+          [titulo]="item.titulo"
+          [imagen]="item.imagen"
+          [serie]="item">
+        </app-serie-card>      </div>
+    </div>
+  </div>
+
+  <div *ngIf="viewedItems && viewedItems.length === 0">
+    <h3>Aún no has visto ningún contenido.</h3>
+    <p>Empieza a explorar y ver películas, series o libros para que aparezcan aquí.</p>
+  </div>
+</div>

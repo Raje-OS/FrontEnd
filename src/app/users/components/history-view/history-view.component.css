@@ -1,0 +1,56 @@
+.history-container {
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  background: linear-gradient(180deg, #111 0%, #361717 100%);
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.viewed-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.viewed-card {
+  position: relative;
+}
+.eliminar-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 26px;       /* Aumenta el tamaño */
+  font-weight: bold;
+  color: #e63946;        /* Rojo fuerte */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.eliminar-btn:hover {
+  transform: scale(1.2); /* efecto al pasar el mouse */
+  color: #ff1e1e;        /* rojo más intenso al pasar */
+}
+.back-button {
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.back-button img {
+  width: 50px;
+  height: 50px;
+}

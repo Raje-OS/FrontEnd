@@ -1,4 +1,3 @@
-
 <div class="book-detail" *ngIf="book">
   <div class="poster-container">
     <img [src]="book.imagen" alt="{{book.titulo}}" class="book-poster" />
@@ -9,15 +8,29 @@
     <p>{{book.sinopsis}}</p>
 
     <div class="book-info">
-
       <span><strong>Género:</strong> {{book.genero.join(', ')}}</span>
       <span><strong>Fecha de Publicación:</strong> {{book.fecha_publicacion}}</span>
       <span><strong>Idioma Original:</strong> {{book.idioma_original}}</span>
       <span><strong>País de Origen:</strong> {{book.pais_origen}}</span>
       <span><strong>Editorial:</strong> {{book.editorial}}</span>
+    </div>
 
+    <div class="author-section">
       <h3>Autor</h3>
       <app-author-card *ngIf="author" [id]="author.id" [nombre]="author.nombre" [imagen]="author.imagen"></app-author-card>
+    </div>
+
+    <div class="library-section" *ngIf="libraries?.length && libraries.length > 0">
+      <h3>Disponible en:</h3>
+      <div class="library-cards">
+        <app-library-card
+          *ngFor="let lib of libraries"
+          [imagen]="lib.imagen"
+          [id]="lib.id"
+          (clickCard)="goToLibraryDetail($event)">
+        </app-library-card>
+
+      </div>
     </div>
   </div>
 </div>

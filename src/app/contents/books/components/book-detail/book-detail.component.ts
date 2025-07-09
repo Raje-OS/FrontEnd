@@ -6,25 +6,40 @@ import {AuthorService} from '../../../../persons/authors/services/author.service
 import {ReviewService} from '../../../../reviews/services/review.service';
 import {BookService} from '../../services/book.service.service';
 import {Router} from '@angular/router';
+import {LibraryCardComponent} from '../../../libraries/components/library-card/library-card.component';
+import {LibraryService} from '../../../libraries/services/library.service';
 
 @Component({
   selector: 'app-book-detail',
   standalone: true,
-  imports: [CommonModule, AuthorCardComponent],
+  imports: [CommonModule, AuthorCardComponent, LibraryCardComponent],
   templateUrl: './book-detail.component.html',
   styleUrls: ['./book-detail.component.css']
 })
 export class BookDetailComponent implements OnInit {
   @Input() book: Book | null = null;
   author: any = null;
+  libraries: any[] = [];
 
-  constructor(private authorService: AuthorService, private bookService: BookService,
-              private reviewService: ReviewService, private router: Router) {}
+  constructor(
+    private authorService: AuthorService,
+    private bookService: BookService,
+    private reviewService: ReviewService,
+    private router: Router,
+    private libraryService: LibraryService
+  ) {}
 
   ngOnInit(): void {
     if (this.book) {
       this.loadAuthor(this.book.autor_id);
       this.actualizarCalificacionPromedio();
+
+      // ✅ corregido: this.book en vez de book
+      if (this.book.librerias_id?.length > 0) {
+        this.libraryService.getAll().subscribe(allLibs => {
+          this.libraries = allLibs.filter(lib => this.book!.librerias_id.includes(lib.id));
+        });
+      }
     }
   }
 
@@ -37,7 +52,6 @@ export class BookDetailComponent implements OnInit {
       const suma = reviews.reduce((acc, review) => acc + (review.rating || 0), 0);
       const promedio = Math.round((suma / reviews.length) * 10) / 10;
 
-      // Solo actualiza si hay un libro cargado
       if (this.book) {
         this.book.calificacion = promedio;
         this.bookService.updateBook(this.book).subscribe({
@@ -52,6 +66,9 @@ export class BookDetailComponent implements OnInit {
     this.authorService.getAuthorById(authorId).subscribe(author => {
       this.author = author;
     });
+  }
+  goToLibraryDetail(id: string): void {
+    this.router.navigate(['/libraries', id]);
   }
 
 }

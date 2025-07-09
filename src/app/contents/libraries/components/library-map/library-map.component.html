@@ -1,0 +1,13 @@
+<app-library-toolbar></app-library-toolbar>
+
+<div class="map-container">
+  <h2>Ubicaciones de la Librería</h2>
+
+  <form class="add-location-form" (ngSubmit)="agregarUbicacion()">
+    <input [(ngModel)]="newNombre" name="nombre" placeholder="Nombre de la sede (Ej: SBS San Borja)" required />
+    <input [(ngModel)]="newDireccion" name="direccion" placeholder="Dirección (Ej: Av. San Borja Sur 123)" required />
+    <button type="submit">Agregar Ubicación</button>
+  </form>
+
+  <div id="map"></div>
+</div>

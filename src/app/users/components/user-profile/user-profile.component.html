@@ -38,13 +38,19 @@
 
       <!-- Contenido Visto -->
       <mat-card class="content-section">
-        <h3>CONTENIDO VISTO</h3>
+        <h3>MI CONTENIDO</h3>
         <div class="content-list">
           <div *ngFor="let item of userData?.list" class="content-item">
             <img [src]="item.image || 'assets/content-placeholder.png'" alt="Content Image" />
             <button mat-raised-button class="review-button">Reseñar</button>
           </div>
         </div>
+
+
+
+        <!-- Botón para ver historial -->
+        <button mat-button color="warn"  class="my-list-button" routerLink="/viewed-history">Ver historial</button>
+
         <button mat-raised-button color="warn" class="my-list-button" routerLink="/lists">
           Mis listas
         </button>

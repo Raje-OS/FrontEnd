@@ -11,8 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIcon } from '@angular/material/icon';
 import { UserReviewCardComponent } from '../../../reviews/components/user-review-card/user-review-card.component';
-import {Router, RouterLink} from '@angular/router';
-import {UpdateReviewComponent} from '../../../reviews/components/update-review/update-review.component'; // Router imported
+import { RouterLink} from '@angular/router';
+import {UpdateReviewComponent} from '../../../reviews/components/update-review/update-review.component';
+import {UserDetailService} from '../../services/user-detail/user-detail.service';
+import {MovieService} from '../../../contents/movies/services/movie.service.service';
+import {BookService} from '../../../contents/books/services/book.service.service';
+import {SerieService} from '../../../contents/series/services/serie.service.service';
+import {MovieCardComponent} from '../../../contents/movies/components/movie-card/movie-card.component';
+import {BookCardComponent} from '../../../contents/books/components/book-card/book-card.component';
+import {SerieCardComponent} from '../../../contents/series/components/serie-card/serie-card.component'; // Router imported
 
 
 @Component({
@@ -30,7 +37,10 @@ import {UpdateReviewComponent} from '../../../reviews/components/update-review/u
     NgFor,
     UserReviewCardComponent,
     RouterLink,
-    UpdateReviewComponent
+    UpdateReviewComponent,
+    MovieCardComponent,
+    BookCardComponent,
+    SerieCardComponent
   ]
 })
 export class UserProfileComponent implements OnInit {
@@ -38,11 +48,17 @@ export class UserProfileComponent implements OnInit {
   protected loading: boolean = true;
   protected userReviews: Review[] = [];
   selectedReviewToEdit: Review | null = null;
+  viewedItems: any[] = [];
+  showAllViewed = false;
 
-  constructor(private userService: UserService, private reviewService: ReviewService, private authService: AuthService) {}
+  constructor(private userService: UserService, private reviewService: ReviewService,
+              private authService: AuthService,private userDetailService: UserDetailService, private movieService: MovieService,
+              private bookService: BookService, private serieService: SerieService ) {}
 
   ngOnInit(): void {
     this.loadUser();
+    this.loadUser();
+    this.loadViewedContent();
   }
 
   private loadUser() {
@@ -79,5 +95,26 @@ export class UserProfileComponent implements OnInit {
     this.authService.logout();
     this.userData = null;
     this.userReviews = [];
+  }
+  loadViewedContent(): void {
+    const userDetails = this.userDetailService.getByUserId(this.userData!.id);
+    userDetails.subscribe(detail => {
+      const viewedIds = detail.viewed;
+      const allContents: any[] = [];
+
+      viewedIds.forEach((id: string) => {
+        // Aquí puedes verificar si es movie, serie o libro
+        this.movieService.getMovieById(id).subscribe(movie => allContents.push(movie));
+        this.bookService.getBookById(id).subscribe(book => allContents.push(book));
+        this.serieService.getSerieById(id).subscribe(serie => allContents.push(serie));
+      });
+
+      setTimeout(() => this.viewedItems = this.showAllViewed ? allContents : allContents.slice(0, 3), 500);
+    });
+  }
+
+  toggleViewed(): void {
+    this.showAllViewed = !this.showAllViewed;
+    this.loadViewedContent();
   }
 }

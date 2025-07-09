@@ -40,7 +40,21 @@
         "SR013",
         "MV001",
         "MV009",
-        "MV008"
+        "MV008",
+        "MV016",
+        "MV017",
+        "MV003",
+        "MV019",
+        "SR022",
+        "SR021",
+        "SR020",
+        "SR019",
+        "MV011",
+        "MV014",
+        "SR018",
+        "MV023",
+        "MV013",
+        "SR007"
       ]
     },
     {
@@ -2046,7 +2060,8 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL002"
+        "PL002",
+        "PL004"
       ],
       "calificacion": 4.7,
       "sinopsis": "Mark Grayson es un adolescente normal, excepto por el hecho de que su padre es el superhéroe más poderoso del planeta, Omni-Man. Al descubrir sus propios poderes, Mark se enfrenta a las duras realidades de ser un héroe y los oscuros secretos que su padre ha estado ocultando. Con batallas sangrientas y dilemas morales, Invincible redefine el género de los superhéroes animados.",
@@ -2310,7 +2325,8 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL002"
+        "PL002",
+        "PL004"
       ],
       "calificacion": 4.7,
       "sinopsis": "Elliot Alderson, un brillante pero socialmente aislado ingeniero de ciberseguridad con trastorno de ansiedad y depresión, es reclutado por un grupo de hackers radicales conocido como fsociety para derrocar a las corporaciones más poderosas del mundo. A medida que su lucha contra el sistema se intensifica, Elliot se enfrenta a su propia identidad y a secretos profundamente enterrados.",
@@ -2333,7 +2349,8 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL002"
+        "PL002",
+        "PL004"
       ],
       "calificacion": 4.5,
       "sinopsis": "Carmen 'Carmy' Berzatto, un joven chef condecorado en la alta cocina, regresa a Chicago para dirigir la deteriorada tienda de sándwiches de su difunto hermano. Mientras lucha por transformar el negocio familiar, enfrenta las duras realidades de la vida en la cocina y los fantasmas del pasado que amenazan con destruir su legado.",
@@ -2357,7 +2374,8 @@
       "idioma_original": "Español",
       "pais_origen": "España",
       "plataformas_id": [
-        "PL002"
+        "PL002",
+        "PL004"
       ],
       "calificacion": 4.6,
       "sinopsis": "En un pequeño pueblo español, un misterioso jardinero comienza a trabajar para una familia adinerada. Pronto, secretos oscuros y traiciones salen a la luz, revelando conexiones inquietantes que amenazan con destruir las vidas de todos a su alrededor. Con giros inesperados y tensión constante, El Jardinero es un thriller psicológico que explora los límites de la confianza y la redención.",
@@ -2382,7 +2400,8 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL002"
+        "PL002",
+        "PL004"
       ],
       "calificacion": 4.4,
       "sinopsis": "Joe Goldberg, un encantador pero obsesivo gerente de librería, se convierte en un peligroso acosador cuando se enamora. Usando redes sociales y tecnología para eliminar cualquier obstáculo que se interponga en su camino, Joe se adentra en una espiral de violencia y manipulación para proteger su versión distorsionada del amor.",

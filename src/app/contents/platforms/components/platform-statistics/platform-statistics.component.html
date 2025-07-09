@@ -2,7 +2,7 @@
   <mat-toolbar color="primary">
     <div class="platform-header-left">
       <img *ngIf="currentPlatform?.imagen" [src]="currentPlatform?.imagen" alt="Logo" class="platform-logo">
-      <span class="platform-name">{{ currentPlatform?.nombre }}</span>
+
     </div>
     <span class="toolbar-spacer"></span>
     <button mat-button (click)="navigateToDashboard()">Contenidos</button>
@@ -63,5 +63,36 @@
       </mat-card>
       <br> <br><br> <br><br> <br><br> <br><br> <br><br> <br>
     </div>
+    <mat-card class="stat-card" *ngIf="topMovies.length > 0">
+      <mat-card-header>
+        <mat-card-title class="card-title-centered">Películas Mejor Calificadas</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="movies-grid">
+          <div class="movie-card-wrapper" *ngFor="let movie of topMovies">
+            <app-movie-card [movie]="movie" [titulo]="movie.titulo" [imagen]="movie.imagen"></app-movie-card>
+            <div class="stat-rating">
+              Promedio: {{ movie.calificacion | number:'1.1-2' }}
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card" *ngIf="topSeries.length > 0">
+      <mat-card-header>
+        <mat-card-title class="card-title-centered">Series Mejor Calificadas</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="movies-grid">
+          <div class="movie-card-wrapper" *ngFor="let serie of topSeries">
+            <app-serie-card [serie]="serie" [titulo]="serie.titulo" [imagen]="serie.imagen"></app-serie-card>
+            <div class="stat-rating">
+              Promedio: {{ serie.calificacion | number:'1.1-2' }}
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
