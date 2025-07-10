@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400&display=swap');
 
 .statistics-container {
-  padding: 40px 20px;
+  padding: 40px 50px;
   max-width: 1200px;
   margin: auto;
   font-family: 'Lexend Mega', sans-serif;
   color: white;
+
 }
 
 /* --------- Toolbar --------- */
@@ -17,7 +18,10 @@ mat-toolbar {
   height: 64px;
   font-family: 'Lexend Mega', sans-serif;
   color: white;
-  border-bottom: 2px solid #2f2f2f;
+  border-bottom: 1px solid #2f2f2f;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  position: relative;
+
 }
 
 .platform-header {
@@ -39,12 +43,20 @@ mat-toolbar button {
   font-weight: 600;
   color: white;
   font-size: 14px;
+  padding: 8px 16px;
   margin-left: 8px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+mat-toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 mat-toolbar button.active {
   background-color: #333333;
-  border-radius: 6px;
 }
 
 /* --------- Contenido --------- */

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LibraryToolbarComponent } from './library-toolbar.component';
 
-describe('LibraryToolbarComponent', () => {
+describe('PlatformToolbarComponent', () => {
   let component: LibraryToolbarComponent;
   let fixture: ComponentFixture<LibraryToolbarComponent>;
 

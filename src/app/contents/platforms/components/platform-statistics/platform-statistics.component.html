@@ -1,4 +1,3 @@
-<div class="statistics-container">
   <mat-toolbar >
     <div class="platform-header">
       <img *ngIf="currentPlatform?.imagen" [src]="currentPlatform?.imagen" alt="Logo" class="platform-logo">
@@ -10,6 +9,8 @@
     <button mat-button class="active">Estadísticas</button>
     <button mat-button (click)="logout()">Cerrar sesión</button>
   </mat-toolbar>
+
+<div class="statistics-container">
 
   <h2>Estadísticas de tu Catálogo</h2>
 

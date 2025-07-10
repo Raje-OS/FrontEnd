@@ -1,71 +1,71 @@
+<mat-toolbar color="primary">
+  <div class="platform-header">
+    <img *ngIf="currentPlatform?.imagen" [src]="currentPlatform?.imagen" alt="Logo" class="platform-logo">
+  </div>
+
+  <span class="toolbar-spacer"></span>
+
+  <button mat-button (click)="setActiveTab('content')" [class.active]="activeTab === 'content'">Contenidos</button>
+  <button mat-button (click)="navigateToStatistics()">Estadísticas</button>
+  <button mat-button (click)="logout()">Cerrar sesión</button>
+</mat-toolbar>
+
 <div class="platform-dashboard-container">
-  <mat-toolbar color="primary">
-    <div class="platform-header">
-      <img *ngIf="currentPlatform?.imagen" [src]="currentPlatform?.imagen" alt="Logo" class="platform-logo">
-
-    </div>
-
-    <span class="toolbar-spacer"></span>
-    <button mat-button (click)="setActiveTab('content')" [class.active]="activeTab === 'content'">Contenidos</button>
-    <button mat-button (click)="navigateToStatistics()">Estadísticas</button>
-    <button mat-button (click)="logout()">Cerrar sesión</button>
-  </mat-toolbar>
-
   <div class="dashboard-content">
+    <h2>Catálogo de Contenidos</h2>
+
+    <!-- Sección: Películas en el catálogo -->
     <div class="catalog-section">
-      <h3>Películas en Catálogo</h3>
-      <div class="catalog-grid">
-        <div *ngFor="let movie of catalogMovies" class="movie-card">
-          <img [src]="movie.imagen" [alt]="movie.titulo">
-          <mat-card-content>
-            <h3>{{ movie.titulo }}</h3>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="warn" (click)="removeMovieFromCatalog(movie)">Quitar</button>
-          </mat-card-actions>
-        </div>
+      <h3>Películas en tu Catálogo</h3>
+      <div *ngIf="catalogMovies.length === 0" class="empty-msg">
+        No tienes películas en tu catálogo.
       </div>
-      <h3>Series en Catálogo</h3>
       <div class="catalog-grid">
-        <div *ngFor="let serie of catalogSeries" class="movie-card">
-          <img [src]="serie.imagen" [alt]="serie.titulo">
-          <mat-card-content>
-            <h3>{{ serie.titulo }}</h3>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="warn" (click)="removeSerieFromCatalog(serie)">Quitar</button>
-          </mat-card-actions>
+        <div class="movie-card" *ngFor="let movie of catalogMovies">
+          <button class="icon-button remove-btn" (click)="removeMovieFromCatalog(movie)">−</button>
+          <img [src]="movie.imagen" [alt]="movie.titulo" class="movie-image" />
+          <p class="movie-title">{{ movie.titulo }}</p>
         </div>
       </div>
     </div>
 
+    <!-- Sección: Series en el catálogo -->
+    <div class="catalog-section">
+      <h3>Series en tu Catálogo</h3>
+      <div *ngIf="catalogSeries.length === 0" class="empty-msg">
+        No tienes series en tu catálogo.
+      </div>
+      <div class="catalog-grid">
+        <div class="movie-card" *ngFor="let serie of catalogSeries">
+          <button class="icon-button remove-btn" (click)="removeSerieFromCatalog(serie)">−</button>
+          <img [src]="serie.imagen" [alt]="serie.titulo" class="movie-image" />
+          <p class="movie-title">{{ serie.titulo }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección: Películas disponibles -->
     <div class="available-movies-section">
       <h3>Películas Disponibles</h3>
       <div class="movies-grid">
-        <div *ngFor="let movie of availableMovies" class="movie-card">
-          <img [src]="movie.imagen" [alt]="movie.titulo">
-          <mat-card-content>
-            <h3>{{ movie.titulo }}</h3>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="primary" (click)="addMovieToCatalog(movie)">Añadir</button>
-          </mat-card-actions>
+        <div class="movie-card" *ngFor="let movie of availableMovies">
+          <button class="icon-button add-btn" (click)="addMovieToCatalog(movie)">＋</button>
+          <img [src]="movie.imagen" [alt]="movie.titulo" class="movie-image" />
+          <p class="movie-title">{{ movie.titulo }}</p>
         </div>
       </div>
+    </div>
+
+    <!-- Sección: Series disponibles -->
+    <div class="available-movies-section">
       <h3>Series Disponibles</h3>
       <div class="movies-grid">
-        <div *ngFor="let serie of availableSeries" class="movie-card">
-          <img [src]="serie.imagen" [alt]="serie.titulo">
-          <mat-card-content>
-            <h3>{{ serie.titulo }}</h3>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="primary" (click)="addSerieToCatalog(serie)">Añadir</button>
-          </mat-card-actions>
+        <div class="movie-card" *ngFor="let serie of availableSeries">
+          <button class="icon-button add-btn" (click)="addSerieToCatalog(serie)">＋</button>
+          <img [src]="serie.imagen" [alt]="serie.titulo" class="movie-image" />
+          <p class="movie-title">{{ serie.titulo }}</p>
         </div>
       </div>
     </div>
   </div>
-
-
 </div>
