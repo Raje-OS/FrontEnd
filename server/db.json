@@ -7,7 +7,37 @@
       "imagen": "https://www.infobae.com/resizer/v2/2YOXQKHBEREMFFBTFX73ALCUAY.jpg?auth=8379202e0b7defe6c4989d5331e6d87cfbb5170cea07bf3b149d8b1a42194b2a&smart=true&width=1200&height=675&quality=85",
       "email": "netflix@example.com",
       "password": "netflix123",
-      "catalog": []
+      "catalog": [
+        "MV001",
+        "MV002",
+        "MV003",
+        "MV004",
+        "MV005",
+        "MV006",
+        "MV007",
+        "MV016",
+        "MV019",
+        "MV020",
+        "MV025",
+        "MV024",
+        "MV022",
+        "MV021",
+        "SR001",
+        "SR002",
+        "SR003",
+        "SR005",
+        "SR007",
+        "SR010",
+        "SR012",
+        "SR013",
+        "SR014",
+        "SR020",
+        "SR019",
+        "SR018",
+        "SR016",
+        "SR021",
+        "SR022"
+      ]
     },
     {
       "id": "PL002",
@@ -16,7 +46,37 @@
       "imagen": "https://media.revistagq.com/photos/61570a628052a49b36a0342d/master/w_1600%2Cc_limit/amazon-prime-video.jpeg",
       "email": "amazon@example.com",
       "password": "amazon123",
-      "catalog": []
+      "catalog": [
+        "MV002",
+        "MV003",
+        "MV008",
+        "MV009",
+        "MV010",
+        "MV011",
+        "MV014",
+        "MV015",
+        "MV017",
+        "MV018",
+        "MV019",
+        "MV022",
+        "MV024",
+        "MV025",
+        "MV020",
+        "SR002",
+        "SR009",
+        "SR005",
+        "SR007",
+        "SR004",
+        "SR015",
+        "SR014",
+        "SR013",
+        "SR011",
+        "SR019",
+        "SR018",
+        "SR020",
+        "SR022",
+        "SR021"
+      ]
     },
     {
       "id": "PL003",
@@ -26,7 +86,36 @@
       "email": "disney@example.com",
       "password": "disney123",
       "catalog": [
-        "MV007"
+        "MV007",
+        "MV002",
+        "MV004",
+        "MV005",
+        "MV009",
+        "MV015",
+        "MV013",
+        "MV014",
+        "MV017",
+        "MV019",
+        "MV020",
+        "MV023",
+        "MV024",
+        "MV025",
+        "SR002",
+        "SR003",
+        "SR004",
+        "SR005",
+        "SR007",
+        "SR008",
+        "SR009",
+        "SR010",
+        "SR011",
+        "SR013",
+        "SR012",
+        "SR019",
+        "SR018",
+        "SR020",
+        "SR021",
+        "SR022"
       ]
     },
     {
@@ -38,23 +127,26 @@
       "password": "hbo123",
       "catalog": [
         "SR013",
-        "MV001",
-        "MV009",
-        "MV008",
         "MV016",
-        "MV017",
         "MV003",
         "MV019",
         "SR022",
-        "SR021",
         "SR020",
         "SR019",
         "MV011",
         "MV014",
         "SR018",
         "MV023",
-        "MV013",
-        "SR007"
+        "MV001",
+        "MV012",
+        "MV015",
+        "MV024",
+        "MV025",
+        "SR001",
+        "SR004",
+        "SR014",
+        "SR015",
+        "SR016"
       ]
     },
     {
@@ -67,6 +159,34 @@
       "catalog": [
         "MV002",
         "MV024",
+        "MV003",
+        "MV004",
+        "MV005",
+        "MV006",
+        "MV008",
+        "MV012",
+        "MV011",
+        "MV010",
+        "MV001",
+        "MV020",
+        "MV022",
+        "SR001",
+        "SR002",
+        "SR003",
+        "SR004",
+        "SR005",
+        "SR006",
+        "SR008",
+        "SR009",
+        "SR010",
+        "SR011",
+        "SR014",
+        "SR016",
+        "SR017",
+        "SR018",
+        "SR019",
+        "SR020",
+        "SR021",
         "MV007"
       ]
     },
@@ -77,7 +197,34 @@
       "imagen": "https://deadline.com/wp-content/uploads/2022/08/hulu-Green-digital-logo-1.jpg?w=1024",
       "email": "hulu@example.com",
       "password": "hulu123",
-      "catalog": []
+      "catalog": [
+        "MV001",
+        "MV003",
+        "MV004",
+        "MV006",
+        "MV007",
+        "MV009",
+        "MV010",
+        "MV011",
+        "MV012",
+        "MV013",
+        "MV014",
+        "MV016",
+        "MV020",
+        "MV023",
+        "MV025",
+        "SR001",
+        "SR005",
+        "SR010",
+        "SR008",
+        "SR012",
+        "SR013",
+        "SR015",
+        "SR018",
+        "SR017",
+        "SR021",
+        "SR022"
+      ]
     },
     {
       "id": "PL007",
@@ -86,7 +233,13 @@
       "imagen": "https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000042000/e965921d2670a197008fe9403e50aaa0b150eabcaab4ce8b0c860d75ba4d1ee6",
       "email": "crunchyroll@example.com",
       "password": "crunchyroll123",
-      "catalog": []
+      "catalog": [
+        "SR013",
+        "SR014",
+        "SR015",
+        "SR017",
+        "SR016"
+      ]
     }
   ],
   "directors": [
@@ -893,7 +1046,9 @@
         "PL001",
         "PL002",
         "PL003",
-        "PL004"
+        "PL004",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 3.7,
       "sinopsis": "Un joven huérfano descubre que es un mago famoso y asiste a una escuela mágica donde se enfrenta a un oscuro poder que amenaza su mundo.",
@@ -947,7 +1102,9 @@
         "PL001",
         "PL002",
         "PL003",
-        "PL004"
+        "PL004",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 3,
       "sinopsis": "Harry descubre la verdad sobre el peligroso prisionero Sirius Black y su conexión con el pasado de sus padres.",
@@ -973,8 +1130,9 @@
       "pais_origen": "Reino Unido",
       "plataformas_id": [
         "PL001",
-        "PL002",
-        "PL003"
+        "PL003",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 4,
       "sinopsis": "Harry es misteriosamente seleccionado para participar en el peligroso Torneo de los Tres Magos, donde enfrenta desafíos mortales.",
@@ -1000,7 +1158,8 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL003"
+        "PL003",
+        "PL005"
       ],
       "calificacion": 3,
       "sinopsis": "Harry forma una resistencia secreta para enfrentarse a las fuerzas oscuras que amenazan tanto al mundo mágico como al mundo muggle.",
@@ -1026,7 +1185,9 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL003"
+        "PL003",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 3.5,
       "sinopsis": "Harry descubre oscuros secretos sobre el pasado de Voldemort mientras se prepara para la batalla final.",
@@ -1053,7 +1214,9 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL003"
+        "PL003",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 3,
       "sinopsis": "Harry, Ron y Hermione comienzan una peligrosa misión para destruir los Horrocruxes de Voldemort.",
@@ -1078,10 +1241,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Reino Unido",
       "plataformas_id": [
-        "PL001",
         "PL002",
         "PL003",
-        "PL004"
+        "PL005"
       ],
       "calificacion": 4,
       "sinopsis": "La batalla final entre Harry y Voldemort se libra en Hogwarts, donde se decide el destino del mundo mágico.",
@@ -1105,8 +1267,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL002",
+        "PL003",
+        "PL006"
       ],
       "calificacion": 4,
       "sinopsis": "El patriarca de una familia criminal intenta transferir el control de su imperio clandestino a su hijo menor.",
@@ -1130,8 +1293,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL002",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 5,
       "sinopsis": "La historia paralela del ascenso al poder de Vito Corleone y el conflicto interno de su hijo Michael como el nuevo líder de la familia Corleone.",
@@ -1154,8 +1318,10 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL004",
+        "PL002",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 3.5,
       "sinopsis": "Ahora en sus últimos años, Michael Corleone intenta legitimar los negocios de su familia mientras enfrenta viejos enemigos y traiciones.",
@@ -1179,8 +1345,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL004",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 4.5,
       "sinopsis": "Un joven heredero se enfrenta a su destino en un planeta desértico donde el poder y la supervivencia se definen por una rara especia.",
@@ -1204,8 +1371,8 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL003",
+        "PL006"
       ],
       "calificacion": 5,
       "sinopsis": "En un futuro cercano, un grupo de astronautas emprende un viaje a través de un agujero de gusano para encontrar un nuevo hogar para la humanidad.",
@@ -1229,8 +1396,10 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL004",
+        "PL002",
+        "PL003",
+        "PL006"
       ],
       "calificacion": 5,
       "sinopsis": "Andrew Neiman es un joven y ambicioso baterista de jazz. Marcado por el fracaso de la carrera literaria de su padre, está obsesionado con alcanzar la cima dentro del elitista conservatorio de música de la Costa Este.",
@@ -1254,8 +1423,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL004",
+        "PL002",
+        "PL003"
       ],
       "calificacion": 4.5,
       "sinopsis": "Un comediante fallido se transforma en un peligroso criminal después de ser rechazado por la sociedad.",
@@ -1280,7 +1450,8 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL004"
+        "PL004",
+        "PL006"
       ],
       "calificacion": 4.5,
       "sinopsis": "La historia de J. Robert Oppenheimer, el físico que dirigió el Proyecto Manhattan y ayudó a desarrollar la primera bomba atómica.",
@@ -1303,8 +1474,8 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL002",
+        "PL003"
       ],
       "calificacion": 4.3,
       "sinopsis": "Bruce Wayne, como Batman, debe enfrentarse a la corrupción en Gotham City y a un peligroso asesino conocido como el Riddler.",
@@ -1328,8 +1499,8 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL004",
+        "PL002"
       ],
       "calificacion": 4.1,
       "sinopsis": "El origen de Bruce Wayne como Batman, desde su entrenamiento hasta su lucha para limpiar Gotham City del crimen.",
@@ -1355,7 +1526,9 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL004"
+        "PL004",
+        "PL002",
+        "PL003"
       ],
       "calificacion": 4.8,
       "sinopsis": "Batman enfrenta a su mayor enemigo, el Joker, en una batalla que pondrá a prueba los límites de su moralidad.",
@@ -1381,7 +1554,11 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL004"
+        "PL004",
+        "PL002",
+        "PL003",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 3.5,
       "sinopsis": "Ocho años después del caos causado por el Joker, Batman debe regresar para salvar Gotham City de la destrucción a manos de Bane.",
@@ -1430,7 +1607,9 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL004"
+        "PL004",
+        "PL002",
+        "PL005"
       ],
       "calificacion": 5,
       "sinopsis": "Un hombre insomne forma un club secreto con un vendedor de jabón, lo que desencadena una serie de eventos violentos y caóticos.",
@@ -1454,8 +1633,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL004",
+        "PL003",
+        "PL006"
       ],
       "calificacion": 4,
       "sinopsis": "Un clon utilizado para misiones suicidas en un planeta lejano comienza a cuestionar su propósito cuando se encuentra en peligro de ser reemplazado.",
@@ -1480,7 +1660,9 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL004"
+        "PL004",
+        "PL002",
+        "PL003"
       ],
       "calificacion": 3.9,
       "sinopsis": "Una joven se enfrenta a las sombras de su pasado mientras descubre oscuros secretos familiares.",
@@ -1504,7 +1686,11 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001"
+        "PL001",
+        "PL004",
+        "PL002",
+        "PL003",
+        "PL006"
       ],
       "calificacion": 5,
       "sinopsis": "Dos jóvenes marginados, unidos por una necesidad oscura y una historia de abandono, recorren Estados Unidos en busca de identidad y redención.",
@@ -1901,7 +2087,9 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL004"
+        "PL004",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 3.5,
       "sinopsis": "Walter White, un profesor de química de secundaria en Albuquerque, descubre que tiene cáncer de pulmón inoperable. Para asegurar el futuro financiero de su familia, se asocia con su antiguo alumno, Jesse Pinkman, para fabricar y vender metanfetaminas. A medida que se sumerge en el peligroso mundo del narcotráfico, se transforma de un hombre desesperado a un despiadado señor de la droga conocido como Heisenberg, enfrentándose a enemigos letales y a su propio deterioro moral.",
@@ -1929,9 +2117,10 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL004"
+        "PL003",
+        "PL005"
       ],
-      "calificacion": 5,
+      "calificacion": 4.3,
       "sinopsis": "Antes de convertirse en el infame abogado Saul Goodman, Jimmy McGill lucha por abrirse camino en el mundo legal de Albuquerque. Con un corazón noble pero métodos cuestionables, se enfrenta a desafíos éticos y morales que lo empujan lentamente hacia el lado oscuro, mientras intenta dejar atrás su pasado como un estafador y convertirse en un respetado abogado. La serie explora su complicada relación con su hermano Chuck y su evolución hacia el criminal sin escrúpulos que conocemos en Breaking Bad.",
       "imagen": "https://es.web.img2.acsta.net/pictures/18/07/02/14/12/5660762.jpg"
     },
@@ -1956,7 +2145,8 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL004"
+        "PL003",
+        "PL005"
       ],
       "calificacion": 5,
       "sinopsis": "En el continente de Westeros, varias familias nobles compiten por el Trono de Hierro y el control de los Siete Reinos. Mientras tanto, una antigua amenaza regresa desde el norte, poniendo en peligro a toda la humanidad. Con alianzas traicioneras, conflictos épicos y personajes complejos, Game of Thrones cuenta una historia de poder, traición, honor y supervivencia en un mundo brutalmente realista.",
@@ -1982,8 +2172,10 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001",
-        "PL004"
+        "PL004",
+        "PL002",
+        "PL003",
+        "PL005"
       ],
       "calificacion": 4.6,
       "sinopsis": "Ambientada 200 años antes de los eventos de Game of Thrones, esta serie sigue a la poderosa Casa Targaryen en su época dorada. Con dragones dominando los cielos y conflictos internos amenazando con destruir a la familia, se narra la brutal guerra civil conocida como la Danza de los Dragones, donde hermanos, primos y tíos luchan por el control del Trono de Hierro.",
@@ -2009,7 +2201,10 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL002"
+        "PL002",
+        "PL003",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 2,
       "sinopsis": "En el pequeño pueblo de Hawkins, Indiana, un niño desaparece misteriosamente, desencadenando una serie de eventos sobrenaturales que revelan una dimensión paralela conocida como el 'Upside Down'. Mientras sus amigos buscan respuestas, descubren a Eleven, una niña con habilidades psíquicas que puede ser la clave para entender los oscuros secretos que acechan a su ciudad.",
@@ -2034,7 +2229,8 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL002"
+        "PL002",
+        "PL005"
       ],
       "calificacion": 4.4,
       "sinopsis": "En un mundo donde los superhéroes son celebridades poderosas pero corruptas, un grupo de vigilantes conocido como 'The Boys' lucha por exponer la verdad y derribar a los superhéroes más corruptos, liderados por el sádico Homelander. Con acción violenta y humor oscuro, la serie explora los peligros del poder sin control y la hipocresía de los ídolos modernos.",
@@ -2061,7 +2257,7 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL004"
+        "PL003"
       ],
       "calificacion": 4.7,
       "sinopsis": "Mark Grayson es un adolescente normal, excepto por el hecho de que su padre es el superhéroe más poderoso del planeta, Omni-Man. Al descubrir sus propios poderes, Mark se enfrenta a las duras realidades de ser un héroe y los oscuros secretos que su padre ha estado ocultando. Con batallas sangrientas y dilemas morales, Invincible redefine el género de los superhéroes animados.",
@@ -2086,7 +2282,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001"
+        "PL003",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 4.3,
       "sinopsis": "Basada en las novelas de Andrzej Sapkowski, la serie sigue a Geralt de Rivia, un solitario cazador de monstruos con habilidades sobrehumanas. Mientras lucha por encontrar su lugar en un mundo lleno de humanos más crueles que las propias bestias, Geralt se cruza con poderosas hechiceras y princesas en fuga, descubriendo que su destino está entrelazado con el de la joven Ciri, poseedora de un misterioso poder.",
@@ -2111,8 +2309,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Reino Unido",
       "plataformas_id": [
-        "PL001",
-        "PL002"
+        "PL002",
+        "PL003",
+        "PL005"
       ],
       "calificacion": 4.6,
       "sinopsis": "Ambientada en Birmingham tras la Primera Guerra Mundial, la serie sigue a la familia Shelby, una organización criminal liderada por el carismático y despiadado Tommy Shelby. Con un estilo único y una narrativa intensa, Peaky Blinders explora el ascenso de los Shelby al poder, enfrentándose a policías corruptos, enemigos brutales y conflictos familiares que amenazan con destruir su imperio.",
@@ -2137,7 +2336,10 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL003"
+        "PL003",
+        "PL001",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 1,
       "sinopsis": "Ambientada en el universo de Star Wars, esta serie sigue a un cazarrecompensas mandaloriano solitario conocido como Din Djarin. Mientras viaja por los rincones más oscuros de la galaxia, se convierte en el protector de un misterioso niño sensible a la Fuerza, conocido como 'Grogu', enfrentándose a imperiales remanentes, cazarrecompensas rivales y enemigos poderosos.",
@@ -2162,7 +2364,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL004"
+        "PL002",
+        "PL003",
+        "PL005"
       ],
       "calificacion": 4.5,
       "sinopsis": "Una serie antológica que explora diferentes casos policiales a lo largo de varias décadas. Cada temporada presenta nuevos detectives, historias y escenarios, pero siempre con un enfoque en los aspectos más oscuros de la humanidad. La primera temporada sigue a Rust Cohle y Martin Hart mientras investigan una serie de asesinatos rituales en los pantanos de Luisiana.",
@@ -2185,7 +2389,9 @@
       "idioma_original": "Inglés",
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
-        "PL001"
+        "PL001",
+        "PL003",
+        "PL006"
       ],
       "calificacion": 5,
       "sinopsis": "Ambientada en el universo de League of Legends, Arcane explora la historia de dos icónicas campeonas, Vi y Jinx, mientras se enfrentan a los desafíos de las ciudades gemelas de Piltover y Zaun. Con una animación impresionante y una narrativa emocionalmente intensa, la serie revela los orígenes de estos personajes y los conflictos que definirán sus destinos.",
@@ -2209,7 +2415,11 @@
       "pais_origen": "Japón",
       "plataformas_id": [
         "PL007",
-        "PL004"
+        "PL004",
+        "PL001",
+        "PL002",
+        "PL003",
+        "PL006"
       ],
       "calificacion": 3,
       "sinopsis": "En un mundo donde la humanidad vive dentro de enormes murallas para protegerse de gigantescos seres conocidos como Titanes, Eren Yeager jura exterminar a estas criaturas después de que un Titán Colosal destruya su hogar. Con la ayuda de sus amigos Mikasa y Armin, se une al Cuerpo de Exploración para enfrentar los horrores de este mundo brutal y descubrir la verdad detrás de los Titanes.",
@@ -2232,7 +2442,11 @@
       "idioma_original": "Japonés",
       "pais_origen": "Japón",
       "plataformas_id": [
-        "PL007"
+        "PL007",
+        "PL004",
+        "PL001",
+        "PL002",
+        "PL005"
       ],
       "calificacion": 4.6,
       "sinopsis": "Yuji Itadori, un estudiante de secundaria con una fuerza física increíble, se encuentra atrapado en el mundo de las maldiciones después de consumir el dedo de un antiguo y poderoso espíritu maligno, Ryomen Sukuna. Ahora, como recipiente de Sukuna, debe aprender a controlar su poder y luchar contra monstruos sobrenaturales para proteger a la humanidad.",
@@ -2254,7 +2468,10 @@
       "idioma_original": "Japonés",
       "pais_origen": "Japón",
       "plataformas_id": [
-        "PL007"
+        "PL007",
+        "PL004",
+        "PL002",
+        "PL006"
       ],
       "calificacion": 4.7,
       "sinopsis": "En un mundo donde casi toda la población tiene superpoderes conocidos como 'Quirks', Izuku Midoriya sueña con convertirse en el héroe más grande a pesar de haber nacido sin poderes. Después de ser elegido por All Might, el héroe más poderoso del mundo, para heredar su Quirk 'One For All', Izuku debe enfrentar desafíos épicos mientras se entrena para proteger a la humanidad.",
@@ -2264,6 +2481,7 @@
       "id": "SR016",
       "titulo": "Vinland Saga",
       "director_id": "DI030",
+      "actores_id": [],
       "genero": [
         "Animación",
         "Aventura",
@@ -2277,9 +2495,12 @@
       "idioma_original": "Japonés",
       "pais_origen": "Japón",
       "plataformas_id": [
-        "PL007"
+        "PL007",
+        "PL004",
+        "PL001",
+        "PL005"
       ],
-      "calificacion": 4.8,
+      "calificacion": 3,
       "sinopsis": "Ambientada en la Europa medieval, Vinland Saga sigue la historia de Thorfinn, un joven guerrero vikingo que busca vengar la muerte de su padre a manos del astuto Askeladd. A medida que se embarca en un viaje violento y brutal, Thorfinn descubre el verdadero significado de la guerra, el honor y la libertad en un mundo implacable dominado por conquistadores y guerreros.",
       "imagen": "https://m.media-amazon.com/images/M/MV5BNDA3MGNmZTEtMzFiMy00ZmViLThhNmQtMjQ4ZDc5MDEyN2U1XkEyXkFqcGc@.V1.jpg"
     },
@@ -2300,7 +2521,10 @@
       "idioma_original": "Japonés",
       "pais_origen": "Japón",
       "plataformas_id": [
-        "PL007"
+        "PL007",
+        "PL002",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 3.5,
       "sinopsis": "En un futuro postapocalíptico, la humanidad enfrenta la amenaza de seres gigantescos conocidos como Ángeles. Para combatir esta amenaza, los pilotos adolescentes son seleccionados para controlar gigantescos mechas llamados Evangelions. Shinji Ikari, un joven introvertido y traumatizado, debe enfrentar sus propios demonios internos mientras lucha por salvar a la humanidad.",
@@ -2326,7 +2550,11 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL002",
-        "PL004"
+        "PL004",
+        "PL001",
+        "PL003",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 4.7,
       "sinopsis": "Elliot Alderson, un brillante pero socialmente aislado ingeniero de ciberseguridad con trastorno de ansiedad y depresión, es reclutado por un grupo de hackers radicales conocido como fsociety para derrocar a las corporaciones más poderosas del mundo. A medida que su lucha contra el sistema se intensifica, Elliot se enfrenta a su propia identidad y a secretos profundamente enterrados.",
@@ -2350,7 +2578,10 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL002",
-        "PL004"
+        "PL004",
+        "PL001",
+        "PL003",
+        "PL005"
       ],
       "calificacion": 4.5,
       "sinopsis": "Carmen 'Carmy' Berzatto, un joven chef condecorado en la alta cocina, regresa a Chicago para dirigir la deteriorada tienda de sándwiches de su difunto hermano. Mientras lucha por transformar el negocio familiar, enfrenta las duras realidades de la vida en la cocina y los fantasmas del pasado que amenazan con destruir su legado.",
@@ -2375,7 +2606,10 @@
       "pais_origen": "España",
       "plataformas_id": [
         "PL002",
-        "PL004"
+        "PL004",
+        "PL001",
+        "PL003",
+        "PL005"
       ],
       "calificacion": 4.6,
       "sinopsis": "En un pequeño pueblo español, un misterioso jardinero comienza a trabajar para una familia adinerada. Pronto, secretos oscuros y traiciones salen a la luz, revelando conexiones inquietantes que amenazan con destruir las vidas de todos a su alrededor. Con giros inesperados y tensión constante, El Jardinero es un thriller psicológico que explora los límites de la confianza y la redención.",
@@ -2401,7 +2635,9 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL004"
+        "PL003",
+        "PL005",
+        "PL006"
       ],
       "calificacion": 4.4,
       "sinopsis": "Joe Goldberg, un encantador pero obsesivo gerente de librería, se convierte en un peligroso acosador cuando se enamora. Usando redes sociales y tecnología para eliminar cualquier obstáculo que se interponga en su camino, Joe se adentra en una espiral de violencia y manipulación para proteger su versión distorsionada del amor.",
@@ -2424,7 +2660,10 @@
       "pais_origen": "Reino Unido",
       "plataformas_id": [
         "PL001",
-        "PL004"
+        "PL004",
+        "PL002",
+        "PL003",
+        "PL006"
       ],
       "calificacion": 4.8,
       "sinopsis": "Cada episodio de esta serie antológica presenta una historia única que explora las consecuencias inesperadas de la tecnología avanzada en la sociedad moderna. Desde realidades virtuales distópicas hasta inteligencias artificiales inquietantemente humanas, Black Mirror ofrece una mirada provocativa y a menudo perturbadora sobre el futuro digital.",
