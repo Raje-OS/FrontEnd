@@ -1529,7 +1529,9 @@
       "calificacion": 2.6,
       "sinopsis": "En un futuro distópico, la humanidad vive bajo un estricto control social que elimina las emociones y la libertad individual.",
       "imagen": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9781784870140_z0qrmjlzprwn2vln.jpg",
-      "librerias_id": []
+      "librerias_id": [
+        "LI001"
+      ]
     },
     {
       "id": "BK002",
@@ -1545,7 +1547,7 @@
       "pais_origen": "Estados Unidos",
       "editorial": "Ballantine Books",
       "isbn": "978-1451673319",
-      "calificacion": 5,
+      "calificacion": 3,
       "sinopsis": "En un futuro opresivo, los bomberos queman libros para suprimir el conocimiento y el pensamiento crítico.",
       "imagen": "https://www.crisol.com.pe/media/catalog/product/cache/cf84e6047db2ba7f2d5c381080c69ffe/9/7/9786124262234_pvbpckmo3v8lkhvu.jpg",
       "librerias_id": [
@@ -1711,9 +1713,7 @@
       "calificacion": 4.4,
       "sinopsis": "En un futuro distópico, un vigilante enmascarado lucha contra un gobierno totalitario para liberar a la sociedad.",
       "imagen": "https://images.cdn2.buscalibre.com/fit-in/360x360/46/70/4670d6ac966abce7595163b261711497.jpg",
-      "librerias_id": [
-        "LI001"
-      ]
+      "librerias_id": []
     },
     {
       "id": "BK011",
@@ -1903,7 +1903,7 @@
         "PL002",
         "PL004"
       ],
-      "calificacion": 5,
+      "calificacion": 3.5,
       "sinopsis": "Walter White, un profesor de química de secundaria en Albuquerque, descubre que tiene cáncer de pulmón inoperable. Para asegurar el futuro financiero de su familia, se asocia con su antiguo alumno, Jesse Pinkman, para fabricar y vender metanfetaminas. A medida que se sumerge en el peligroso mundo del narcotráfico, se transforma de un hombre desesperado a un despiadado señor de la droga conocido como Heisenberg, enfrentándose a enemigos letales y a su propio deterioro moral.",
       "imagen": "https://images-cdn.ubuy.co.in/634e35c3802d917a630c6706-breaking-bad-tv-show-2008-2013-poster.jpg"
     },
@@ -1958,7 +1958,7 @@
         "PL001",
         "PL004"
       ],
-      "calificacion": 4.7,
+      "calificacion": 5,
       "sinopsis": "En el continente de Westeros, varias familias nobles compiten por el Trono de Hierro y el control de los Siete Reinos. Mientras tanto, una antigua amenaza regresa desde el norte, poniendo en peligro a toda la humanidad. Con alianzas traicioneras, conflictos épicos y personajes complejos, Game of Thrones cuenta una historia de poder, traición, honor y supervivencia en un mundo brutalmente realista.",
       "imagen": "https://static.posters.cz/image/1300/135455.jpg"
     },
@@ -2011,7 +2011,7 @@
         "PL001",
         "PL002"
       ],
-      "calificacion": 5,
+      "calificacion": 2,
       "sinopsis": "En el pequeño pueblo de Hawkins, Indiana, un niño desaparece misteriosamente, desencadenando una serie de eventos sobrenaturales que revelan una dimensión paralela conocida como el 'Upside Down'. Mientras sus amigos buscan respuestas, descubren a Eleven, una niña con habilidades psíquicas que puede ser la clave para entender los oscuros secretos que acechan a su ciudad.",
       "imagen": "https://m.media-amazon.com/images/M/MV5BMjg2NmM0MTEtYWY2Yy00NmFlLTllNTMtMjVkZjEwMGVlNzdjXkEyXkFqcGc@.V1.jpg"
     },
@@ -2505,12 +2505,7 @@
       "userName": "anhos",
       "email": "antugaturra@gmail.com",
       "password": "secure1234",
-      "platforms": [
-        "Netflix",
-        "Amazon Prime",
-        "Disney+",
-        "Amazon Prime Video"
-      ],
+      "platforms": [],
       "list": [],
       "images": "https://images.squarespace-cdn.com/content/v1/6670add926f2a64cd00fb0e7/d2f9b9c1-ab9c-4fe2-a793-d6a8634ac920/character+chii.png",
       "apiId": "v1"
@@ -2594,15 +2589,7 @@
       "userName": "Xann",
       "email": "chomihater@gmail.com",
       "password": "chomi",
-      "platforms": [
-        "Netflix",
-        "Crunchyroll",
-        "Hulu",
-        "Apple TV+",
-        "HBO Max",
-        "Disney+",
-        "Amazon Prime Video"
-      ],
+      "platforms": [],
       "list": [],
       "images": "https://i.ibb.co/7N2HxgXj/chomi2.jpg"
     },
@@ -2741,14 +2728,6 @@
       "rating": 3,
       "text": "Me gustó, pero no tanto como esperaba.",
       "createdAt": "2025-05-03T09:00:00Z"
-    },
-    {
-      "id": "RV014",
-      "userId": "US003",
-      "contenidoId": "MV009",
-      "rating": 5,
-      "text": "Excelente adaptación del libro, muy fiel a la historia original.",
-      "createdAt": "2025-05-02T15:00:00Z"
     },
     {
       "id": "RV015",
@@ -2917,6 +2896,94 @@
       "rating": 5,
       "text": "",
       "createdAt": "2025-07-06T19:49:44.794Z"
+    },
+    {
+      "id": "RV036",
+      "userId": "US003",
+      "contenidoId": "MV010",
+      "rating": 2,
+      "text": "CACA",
+      "createdAt": "2025-07-10T00:10:06.930Z"
+    },
+    {
+      "id": "RV037",
+      "userId": "US003",
+      "contenidoId": "MV013",
+      "rating": 5,
+      "text": "",
+      "createdAt": "2025-07-10T00:11:15.876Z"
+    },
+    {
+      "id": "RV038",
+      "userId": "US003",
+      "contenidoId": "SR002",
+      "rating": 5,
+      "text": "Mmm chistoso",
+      "createdAt": "2025-07-10T00:20:44.309Z"
+    },
+    {
+      "id": "RV039",
+      "userId": "US003",
+      "contenidoId": "SR001",
+      "rating": 2,
+      "text": "no",
+      "createdAt": "2025-07-10T00:42:36.960Z"
+    },
+    {
+      "id": "RV040",
+      "userId": "US003",
+      "contenidoId": "BK002",
+      "rating": 1,
+      "text": "",
+      "createdAt": "2025-07-10T00:42:59.868Z"
+    },
+    {
+      "id": "RV041",
+      "userId": "US003",
+      "contenidoId": "SR005",
+      "rating": 2,
+      "text": "dasd",
+      "createdAt": "2025-07-10T00:43:23.426Z"
+    },
+    {
+      "id": "RV042",
+      "userId": "US003",
+      "contenidoId": "SR016",
+      "rating": 3,
+      "text": "",
+      "createdAt": "2025-07-10T00:43:29.957Z"
+    },
+    {
+      "id": "RV043",
+      "userId": "US003",
+      "contenidoId": "SR003",
+      "rating": 5,
+      "text": "",
+      "createdAt": "2025-07-10T00:45:36.346Z"
+    },
+    {
+      "id": "RV044",
+      "userId": "US003",
+      "contenidoId": "SR003",
+      "rating": 5,
+      "text": "",
+      "createdAt": "2025-07-10T00:45:37.971Z"
+    },
+    {
+      "id": "RV045",
+      "userId": "US003",
+      "contenidoId": "SR003",
+      "rating": 5,
+      "text": "",
+      "createdAt": "2025-07-10T00:45:40.614Z"
+    },
+    {
+      "id": "RV046",
+      "userId": "US003",
+      "contenidoId": "SR002",
+      "rating": 3,
+      "text": "",
+      "createdAt": "2025-07-10T00:45:54.666Z"
     }
   ],
   "userDetails": [
@@ -2939,9 +3006,12 @@
         "MV001"
       ],
       "viewed": [
-        "SR001",
         "BK003",
-        "MV001"
+        "MV001",
+        "BK002",
+        "SR005",
+        "SR016",
+        "SR003"
       ]
     },
     {
@@ -3016,90 +3086,6 @@
     {
       "id": "UD014",
       "userId": "US014",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD015",
-      "userId": "US015",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD016",
-      "userId": "US015",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD017",
-      "userId": "US015",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD018",
-      "userId": "US016",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD019",
-      "userId": "US017",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD020",
-      "userId": "US018",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD021",
-      "userId": "US019",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD022",
-      "userId": "US020",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD023",
-      "userId": "US021",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD024",
-      "userId": "US022",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD025",
-      "userId": "US015",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD026",
-      "userId": "US015",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD027",
-      "userId": "US016",
-      "favorites": [],
-      "viewed": []
-    },
-    {
-      "id": "UD028",
-      "userId": "US017",
       "favorites": [],
       "viewed": []
     }
@@ -3206,12 +3192,6 @@
       "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsnpbe1RXpr9E8bzzdiy-i4aKZEiDs2axmpA&s",
       "email": "crisol@example.com",
       "password": "crisol123",
-      "catalog": [
-        "BK002",
-        "BK005",
-        "BK010",
-        "BK008"
-      ],
       "ubicaciones": [
         {
           "lat": -12.0464,
@@ -3232,7 +3212,6 @@
       "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw9amhu3RdHK6VxiQSewgYdrNy4WMGSVBokg&s",
       "email": "ibero@example.com",
       "password": "ibero123",
-      "catalog": [],
       "ubicaciones": [
         {
           "lat": -12.1327,
@@ -3253,10 +3232,6 @@
       "imagen": "https://media.licdn.com/dms/image/v2/C4D0BAQEsyCFgIArCrw/company-logo_200_200/company-logo_200_200/0/1630531705713/sbs_librer_a_internacional_logo?e=2147483647&v=beta&t=JbVanxB8hHdenl7ruqcqEjiiJv-hPtgzsH4mTFN1tMU",
       "email": "sbs@example.com",
       "password": "sbs123",
-      "catalog": [
-        "BK002",
-        "BK016"
-      ],
       "ubicaciones": [
         {
           "lat": -12.0905,

@@ -5,7 +5,6 @@ export class Library {
   imagen: string;
   email: string;
   password: string;
-  catalog: string[] = [];
   ubicaciones: { lat: number; lng: number; direccion: string }[] = [];
 
   constructor(library: {
@@ -15,7 +14,6 @@ export class Library {
     imagen?: string;
     email?: string;
     password?: string;
-    catalog?: string[];
     ubicaciones?: { lat: number; lng: number; direccion: string }[];
   }) {
     this.id = library.id || '';
@@ -24,7 +22,6 @@ export class Library {
     this.imagen = library.imagen || '';
     this.email = library.email || '';
     this.password = library.password || '';
-    this.catalog = library.catalog || [];
     this.ubicaciones = library.ubicaciones || [];
   }
 }

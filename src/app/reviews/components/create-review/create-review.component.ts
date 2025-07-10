@@ -99,6 +99,7 @@ export class CreateReviewComponent implements OnInit {
   }
 
   submitReview(): void {
+    this.onEyeClick()
     const user = this.authService.getCurrentUser();
     if (!user) {
       alert('Debes iniciar sesión para dejar un review');

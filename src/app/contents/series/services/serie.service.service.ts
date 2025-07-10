@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import {Serie} from '../model/serie.entity';
 import {map} from 'rxjs/operators';
+import {ReviewService} from '../../../reviews/services/review.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import {map} from 'rxjs/operators';
 export class SerieService {
   private baseUrl = environment.serverBaseUrl + environment.serieEndpointPath;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private reviewService: ReviewService) {}
 
   // Obtener todas las series
   getSeries(): Observable<any[]> {
@@ -39,4 +40,6 @@ export class SerieService {
       map(series => series.sort((a, b) => b.calificacion - a.calificacion))
     );
   }
+
+
 }

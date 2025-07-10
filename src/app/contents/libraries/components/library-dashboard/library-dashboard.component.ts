@@ -4,16 +4,17 @@ import { Router } from '@angular/router';
 import { BookService } from '../../../books/services/book.service.service';
 import { Library } from '../../model/library.entity';
 import { Book } from '../../../books/model/book.entity';
-import {MatCard, MatCardActions, MatCardContent, MatCardImage} from '@angular/material/card';
-import {LibraryToolbarComponent} from '../library-toolbar/library-toolbar.component';
-import {MatButton} from '@angular/material/button';
-import {NgForOf, NgIf} from '@angular/common';
-import {LibraryService} from '../../services/library.service';
+import { MatCard, MatCardActions, MatCardContent, MatCardImage } from '@angular/material/card';
+import { LibraryToolbarComponent } from '../library-toolbar/library-toolbar.component';
+import { MatButton } from '@angular/material/button';
+import { NgForOf, NgIf } from '@angular/common';
+import { LibraryService } from '../../services/library.service';
 
 @Component({
   selector: 'app-library-dashboard',
   templateUrl: './library-dashboard.component.html',
   styleUrls: ['./library-dashboard.component.css'],
+  standalone: true,
   imports: [
     MatCard,
     MatCardContent,
@@ -23,13 +24,13 @@ import {LibraryService} from '../../services/library.service';
     MatButton,
     NgIf,
     NgForOf
-  ],
-  standalone: true
+  ]
 })
 export class LibraryDashboardComponent implements OnInit {
   currentLibrary: Library | null = null;
   allBooks: Book[] = [];
   catalogBooks: Book[] = [];
+  availableBooks: Book[] = [];
   loading = false;
 
   constructor(
@@ -50,57 +51,47 @@ export class LibraryDashboardComponent implements OnInit {
   }
 
   loadBooks(): void {
-    this.loading = true;
-    this.bookService.getBooks().subscribe(books => {
-      this.allBooks = books;
-      this.catalogBooks = books.filter(book => this.currentLibrary?.catalog.includes(book.id));
-      this.loading = false;
+    this.bookService.getBooks().subscribe(allBooks => {
+      this.allBooks = allBooks;
+
+      const currentLibraryId = this.currentLibrary?.id;
+      if (!currentLibraryId) return;
+
+      this.catalogBooks = allBooks.filter(book =>
+        book.librerias_id?.includes(currentLibraryId)
+      );
+
+      this.availableBooks = allBooks.filter(book =>
+        !book.librerias_id?.includes(currentLibraryId)
+      );
     });
   }
 
-  isInCatalog(bookId: string): boolean {
-    return this.currentLibrary?.catalog.includes(bookId) || false;
+  isInCatalog(book: Book): boolean {
+    return book.librerias_id?.includes(this.currentLibrary?.id || '') || false;
   }
 
-  addBookToCatalog(bookId: string): void {
+  addBookToCatalog(book: Book): void {
     if (!this.currentLibrary) return;
 
-    this.libraryService.addBookToCatalog(this.currentLibrary.id, bookId).subscribe({
-      next: updatedLibrary => {
-        this.currentLibrary = updatedLibrary;
-        localStorage.setItem('currentLibrary', JSON.stringify(updatedLibrary));
-        this.loadBooks();
+    if (!book.librerias_id) {
+      book.librerias_id = [];
+    }
 
-        // 🔥 También actualizar el libro
-        this.bookService.getBookById(bookId).subscribe(book => {
-          if (!book.librerias_id) book.librerias_id = [];
-          if (!book.librerias_id.includes(this.currentLibrary!.id)) {
-            book.librerias_id.push(this.currentLibrary!.id);
-            this.bookService.updateBook(book).subscribe(); // actualiza el JSON
-          }
-        });
-      }
-    });
+    if (!book.librerias_id.includes(this.currentLibrary.id)) {
+      book.librerias_id.push(this.currentLibrary.id);
+      this.bookService.updateBook(book).subscribe(() => {
+        this.loadBooks();
+      });
+    }
   }
 
-  removeBookFromCatalog(bookId: string): void {
-    if (!this.currentLibrary) return;
+  removeBookFromCatalog(book: Book): void {
+    if (!this.currentLibrary || !book.librerias_id) return;
 
-    this.libraryService.removeBookFromCatalog(this.currentLibrary.id, bookId).subscribe({
-      next: updatedLibrary => {
-        this.currentLibrary = updatedLibrary;
-        localStorage.setItem('currentLibrary', JSON.stringify(updatedLibrary));
-        this.loadBooks();
-
-        this.bookService.getBookById(bookId).subscribe(book => {
-          if (book.librerias_id) {
-            book.librerias_id = book.librerias_id.filter(id => id !== this.currentLibrary!.id);
-            this.bookService.updateBook(book).subscribe(); // actualiza el JSON
-          }
-        });
-      }
+    book.librerias_id = book.librerias_id.filter(id => id !== this.currentLibrary?.id);
+    this.bookService.updateBook(book).subscribe(() => {
+      this.loadBooks();
     });
   }
-
-
 }

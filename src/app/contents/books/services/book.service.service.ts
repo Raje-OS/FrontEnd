@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 
 import { map } from 'rxjs/operators';
 import {Book} from '../model/book.entity';
+import {ReviewService} from '../../../reviews/services/review.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ import {Book} from '../model/book.entity';
 export class BookService {
   private baseUrl = environment.serverBaseUrl + environment.bookEndpointPath;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private reviewService: ReviewService) {}
 
   getBooks(): Observable<Book[]> {
     return this.http.get<any[]>(this.baseUrl).pipe(
@@ -36,5 +37,7 @@ export class BookService {
       map(books => books.sort((a, b) => b.calificacion - a.calificacion))
     );
   }
+
+
 
 }

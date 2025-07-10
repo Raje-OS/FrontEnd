@@ -3,40 +3,30 @@
 <div class="dashboard-content">
   <h2>Catálogo de Libros</h2>
 
-  <!-- Libros en catálogo -->
+  <!-- Libros en el catálogo -->
   <div class="catalog-section">
     <h3>Libros en tu Catálogo</h3>
     <div *ngIf="catalogBooks.length === 0" class="empty-msg">
       No tienes libros en tu catálogo.
     </div>
     <div class="books-grid">
-      <mat-card *ngFor="let book of catalogBooks" class="book-card">
-        <img mat-card-image [src]="book.imagen" alt="{{ book.titulo }}">
-        <mat-card-content>
-          <h3>{{ book.titulo }}</h3>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button color="warn" (click)="removeBookFromCatalog(book.id)">Quitar</button>
-        </mat-card-actions>
-      </mat-card>
+      <div class="book-card" *ngFor="let book of catalogBooks">
+        <button class="icon-button remove-btn" (click)="removeBookFromCatalog(book)">−</button>
+        <img [src]="book.imagen" [alt]="book.titulo" class="book-image" />
+        <p class="book-title">{{ book.titulo }}</p>
+      </div>
     </div>
   </div>
 
+  <!-- Libros disponibles -->
   <div class="available-section">
     <h3>Libros Disponibles</h3>
     <div class="books-grid">
-      <ng-container *ngFor="let book of allBooks">
-        <mat-card class="book-card" *ngIf="!isInCatalog(book.id)">
-          <img mat-card-image [src]="book.imagen" alt="{{ book.titulo }}">
-          <mat-card-content>
-            <h3>{{ book.titulo }}</h3>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="primary" (click)="addBookToCatalog(book.id)">Agregar</button>
-          </mat-card-actions>
-        </mat-card>
-      </ng-container>
+      <div class="book-card" *ngFor="let book of availableBooks">
+        <button class="icon-button add-btn" (click)="addBookToCatalog(book)">＋</button>
+        <img [src]="book.imagen" [alt]="book.titulo" class="book-image" />
+        <p class="book-title">{{ book.titulo }}</p>
+      </div>
     </div>
   </div>
-
 </div>

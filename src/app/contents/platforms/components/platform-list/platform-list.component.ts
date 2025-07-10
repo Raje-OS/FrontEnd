@@ -20,9 +20,8 @@ import {AuthService} from '../../../../users/pages/login-form/services/auth.serv
   styleUrls: ['./platform-list.component.css']
 })
 export class PlatformListComponent implements OnInit {
-  subscribedPlatformNames: string[] = [];
+  subscribedPlatformIds: string[] = [];
   allPlatforms: any[] = [];
-
   currentUser: User | null = null;
 
   constructor(
@@ -30,7 +29,7 @@ export class PlatformListComponent implements OnInit {
     private platformService: PlatformService,
     private userService: UserService,
     private authService: AuthService
-) {}
+  ) {}
 
   ngOnInit(): void {
     this.currentUser = this.authService.getCurrentUser();
@@ -41,57 +40,57 @@ export class PlatformListComponent implements OnInit {
     }
 
     this.userService.getUserById(this.currentUser.id).subscribe(user => {
-      this.subscribedPlatformNames = user.platforms ?? [];
+      this.subscribedPlatformIds = user.platforms ?? [];
       this.loadAllPlatforms();
     });
   }
 
-
   loadAllPlatforms() {
-    this.platformService.getPlatformsByIds([]).subscribe(platforms => {
+    this.platformService.getAllPlatforms().subscribe(platforms => {
       this.allPlatforms = platforms;
     });
   }
 
-
-  isSubscribed(name: string): boolean {
-    return this.subscribedPlatformNames.includes(name);
+  isSubscribed(id: string): boolean {
+    return this.subscribedPlatformIds.includes(id);
   }
 
-  toggleSubscription(name: string) {
-    const index = this.subscribedPlatformNames.indexOf(name);
+  toggleSubscription(id: string) {
+    const index = this.subscribedPlatformIds.indexOf(id);
     if (index >= 0) {
-      this.subscribedPlatformNames.splice(index, 1);
+      this.subscribedPlatformIds.splice(index, 1);
     } else {
-      this.subscribedPlatformNames.push(name);
+      this.subscribedPlatformIds.push(id);
     }
-  }
 
-  saveChanges() {
     if (!this.currentUser) {
-      alert("No hay usuario. No se puede guardar.");
+      console.error("No hay usuario autenticado");
       return;
     }
 
-    this.userService.getUserById(this.currentUser.id).pipe(
+    const userId = this.currentUser.id;
+
+    this.userService.getUserById(userId).pipe(
       switchMap((user: User) => {
         if (!user) return throwError(() => new Error('Usuario no encontrado'));
         const updatedUser: User = {
           ...user,
-          platforms: [...this.subscribedPlatformNames]
+          platforms: [...this.subscribedPlatformIds]
         };
-        return this.userService.update(this.currentUser!.id, updatedUser);
+        return this.userService.update(userId, updatedUser);
       }),
       catchError(err => {
-        console.error('Error al guardar:', err);
-        alert('Error al guardar los cambios');
+        console.error('Error al guardar automáticamente:', err);
+        alert('Error al actualizar la suscripción');
         return of(null);
       })
     ).subscribe((response) => {
       if (response) {
-        alert('Cambios guardados exitosamente.');
-        console.log("Nuevas plataformas suscritas:", this.subscribedPlatformNames);
+        console.log("Suscripciones actualizadas automáticamente:", this.subscribedPlatformIds);
       }
     });
   }
+
+
+
 }

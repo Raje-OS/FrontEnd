@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import {environment} from '../../../../environments/environment';
 import {map, switchMap} from 'rxjs/operators';
 import {Movie} from '../model/movie.entity';
+import {ReviewService} from '../../../reviews/services/review.service';
+import {Book} from '../../books/model/book.entity';
 
 
 @Injectable({
@@ -12,7 +14,7 @@ import {Movie} from '../model/movie.entity';
 export class MovieService {
   private baseUrl = environment.serverBaseUrl + environment.movieEndpointPath;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private reviewService: ReviewService) {}
 
   getMovies(): Observable<any[]> {
     return this.http.get<any[]>(this.baseUrl);
@@ -27,7 +29,9 @@ export class MovieService {
       map(movies => movies[0] || {})  // <-- Esto devuelve el primer objeto del array
     );
   }
-
+  updateMovie(movie: Movie): Observable<Movie> {
+    return this.http.put<Movie>(`${this.baseUrl}/${movie.id}`, movie);
+  }
   getMoviesOrderedByRating(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.baseUrl).pipe(
       map(movies => movies.sort((a, b) => b.calificacion - a.calificacion))

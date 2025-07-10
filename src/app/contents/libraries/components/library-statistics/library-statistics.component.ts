@@ -4,9 +4,15 @@ import { AuthService } from '../../../../users/pages/login-form/services/auth.se
 import { BookService } from '../../../books/services/book.service.service';
 import { Book } from '../../../books/model/book.entity';
 import { Router } from '@angular/router';
-import {NgForOf, NgIf} from '@angular/common';
-import {LibraryToolbarComponent} from '../library-toolbar/library-toolbar.component';
-import {MatCard, MatCardContent, MatCardHeader, MatCardImage, MatCardTitle} from '@angular/material/card';
+import { NgForOf, NgIf } from '@angular/common';
+import { LibraryToolbarComponent } from '../library-toolbar/library-toolbar.component';
+import {
+  MatCard,
+  MatCardTitle,
+  MatCardHeader,
+  MatCardContent,
+  MatCardImage
+} from '@angular/material/card';
 
 @Component({
   selector: 'app-library-statistics',
@@ -54,9 +60,17 @@ export class LibraryStatisticsComponent implements OnInit {
 
   loadCatalogBooks(): void {
     this.loading = true;
+
+    if (!this.currentLibrary) {
+      this.loading = false;
+      return;
+    }
+
+    const currentLibraryId = this.currentLibrary.id;
+
     this.bookService.getBooks().subscribe(allBooks => {
       this.catalogBooks = allBooks.filter(book =>
-        this.currentLibrary!.catalog.includes(book.id)
+        book.librerias_id?.includes(currentLibraryId)
       );
 
       this.calculateStatistics();
@@ -67,17 +81,15 @@ export class LibraryStatisticsComponent implements OnInit {
   calculateStatistics(): void {
     this.statistics.totalBooks = this.catalogBooks.length;
 
-    const genreCount: { [key: string]: number } = {};
+    const genreCount: Record<string, number> = {};
     let topBook: Book | null = null;
     let worstBook: Book | null = null;
 
     this.catalogBooks.forEach(book => {
-      // Acumular géneros
       book.genero?.forEach(g => {
         genreCount[g] = (genreCount[g] || 0) + 1;
       });
 
-      // Calcular libro con mejor y peor calificación
       if (typeof book.calificacion === 'number') {
         if (!topBook || book.calificacion > (topBook.calificacion || 0)) {
           topBook = book;
@@ -92,9 +104,8 @@ export class LibraryStatisticsComponent implements OnInit {
     this.statistics.topBook = topBook;
     this.statistics.worstBook = worstBook;
   }
+
   getGenreKeys(): string[] {
     return Object.keys(this.statistics.genreDistribution);
   }
-
-
 }
