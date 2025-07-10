@@ -10,9 +10,9 @@
       </div>
     </div>
   </div>
+  <div *ngIf="favoritos && favoritos.length === 0" class="no-favoritos">
+    <h2>¡Aún no tienes favoritos!</h2>
+    <p>Explora el contenido y marca tus películas, series o libros preferidos para verlos aquí.</p>
+  </div>
 </div>
 
-<div *ngIf="favoritos && favoritos.length === 0">
-  <h2>¡Aún no tienes favoritos!</h2>
-  <p>Explora el contenido y marca tus películas, series o libros preferidos para verlos aquí.</p>
-</div>
