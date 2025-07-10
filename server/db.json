@@ -157,17 +157,10 @@
       "email": "apple@example.com",
       "password": "apple123",
       "catalog": [
-        "MV002",
         "MV024",
-        "MV003",
-        "MV004",
-        "MV005",
-        "MV006",
-        "MV008",
         "MV012",
         "MV011",
         "MV010",
-        "MV001",
         "MV020",
         "MV022",
         "SR001",
@@ -187,7 +180,14 @@
         "SR019",
         "SR020",
         "SR021",
-        "MV007"
+        "MV001",
+        "MV002",
+        "MV003",
+        "MV004",
+        "MV005",
+        "MV006",
+        "MV007",
+        "MV008"
       ]
     },
     {
@@ -1047,8 +1047,8 @@
         "PL002",
         "PL003",
         "PL004",
-        "PL005",
-        "PL006"
+        "PL006",
+        "PL005"
       ],
       "calificacion": 3.7,
       "sinopsis": "Un joven huérfano descubre que es un mago famoso y asiste a una escuela mágica donde se enfrenta a un oscuro poder que amenaza su mundo.",
@@ -1074,7 +1074,8 @@
       "plataformas_id": [
         "PL001",
         "PL002",
-        "PL003"
+        "PL003",
+        "PL005"
       ],
       "calificacion": 4,
       "sinopsis": "Harry regresa para su segundo año en Hogwarts, donde debe enfrentarse a un misterio oscuro y antiguo que amenaza a los estudiantes de la escuela.",
@@ -1103,8 +1104,8 @@
         "PL002",
         "PL003",
         "PL004",
-        "PL005",
-        "PL006"
+        "PL006",
+        "PL005"
       ],
       "calificacion": 3,
       "sinopsis": "Harry descubre la verdad sobre el peligroso prisionero Sirius Black y su conexión con el pasado de sus padres.",
@@ -1131,8 +1132,8 @@
       "plataformas_id": [
         "PL001",
         "PL003",
-        "PL005",
-        "PL006"
+        "PL006",
+        "PL005"
       ],
       "calificacion": 4,
       "sinopsis": "Harry es misteriosamente seleccionado para participar en el peligroso Torneo de los Tres Magos, donde enfrenta desafíos mortales.",
@@ -1186,8 +1187,8 @@
         "PL001",
         "PL002",
         "PL003",
-        "PL005",
-        "PL006"
+        "PL006",
+        "PL005"
       ],
       "calificacion": 3.5,
       "sinopsis": "Harry descubre oscuros secretos sobre el pasado de Voldemort mientras se prepara para la batalla final.",
@@ -1215,8 +1216,8 @@
         "PL001",
         "PL002",
         "PL003",
-        "PL005",
-        "PL006"
+        "PL006",
+        "PL005"
       ],
       "calificacion": 3,
       "sinopsis": "Harry, Ron y Hermione comienzan una peligrosa misión para destruir los Horrocruxes de Voldemort.",
