@@ -8,6 +8,7 @@ import { ActorService } from '../../../../persons/actors/services/actor.service.
 import { PlatformService } from '../../../platforms/services/platform.service.service';
 import { MovieService } from '../../services/movie.service.service';
 import {RouterModule, ActivatedRoute, Router} from '@angular/router';
+import {ReviewService} from '../../../../reviews/services/review.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -32,6 +33,7 @@ export class MovieDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private movieService: MovieService,
     private directorService: DirectorService,
+    private reviewService: ReviewService,
     private actorService: ActorService,
     private platformService: PlatformService,
     private router: Router
@@ -41,8 +43,10 @@ export class MovieDetailComponent implements OnInit {
     if (this.movie) {
       // Usado desde componente padre
       this.loadDetails(this.movie);
+      this.actualizarCalificacionPromedio();
     } else {
       // Usado como página desde ruta /movies/:id
+      this.actualizarCalificacionPromedio();
       const id = this.route.snapshot.paramMap.get('id');
       if (id) {
         this.movieService.getMovieById(id).subscribe(movie => {
@@ -58,6 +62,25 @@ export class MovieDetailComponent implements OnInit {
     this.loadDirector(movie.director_id);
     this.loadActors(movie.actores_id);
     this.loadPlatforms(movie.plataformas_id);
+  }
+
+  actualizarCalificacionPromedio() {
+    if (!this.movie?.id) return;
+
+    this.reviewService.getReviewsByContenidoId(this.movie.id).subscribe(reviews => {
+      if (!reviews || reviews.length === 0) return;
+
+      const suma = reviews.reduce((acc, review) => acc + (review.rating || 0), 0);
+      const promedio = Math.round((suma / reviews.length) * 10) / 10;
+
+      if (this.movie) {
+        this.movie.calificacion = promedio;
+        this.movieService.updateMovie(this.movie).subscribe({
+          next: () => console.log('Calificación actualizada'),
+          error: err => console.error('Error al actualizar calificación', err)
+        });
+      }
+    });
   }
 
   loadDirector(directorId: string): void {

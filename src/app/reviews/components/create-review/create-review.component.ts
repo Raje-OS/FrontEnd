@@ -136,6 +136,7 @@ export class CreateReviewComponent implements OnInit {
             this.loading = false;
           }
         });
+        window.location.reload();
       },
       error: err => {
         console.error('Error al cargar reviews existentes:', err);
