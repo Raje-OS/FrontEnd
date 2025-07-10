@@ -6,38 +6,7 @@
       "descripcion": "Servicio de streaming global que ofrece una amplia variedad de películas, series, documentales y contenido original.",
       "imagen": "https://www.infobae.com/resizer/v2/2YOXQKHBEREMFFBTFX73ALCUAY.jpg?auth=8379202e0b7defe6c4989d5331e6d87cfbb5170cea07bf3b149d8b1a42194b2a&smart=true&width=1200&height=675&quality=85",
       "email": "netflix@example.com",
-      "password": "netflix123",
-      "catalog": [
-        "MV001",
-        "MV002",
-        "MV003",
-        "MV004",
-        "MV005",
-        "MV006",
-        "MV007",
-        "MV016",
-        "MV019",
-        "MV020",
-        "MV025",
-        "MV024",
-        "MV022",
-        "MV021",
-        "SR001",
-        "SR002",
-        "SR003",
-        "SR005",
-        "SR007",
-        "SR010",
-        "SR012",
-        "SR013",
-        "SR014",
-        "SR020",
-        "SR019",
-        "SR018",
-        "SR016",
-        "SR021",
-        "SR022"
-      ]
+      "password": "netflix123"
     },
     {
       "id": "PL002",
@@ -45,38 +14,7 @@
       "descripcion": "Plataforma de streaming de Amazon que incluye películas, series y contenido original, además de acceso a otros canales premium.",
       "imagen": "https://media.revistagq.com/photos/61570a628052a49b36a0342d/master/w_1600%2Cc_limit/amazon-prime-video.jpeg",
       "email": "amazon@example.com",
-      "password": "amazon123",
-      "catalog": [
-        "MV002",
-        "MV003",
-        "MV008",
-        "MV009",
-        "MV010",
-        "MV011",
-        "MV014",
-        "MV015",
-        "MV017",
-        "MV018",
-        "MV019",
-        "MV022",
-        "MV024",
-        "MV025",
-        "MV020",
-        "SR002",
-        "SR009",
-        "SR005",
-        "SR007",
-        "SR004",
-        "SR015",
-        "SR014",
-        "SR013",
-        "SR011",
-        "SR019",
-        "SR018",
-        "SR020",
-        "SR022",
-        "SR021"
-      ]
+      "password": "amazon123"
     },
     {
       "id": "PL003",
@@ -84,39 +22,7 @@
       "descripcion": "Servicio de streaming de The Walt Disney Company con contenido de Disney, Pixar, Marvel, Star Wars y National Geographic.",
       "imagen": "https://giftcardoferta.com/tienda/wp-content/uploads/2022/07/disneyplus-1200x675-1.jpg",
       "email": "disney@example.com",
-      "password": "disney123",
-      "catalog": [
-        "MV007",
-        "MV002",
-        "MV004",
-        "MV005",
-        "MV009",
-        "MV015",
-        "MV013",
-        "MV014",
-        "MV017",
-        "MV019",
-        "MV020",
-        "MV023",
-        "MV024",
-        "MV025",
-        "SR002",
-        "SR003",
-        "SR004",
-        "SR005",
-        "SR007",
-        "SR008",
-        "SR009",
-        "SR010",
-        "SR011",
-        "SR013",
-        "SR012",
-        "SR019",
-        "SR018",
-        "SR020",
-        "SR021",
-        "SR022"
-      ]
+      "password": "disney123"
     },
     {
       "id": "PL004",
@@ -124,30 +30,7 @@
       "descripcion": "Plataforma de streaming que ofrece contenido de HBO, Warner Bros., DC, Cartoon Network y otros estudios.",
       "imagen": "https://teinvitoalcine.com/download/multimedia.normal.857c9387a69eba51.TG9nbyBwbGF0YWZvcm1hICBNYXhfbm9ybWFsLndlYnA%3D.webp",
       "email": "hbo@example.com",
-      "password": "hbo123",
-      "catalog": [
-        "SR013",
-        "MV016",
-        "MV003",
-        "MV019",
-        "SR022",
-        "SR020",
-        "SR019",
-        "MV011",
-        "MV014",
-        "SR018",
-        "MV023",
-        "MV001",
-        "MV012",
-        "MV015",
-        "MV024",
-        "MV025",
-        "SR001",
-        "SR004",
-        "SR014",
-        "SR015",
-        "SR016"
-      ]
+      "password": "hbo123"
     },
     {
       "id": "PL005",
@@ -155,40 +38,7 @@
       "descripcion": "Servicio de streaming de Apple con contenido original, incluyendo series, películas y documentales exclusivos.",
       "imagen": "https://www.apple.com/v/apple-tv-plus/ak/images/meta/apple-tv__e7aqjl2rqzau_og.png",
       "email": "apple@example.com",
-      "password": "apple123",
-      "catalog": [
-        "MV024",
-        "MV012",
-        "MV011",
-        "MV010",
-        "MV020",
-        "MV022",
-        "SR001",
-        "SR002",
-        "SR003",
-        "SR004",
-        "SR005",
-        "SR006",
-        "SR008",
-        "SR009",
-        "SR010",
-        "SR011",
-        "SR014",
-        "SR016",
-        "SR017",
-        "SR018",
-        "SR019",
-        "SR020",
-        "SR021",
-        "MV001",
-        "MV002",
-        "MV003",
-        "MV004",
-        "MV005",
-        "MV006",
-        "MV007",
-        "MV008"
-      ]
+      "password": "apple123"
     },
     {
       "id": "PL006",
@@ -196,35 +46,7 @@
       "descripcion": "Servicio de streaming estadounidense que ofrece contenido de televisión, películas, series originales y eventos deportivos en vivo.",
       "imagen": "https://deadline.com/wp-content/uploads/2022/08/hulu-Green-digital-logo-1.jpg?w=1024",
       "email": "hulu@example.com",
-      "password": "hulu123",
-      "catalog": [
-        "MV001",
-        "MV003",
-        "MV004",
-        "MV006",
-        "MV007",
-        "MV009",
-        "MV010",
-        "MV011",
-        "MV012",
-        "MV013",
-        "MV014",
-        "MV016",
-        "MV020",
-        "MV023",
-        "MV025",
-        "SR001",
-        "SR005",
-        "SR010",
-        "SR008",
-        "SR012",
-        "SR013",
-        "SR015",
-        "SR018",
-        "SR017",
-        "SR021",
-        "SR022"
-      ]
+      "password": "hulu123"
     },
     {
       "id": "PL007",
@@ -1046,11 +868,11 @@
         "PL001",
         "PL002",
         "PL003",
-        "PL004",
         "PL006",
-        "PL005"
+        "PL005",
+        "PL004"
       ],
-      "calificacion": 3.7,
+      "calificacion": 3.9,
       "sinopsis": "Un joven huérfano descubre que es un mago famoso y asiste a una escuela mágica donde se enfrenta a un oscuro poder que amenaza su mundo.",
       "imagen": "https://images.justwatch.com/poster/87608067/s718/harry-potter-and-the-philosophers-stone.jpg"
     },
@@ -1077,7 +899,7 @@
         "PL003",
         "PL005"
       ],
-      "calificacion": 4,
+      "calificacion": 4.5,
       "sinopsis": "Harry regresa para su segundo año en Hogwarts, donde debe enfrentarse a un misterio oscuro y antiguo que amenaza a los estudiantes de la escuela.",
       "imagen": "https://m.media-amazon.com/images/M/MV5BNGJhM2M2MWYtZjIzMC00MDZmLThkY2EtOWViMDhhYjRhMzk4XkEyXkFqcGc@.V1_FMjpg_UX1000.jpg"
     },
@@ -1272,7 +1094,7 @@
         "PL003",
         "PL006"
       ],
-      "calificacion": 4,
+      "calificacion": 3.5,
       "sinopsis": "El patriarca de una familia criminal intenta transferir el control de su imperio clandestino a su hijo menor.",
       "imagen": "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@.V1_FMjpg_UX1000.jpg"
     },
@@ -1298,7 +1120,7 @@
         "PL005",
         "PL006"
       ],
-      "calificacion": 5,
+      "calificacion": 4,
       "sinopsis": "La historia paralela del ascenso al poder de Vito Corleone y el conflicto interno de su hijo Michael como el nuevo líder de la familia Corleone.",
       "imagen": "https://m.media-amazon.com/images/M/MV5BMDIxMzBlZDktZjMxNy00ZGI4LTgxNDEtYWRlNzRjMjJmOGQ1XkEyXkFqcGc@.V1_FMjpg_UX1000.jpg"
     },
@@ -1375,7 +1197,7 @@
         "PL003",
         "PL006"
       ],
-      "calificacion": 5,
+      "calificacion": 4,
       "sinopsis": "En un futuro cercano, un grupo de astronautas emprende un viaje a través de un agujero de gusano para encontrar un nuevo hogar para la humanidad.",
       "imagen": "https://es.web.img3.acsta.net/pictures/14/10/02/11/07/341344.jpg"
     },
@@ -2149,7 +1971,7 @@
         "PL003",
         "PL005"
       ],
-      "calificacion": 5,
+      "calificacion": 4,
       "sinopsis": "En el continente de Westeros, varias familias nobles compiten por el Trono de Hierro y el control de los Siete Reinos. Mientras tanto, una antigua amenaza regresa desde el norte, poniendo en peligro a toda la humanidad. Con alianzas traicioneras, conflictos épicos y personajes complejos, Game of Thrones cuenta una historia de poder, traición, honor y supervivencia en un mundo brutalmente realista.",
       "imagen": "https://static.posters.cz/image/1300/135455.jpg"
     },
@@ -3224,6 +3046,46 @@
       "rating": 3,
       "text": "",
       "createdAt": "2025-07-10T00:45:54.666Z"
+    },
+    {
+      "id": "RV047",
+      "userId": "US003",
+      "contenidoId": "MV022",
+      "rating": 5,
+      "text": "cine",
+      "createdAt": "2025-07-10T03:16:05.638Z"
+    },
+    {
+      "id": "RV048",
+      "userId": "US003",
+      "contenidoId": "MV013",
+      "rating": 3,
+      "text": "no ogti",
+      "createdAt": "2025-07-10T03:17:15.704Z"
+    },
+    {
+      "id": "RV049",
+      "userId": "US003",
+      "contenidoId": "MV014",
+      "rating": 5,
+      "text": "cine",
+      "createdAt": "2025-07-10T03:20:19.261Z"
+    },
+    {
+      "id": "RV050",
+      "userId": "US003",
+      "contenidoId": "MV002",
+      "rating": 4,
+      "text": "ola",
+      "createdAt": "2025-07-10T03:21:20.718Z"
+    },
+    {
+      "id": "RV051",
+      "userId": "US003",
+      "contenidoId": "SR003",
+      "rating": 1,
+      "text": "zzz",
+      "createdAt": "2025-07-10T03:21:31.746Z"
     }
   ],
   "userDetails": [
@@ -3242,16 +3104,17 @@
     {
       "id": "UD003",
       "userId": "US003",
-      "favorites": [
-        "MV001"
-      ],
+      "favorites": [],
       "viewed": [
         "BK003",
         "MV001",
         "BK002",
         "SR005",
         "SR016",
-        "SR003"
+        "MV010",
+        "MV013",
+        "MV014",
+        "MV002"
       ]
     },
     {

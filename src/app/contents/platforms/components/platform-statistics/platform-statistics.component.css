@@ -1,140 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@400&display=swap');
+
 .statistics-container {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
-  color: var(--text-light);
-  min-height: 100vh;
-}
-
-.statistics-content {
-  padding: 100px 20px 40px;
+  padding: 40px 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
+  font-family: 'Lexend Mega', sans-serif;
+  color: white;
 }
 
-.statistics-content h2 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  border-bottom: 4px solid var(--primary-color);
-  padding-bottom: 10px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.statistics-content p {
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 30px;
-}
-
-.statistics-cards {
+/* --------- Toolbar --------- */
+mat-toolbar {
+  background-color: #1a1a1a;
+  padding: 0 20px;
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  align-items: center;
+  height: 64px;
+  font-family: 'Lexend Mega', sans-serif;
+  color: white;
+  border-bottom: 2px solid #2f2f2f;
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+}
+
+.platform-logo {
+  height: 40px;
+  width: auto;
+  margin-right: 12px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar button {
+  font-weight: 600;
+  color: white;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+mat-toolbar button.active {
+  background-color: #333333;
+  border-radius: 6px;
+}
+
+/* --------- Contenido --------- */
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 3px solid #a4161a;
+  padding-bottom: 10px;
+}
+
+.empty-msg {
+  text-align: center;
+  font-style: italic;
+  color: #ccc;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
 .stat-card {
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: #1a1a1a;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  padding: 20px;
-}
-
-.card-title-centered {
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-align: center;
-  width: 100%;
-  color: var(--text-light);
+  overflow: hidden;
 }
 
 .stat-value {
   font-size: 3rem;
   font-weight: bold;
-  color: var(--primary-color);
   text-align: center;
-  padding: 20px 0;
+  margin: 20px 0;
+  color: #ffcc00;
 }
 
-.stat-item {
-  margin: 12px 0;
+.genre-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.stat-label {
-  font-weight: 500;
-  color: var(--text-light);
+.genre-count {
+  font-weight: bold;
+  color: #ffcc00;
 }
 
-.stat-count {
-  float: right;
-  font-weight: 600;
-  color: var(--primary-hover);
+mat-card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffcc00;
 }
 
-.stat-bar {
-  height: 8px;
-  background-color: var(--primary-color);
-  border-radius: 4px;
-  margin-top: 6px;
-  box-shadow: 0 2px 6px rgba(164, 22, 26, 0.3);
+mat-card-content h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.empty-stat {
-  font-style: italic;
-  color: var(--text-muted);
-  text-align: center;
-  padding: 20px;
+mat-card-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #ccc;
 }
-.platform-logo {
-  height: 50px;
-  max-width: 200px;
+
+mat-card img {
+  height: 180px;
   object-fit: contain;
-}
-.movies-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  margin-top: 20px;
-}
-.movie-card-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 180px;
-  margin-bottom: 20px;
-}
-
-.stat-rating {
-  margin-top: 8px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  background-color: rgba(255, 255, 255, 0.02);
-  padding: 4px 8px;
-  border-radius: 6px;
-  text-align: center;
-  width: 100%;
-}
-
-.loading-spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  margin-bottom: 30px;
-}
-
-@media (max-width: 768px) {
-  .stat-value {
-    font-size: 2.2rem;
-  }
-
-  .card-title-centered {
-    font-size: 1.2rem;
-  }
-
-  .movies-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+  background-color: transparent;
+  padding: 8px;
 }

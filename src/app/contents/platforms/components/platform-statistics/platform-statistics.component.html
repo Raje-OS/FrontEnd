@@ -1,98 +1,96 @@
 <div class="statistics-container">
-  <mat-toolbar color="primary">
-    <div class="platform-header-left">
+  <mat-toolbar >
+    <div class="platform-header">
       <img *ngIf="currentPlatform?.imagen" [src]="currentPlatform?.imagen" alt="Logo" class="platform-logo">
 
     </div>
+
     <span class="toolbar-spacer"></span>
     <button mat-button (click)="navigateToDashboard()">Contenidos</button>
     <button mat-button class="active">Estadísticas</button>
     <button mat-button (click)="logout()">Cerrar sesión</button>
-
   </mat-toolbar>
 
-  <div class="statistics-content">
-    <h2>Estadísticas de la Plataforma</h2>
-    <p>Aquí puedes ver estadísticas sobre tu catálogo de películas.</p>
+  <h2>Estadísticas de tu Catálogo</h2>
 
-    <div *ngIf="loading" class="loading-spinner">
-      <mat-spinner diameter="40"></mat-spinner>
-    </div>
+  <div *ngIf="statistics.totalMovies + statistics.totalSeries === 0" class="empty-msg">
+    No tienes películas ni series en tu catálogo para mostrar estadísticas.
+  </div>
 
-    <div *ngIf="!loading" class="statistics-cards">
-      <mat-card class="stat-card total-movies">
-        <mat-card-header>
-          <mat-card-title class="card-title-centered">Total de Películas</mat-card-title>
+  <div *ngIf="statistics.totalMovies + statistics.totalSeries > 0" class="stats-grid">
 
-        </mat-card-header>
-        <mat-card-content>
-          <div class="stat-value">{{ statistics.totalMovies }}</div>
-        </mat-card-content>
-      </mat-card>
-
-      <mat-card class="stat-card genre-distribution" *ngIf="statistics.totalMovies > 0">
-        <mat-card-header>
-          <mat-card-title class="card-title-centered">Distribución por Género</mat-card-title>
-
-        </mat-card-header>
-        <br> <br>
-        <mat-card-content>
-          <div *ngIf="Object.keys(statistics.genreDistribution).length === 0" class="empty-stat">
-            No hay información de géneros disponible.
-          </div>
-          <div *ngFor="let genre of getGenreKeys()" class="stat-item">
-            <span class="stat-label">{{ genre }}</span>
-            <span class="stat-count">{{ statistics.genreDistribution[genre] }}</span>
-            <div class="stat-bar" [style.width.%]="getPercentage(statistics.genreDistribution[genre], statistics.totalMovies)"></div>
-          </div>
-        </mat-card-content>
-      </mat-card>
-
-
-      <mat-card class="stat-card empty-catalog" *ngIf="statistics.totalMovies === 0">
-        <mat-card-header>
-          <mat-icon mat-card-avatar>info</mat-icon>
-          <mat-card-title>Catálogo Vacío</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>No tienes películas en tu catálogo. Agrega películas desde la sección de Contenidos para ver estadísticas.</p>
-          <button mat-raised-button color="primary" (click)="navigateToDashboard()">
-            <mat-icon>add_circle</mat-icon> Agregar Películas
-          </button>
-        </mat-card-content>
-      </mat-card>
-      <br> <br><br> <br><br> <br><br> <br><br> <br><br> <br>
-    </div>
-    <mat-card class="stat-card" *ngIf="topMovies.length > 0">
+    <!-- Total -->
+    <mat-card class="stat-card total-content">
       <mat-card-header>
-        <mat-card-title class="card-title-centered">Películas Mejor Calificadas</mat-card-title>
+        <mat-card-title>Total de Contenidos</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <div class="movies-grid">
-          <div class="movie-card-wrapper" *ngFor="let movie of topMovies">
-            <app-movie-card [movie]="movie" [titulo]="movie.titulo" [imagen]="movie.imagen"></app-movie-card>
-            <div class="stat-rating">
-              Promedio: {{ movie.calificacion | number:'1.1-2' }}
-            </div>
-          </div>
+        <div class="stat-value">{{ statistics.totalMovies + statistics.totalSeries }}</div>
+        <p>Películas: {{ statistics.totalMovies }}</p>
+        <p>Series: {{ statistics.totalSeries }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Distribución por Género -->
+    <mat-card class="stat-card genre-distribution" *ngIf="getGenreKeys().length > 0">
+      <mat-card-header>
+        <mat-card-title>Distribución por Género</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let genre of getGenreKeys()" class="genre-item">
+          <span>{{ genre }}</span>
+          <span class="genre-count">{{ statistics.genreDistribution[genre] }}</span>
         </div>
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="stat-card" *ngIf="topSeries.length > 0">
+    <!-- Top Movie -->
+    <mat-card class="stat-card best-movie" *ngIf="statistics.topMovie">
       <mat-card-header>
-        <mat-card-title class="card-title-centered">Series Mejor Calificadas</mat-card-title>
+        <mat-card-title>Película Mejor Calificada</mat-card-title>
       </mat-card-header>
+      <img mat-card-image [src]="statistics.topMovie.imagen" alt="{{ statistics.topMovie.titulo }}">
       <mat-card-content>
-        <div class="movies-grid">
-          <div class="movie-card-wrapper" *ngFor="let serie of topSeries">
-            <app-serie-card [serie]="serie" [titulo]="serie.titulo" [imagen]="serie.imagen"></app-serie-card>
-            <div class="stat-rating">
-              Promedio: {{ serie.calificacion | number:'1.1-2' }}
-            </div>
-          </div>
-        </div>
+        <h3>{{ statistics.topMovie.titulo }}</h3>
+        <p>Calificación: {{ statistics.topMovie.calificacion }}</p>
       </mat-card-content>
     </mat-card>
+
+    <!-- Worst Movie -->
+    <mat-card class="stat-card worst-movie" *ngIf="statistics.worstMovie">
+      <mat-card-header>
+        <mat-card-title>Película Peor Calificada</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="statistics.worstMovie.imagen" alt="{{ statistics.worstMovie.titulo }}">
+      <mat-card-content>
+        <h3>{{ statistics.worstMovie.titulo }}</h3>
+        <p>Calificación: {{ statistics.worstMovie.calificacion }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Top Serie -->
+    <mat-card class="stat-card best-serie" *ngIf="statistics.topSerie">
+      <mat-card-header>
+        <mat-card-title>Serie Mejor Calificada</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="statistics.topSerie.imagen" alt="{{ statistics.topSerie.titulo }}">
+      <mat-card-content>
+        <h3>{{ statistics.topSerie.titulo }}</h3>
+        <p>Calificación: {{ statistics.topSerie.calificacion }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Worst Serie -->
+    <mat-card class="stat-card worst-serie" *ngIf="statistics.worstSerie">
+      <mat-card-header>
+        <mat-card-title>Serie Peor Calificada</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="statistics.worstSerie.imagen" alt="{{ statistics.worstSerie.titulo }}">
+      <mat-card-content>
+        <h3>{{ statistics.worstSerie.titulo }}</h3>
+        <p>Calificación: {{ statistics.worstSerie.calificacion }}</p>
+      </mat-card-content>
+    </mat-card>
+
   </div>
 </div>

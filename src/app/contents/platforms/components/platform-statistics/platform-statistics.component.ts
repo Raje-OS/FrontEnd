@@ -35,13 +35,25 @@ import {SerieCardComponent} from '../../../series/components/serie-card/serie-ca
 export class PlatformStatisticsComponent implements OnInit {
   currentPlatform: Platform | null = null;
   catalogMovies: any[] = [];
-  topMovies: any[] = [];
-  topSeries: any[] = [];
+  catalogSeries: any[] = [];
   loading: boolean = false;
-  statistics: any = {
+
+  statistics: {
+    totalMovies: number;
+    totalSeries: number;
+    genreDistribution: Record<string, number>;
+    topMovie: any | null;
+    worstMovie: any | null;
+    topSerie: any | null;
+    worstSerie: any | null;
+  } = {
     totalMovies: 0,
+    totalSeries: 0,
     genreDistribution: {},
-    yearDistribution: {}
+    topMovie: null,
+    worstMovie: null,
+    topSerie: null,
+    worstSerie: null
   };
 
   constructor(
@@ -58,77 +70,83 @@ export class PlatformStatisticsComponent implements OnInit {
       this.router.navigate(['/login']);
       return;
     }
-    this.loadCatalogMovies();
-    this.loadTopContent();
+
+    this.loadCatalog();
   }
 
-
-  loadTopContent(): void {
-    // Películas top del catálogo de la plataforma
-    this.movieService.getMoviesOrderedByRating().subscribe(movies => {
-      this.topMovies = movies.filter(m =>
-        this.currentPlatform?.catalog.includes(m.id)
-      ) // Top 5
-    });
-    // Series top del catálogo de la plataforma
-    this.serieService.getSeriesOrderedByRating().subscribe(series => {
-      this.topSeries = series.filter(s =>
-        this.currentPlatform?.catalog.includes(s.id)
-      ) // Top 5
-    });
-  }
-
-  loadCatalogMovies(): void {
+  loadCatalog(): void {
     this.loading = true;
+    const platformId = this.currentPlatform?.id;
 
-    if (!this.currentPlatform || !this.currentPlatform.catalog || this.currentPlatform.catalog.length === 0) {
-      this.loading = false;
-      return;
-    }
-
-    // Load all movies first
-    this.movieService.getAllMovies().subscribe(movies => {
-      // Filter movies that are in the platform's catalog
+    this.movieService.getMovies().subscribe(movies => {
       this.catalogMovies = movies.filter(movie =>
-        this.currentPlatform?.catalog.includes(movie.id)
+        movie.plataformas_id?.includes(platformId)
       );
 
-      this.calculateStatistics();
-      this.loading = false;
+      this.serieService.getSeries().subscribe(series => {
+        this.catalogSeries = series.filter(serie =>
+          serie.plataformas_id?.includes(platformId)
+        );
+
+        this.calculateStatistics();
+        this.loading = false;
+      });
     });
   }
 
   calculateStatistics(): void {
-    // Total movies
     this.statistics.totalMovies = this.catalogMovies.length;
+    this.statistics.totalSeries = this.catalogSeries.length;
 
-    // Genre distribution
-    const genreCount: {[key: string]: number} = {};
-    this.catalogMovies.forEach(movie => {
-      if (movie.genero) {
-        if (genreCount[movie.genero]) {
-          genreCount[movie.genero]++;
-        } else {
-          genreCount[movie.genero] = 1;
+    const genreCount: Record<string, number> = {};
+    let topMovie = null;
+    let worstMovie = null;
+    let topSerie = null;
+    let worstSerie = null;
+
+    // Películas
+    for (const movie of this.catalogMovies) {
+      movie.genero?.forEach((g: string) => {
+        genreCount[g] = (genreCount[g] || 0) + 1;
+      });
+
+      if (typeof movie.calificacion === 'number') {
+        if (!topMovie || movie.calificacion > (topMovie.calificacion || 0)) {
+          topMovie = movie;
+        }
+        if (!worstMovie || movie.calificacion < (worstMovie.calificacion || 5)) {
+          worstMovie = movie;
         }
       }
-    });
+    }
+
+    // Series
+    for (const serie of this.catalogSeries) {
+      serie.genero?.forEach((g: string) => {
+        genreCount[g] = (genreCount[g] || 0) + 1;
+      });
+
+      if (typeof serie.calificacion === 'number') {
+        if (!topSerie || serie.calificacion > (topSerie.calificacion || 0)) {
+          topSerie = serie;
+        }
+        if (!worstSerie || serie.calificacion < (worstSerie.calificacion || 5)) {
+          worstSerie = serie;
+        }
+      }
+    }
+
     this.statistics.genreDistribution = genreCount;
-
-    // Year distribution
-    const yearCount: {[key: string]: number} = {};
-    this.catalogMovies.forEach(movie => {
-      if (movie.anio) {
-        const year = movie.anio.toString();
-        if (yearCount[year]) {
-          yearCount[year]++;
-        } else {
-          yearCount[year] = 1;
-        }
-      }
-    });
-    this.statistics.yearDistribution = yearCount;
+    this.statistics.topMovie = topMovie;
+    this.statistics.worstMovie = worstMovie;
+    this.statistics.topSerie = topSerie;
+    this.statistics.worstSerie = worstSerie;
   }
+
+  getGenreKeys(): string[] {
+    return Object.keys(this.statistics.genreDistribution);
+  }
+
 
   navigateToDashboard(): void {
     this.router.navigate(['/platform-dashboard']);
@@ -139,18 +157,5 @@ export class PlatformStatisticsComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  // Make Object available in the template
-  Object = Object;
 
-  getGenreKeys(): string[] {
-    return Object.keys(this.statistics.genreDistribution).sort();
-  }
-
-  getYearKeys(): string[] {
-    return Object.keys(this.statistics.yearDistribution).sort((a, b) => parseInt(b) - parseInt(a));
-  }
-
-  getPercentage(value: number, total: number): number {
-    return total > 0 ? (value / total) * 100 : 0;
-  }
 }

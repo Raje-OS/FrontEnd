@@ -5,7 +5,7 @@ export class Platform {
   imagen: string;
   email: string;
   password: string;
-  catalog: string[] = [];
+
 
   constructor(platform: {
     id?: string,
@@ -14,7 +14,7 @@ export class Platform {
     imagen?: string,
     email?: string,
     password?: string,
-    catalog?: string[]
+
   }) {
     this.id = platform.id || '';
     this.nombre = platform.nombre || '';
@@ -22,6 +22,6 @@ export class Platform {
     this.imagen = platform.imagen || '';
     this.email = platform.email || '';
     this.password = platform.password || '';
-    this.catalog = platform.catalog || [];
+
   }
 }

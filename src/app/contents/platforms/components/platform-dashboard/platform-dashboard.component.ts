@@ -35,15 +35,16 @@ import {SerieService} from '../../../series/services/serie.service.service';
 export class PlatformDashboardComponent implements OnInit {
   currentPlatform: Platform | null = null;
   activeTab: string = 'content';
-  allSeries: any[] = [];
-  catalogSeries: any[] = [];
   allMovies: any[] = [];
+  allSeries: any[] = [];
   catalogMovies: any[] = [];
+  catalogSeries: any[] = [];
+  availableMovies: any[] = [];
+  availableSeries: any[] = [];
   loading: boolean = false;
 
   constructor(
     private authService: AuthService,
-    private platformService: PlatformService,
     private movieService: MovieService,
     private seriesService: SerieService,
     private router: Router,
@@ -56,187 +57,78 @@ export class PlatformDashboardComponent implements OnInit {
       this.router.navigate(['/login']);
       return;
     }
-    this.loadMovies();
-    this.loadSeries();
+    this.loadContent();
   }
-  loadSeries(): void {
+
+  loadContent(): void {
     this.loading = true;
-
-    this.seriesService.getAllSeries().subscribe(series => {
-      this.allSeries = series;
-
-      if (this.currentPlatform && this.currentPlatform.catalog && this.currentPlatform.catalog.length > 0) {
-        this.loadCatalogSeries();
-      } else {
-        this.catalogSeries = [];
-        this.loading = false;
-      }
-    });
-  }
-
-  loadCatalogSeries(): void {
-    if (!this.currentPlatform || !this.currentPlatform.catalog) {
-      this.loading = false;
-      return;
-    }
-
-    const catalogIds = this.currentPlatform.catalog;
-    if (catalogIds.length === 0) {
-      this.catalogSeries = [];
-      this.loading = false;
-      return;
-    }
-
-    this.catalogSeries = this.allSeries.filter(serie =>
-      catalogIds.includes(serie.id)
-    );
-    this.loading = false;
-  }
-
-
-  loadMovies(): void {
-    this.loading = true;
-
-    // Load all movies
-    this.movieService.getAllMovies().subscribe(movies => {
+    this.movieService.getMovies().subscribe(movies => {
       this.allMovies = movies;
-
-      // If platform has movies in catalog, load them
-      if (this.currentPlatform && this.currentPlatform.catalog && this.currentPlatform.catalog.length > 0) {
-        this.loadCatalogMovies();
-      } else {
-        this.catalogMovies = [];
+      this.updateMovieLists();
+      this.seriesService.getSeries().subscribe(series => {
+        this.allSeries = series;
+        this.updateSeriesLists();
         this.loading = false;
-      }
+      });
+    });
+  }
+
+  updateMovieLists(): void {
+    const pid = this.currentPlatform?.id;
+    this.catalogMovies = this.allMovies.filter(m => m.plataformas_id?.includes(pid));
+    this.availableMovies = this.allMovies.filter(m => !m.plataformas_id?.includes(pid));
+  }
+
+  updateSeriesLists(): void {
+    const pid = this.currentPlatform?.id;
+    this.catalogSeries = this.allSeries.filter(s => s.plataformas_id?.includes(pid));
+    this.availableSeries = this.allSeries.filter(s => !s.plataformas_id?.includes(pid));
+  }
+
+  addMovieToCatalog(movie: any): void {
+    if (!this.currentPlatform) return;
+    movie.plataformas_id = movie.plataformas_id || [];
+    if (!movie.plataformas_id.includes(this.currentPlatform.id)) {
+      movie.plataformas_id.push(this.currentPlatform.id);
+      this.movieService.updateMovie(movie).subscribe(() => {
+        this.loadContent();
+        this.snackBar.open('Película añadida al catálogo', '', { duration: 1500 });
+      });
+    }
+  }
+
+  removeMovieFromCatalog(movie: any): void {
+    if (!this.currentPlatform) return;
+    movie.plataformas_id = (movie.plataformas_id || []).filter((id: string) => id !== this.currentPlatform?.id);
+    this.movieService.updateMovie(movie).subscribe(() => {
+      this.loadContent();
+      this.snackBar.open('Película eliminada del catálogo', '', { duration: 1500 });
+    });
+  }
+
+  addSerieToCatalog(serie: any): void {
+    if (!this.currentPlatform) return;
+    serie.plataformas_id = serie.plataformas_id || [];
+    if (!serie.plataformas_id.includes(this.currentPlatform.id)) {
+      serie.plataformas_id.push(this.currentPlatform.id);
+      this.seriesService.updateSerie(serie).subscribe(() => {
+        this.loadContent();
+        this.snackBar.open('Serie añadida al catálogo', '', { duration: 1500 });
+      });
+    }
+  }
+
+  removeSerieFromCatalog(serie: any): void {
+    if (!this.currentPlatform) return;
+    serie.plataformas_id = (serie.plataformas_id || []).filter((id: string) => id !== this.currentPlatform?.id);
+    this.seriesService.updateSerie(serie).subscribe(() => {
+      this.loadContent();
+      this.snackBar.open('Serie eliminada del catálogo', '', { duration: 1500 });
     });
   }
 
 
 
-  loadCatalogMovies(): void {
-    if (!this.currentPlatform || !this.currentPlatform.catalog) {
-      this.loading = false;
-      return;
-    }
-
-    const catalogIds = this.currentPlatform.catalog;
-    if (catalogIds.length === 0) {
-      this.catalogMovies = [];
-      this.loading = false;
-      return;
-    }
-
-    this.catalogMovies = this.allMovies.filter(movie =>
-      catalogIds.includes(movie.id)
-    );
-    this.loading = false;
-  }
-
-  isSerieInCatalog(serieId: string): boolean {
-    return this.currentPlatform?.catalog?.includes(serieId) || false;
-  }
-
-
-  addMovieToCatalog(movieId: string): void {
-    if (!this.currentPlatform) return;
-
-    this.loading = true;
-    this.platformService.addMovieToCatalog(this.currentPlatform.id, movieId)
-      .subscribe(updatedPlatform => {
-        this.currentPlatform = updatedPlatform;
-        this.authService.platformLogout();
-        localStorage.setItem('currentPlatform', JSON.stringify(updatedPlatform));
-        this.loadCatalogMovies();
-        this.snackBar.open('Película agregada al catálogo', 'Cerrar', {
-          duration: 3000,
-          panelClass: ['custom-snackbar']
-        });
-      }, error => {
-        console.error('Error adding movie to catalog', error);
-        this.loading = false;
-        this.snackBar.open('Error al agregar la película', 'Cerrar', {
-          duration: 3000,
-          panelClass: ['custom-snackbar']
-        });
-      });
-  }
-
-  removeMovieFromCatalog(movieId: string): void {
-    if (!this.currentPlatform) return;
-
-    this.loading = true;
-    this.platformService.removeMovieFromCatalog(this.currentPlatform.id, movieId)
-      .subscribe(updatedPlatform => {
-        this.currentPlatform = updatedPlatform;
-        this.authService.platformLogout();
-        localStorage.setItem('currentPlatform', JSON.stringify(updatedPlatform));
-        this.loadCatalogMovies();
-        this.snackBar.open('Película eliminada del catálogo', 'Cerrar', {
-          duration: 3000,
-          panelClass: ['custom-snackbar']
-        });
-      }, error => {
-        console.error('Error removing movie from catalog', error);
-        this.loading = false;
-        this.snackBar.open('Error al eliminar la película', 'Cerrar', {
-          duration: 3000,
-          panelClass: ['custom-snackbar']
-        });
-      });
-  }
-
-  addSerieToCatalog(serieId: string): void {
-    if (!this.currentPlatform) return;
-
-    this.loading = true;
-    this.platformService.addSerieToCatalog(this.currentPlatform.id, serieId)
-      .subscribe(updatedPlatform => {
-        this.currentPlatform = updatedPlatform;
-        this.authService.platformLogout();
-        localStorage.setItem('currentPlatform', JSON.stringify(updatedPlatform));
-        this.loadCatalogSeries();
-        this.snackBar.open('Serie agregada al catálogo', 'Cerrar', {
-          duration: 3000,
-          panelClass: ['custom-snackbar']
-        });
-      }, error => {
-        console.error('Error adding serie to catalog', error);
-        this.loading = false;
-        this.snackBar.open('Error al agregar la serie', 'Cerrar', {
-          duration: 3000,
-          panelClass: ['custom-snackbar']
-        });
-      });
-  }
-
-  removeSerieFromCatalog(serieId: string): void {
-    if (!this.currentPlatform) return;
-
-    this.loading = true;
-    this.platformService.removeSerieFromCatalog(this.currentPlatform.id, serieId)
-      .subscribe(updatedPlatform => {
-        this.currentPlatform = updatedPlatform;
-        this.authService.platformLogout();
-        localStorage.setItem('currentPlatform', JSON.stringify(updatedPlatform));
-        this.loadCatalogSeries();
-        this.snackBar.open('Serie eliminada del catálogo', 'Cerrar', {
-          duration: 3000,
-          panelClass: ['custom-snackbar']
-        });
-      }, error => {
-        console.error('Error removing serie from catalog', error);
-        this.loading = false;
-        this.snackBar.open('Error al eliminar la serie', 'Cerrar', {
-          duration: 3000,
-          panelClass: ['custom-snackbar']
-        });
-      });
-  }
-
-
-  isInCatalog(movieId: string): boolean {
-    return this.currentPlatform?.catalog?.includes(movieId) || false;
-  }
 
   logout(): void {
     this.authService.platformLogout();
