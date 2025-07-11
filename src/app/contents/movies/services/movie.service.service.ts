@@ -20,10 +20,6 @@ export class MovieService {
     return this.http.get<any[]>(this.baseUrl);
   }
 
-  getAllMovies(): Observable<any[]> {
-    return this.http.get<any[]>(this.baseUrl);
-  }
-
   getMovieById(id: string): Observable<any> {
     return this.http.get<any[]>(`${this.baseUrl}?id=${id}`).pipe(
       map(movies => movies[0] || {})  // <-- Esto devuelve el primer objeto del array
