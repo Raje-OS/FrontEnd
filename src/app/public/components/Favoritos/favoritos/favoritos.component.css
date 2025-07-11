@@ -1,3 +1,8 @@
+.body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(to bottom, #111111, #361717);
+}
 .favoritos-container {
   display: flex;
   flex-direction: column;
@@ -6,8 +11,8 @@
   background: linear-gradient(to bottom, #111111, #361717);
   color: #fff;
   gap: 40px;
+  min-height: 100vh;
   margin-top: 50px;
-
 }
 .no-favoritos {
   background: linear-gradient(135deg, #121212, #2a1215);
@@ -21,6 +26,7 @@
   animation: fadeIn 0.8s ease-out forwards;
   font-family: 'Arial', sans-serif;
   margin-top: 20px;
+
 }
 
 .no-favoritos h2 {
