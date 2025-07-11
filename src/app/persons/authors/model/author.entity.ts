@@ -2,7 +2,7 @@ export class Author {
   id: string;
   nombre: string;
   descripcion: string;
-  edad: number;
+  fechaNacimiento: string;
   ciudad_origen: string;
   imagen: string;
 
@@ -10,7 +10,7 @@ export class Author {
     this.id = author.id || '';
     this.nombre = author.nombre || '';
     this.descripcion = author.descripcion || '';
-    this.edad = author.edad || 0;
+    this.fechaNacimiento = author.fechaNacimiento || '';
     this.ciudad_origen = author.ciudad_origen || '';
     this.imagen = author.imagen || '';
   }
