@@ -359,7 +359,7 @@
       "id": "AC001",
       "nombre": "Daniel Radcliffe",
       "descripcion": "Actor británico conocido por interpretar a Harry Potter en la saga de 'Harry Potter'.",
-      "edad": 33,
+      "fechaNacimiento": "1989-07-23",
       "ciudad_origen": "Londres, Reino Unido",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/DanielRadcliffe.jpg/1200px-DanielRadcliffe.jpg"
     },
@@ -367,7 +367,7 @@
       "id": "AC002",
       "nombre": "Rupert Grint",
       "descripcion": "Actor británico conocido por interpretar a Ron Weasley en la saga de 'Harry Potter'.",
-      "edad": 34,
+      "fechaNacimiento": "1988-08-24",
       "ciudad_origen": "Harlow, Essex, Reino Unido",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/9/93/RupertGrint2018.jpg"
     },
@@ -375,7 +375,7 @@
       "id": "AC003",
       "nombre": "Emma Watson",
       "descripcion": "Actriz británica conocida por interpretar a Hermione Granger en la saga de 'Harry Potter'.",
-      "edad": 33,
+      "fechaNacimiento": "1990-04-15",
       "ciudad_origen": "París, Francia",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Emma_Watson_2013.jpg"
     },
@@ -383,7 +383,7 @@
       "id": "AC004",
       "nombre": "Gary Oldman",
       "descripcion": "Actor británico conocido por interpretar a Sirius Black en la saga de 'Harry Potter'.",
-      "edad": 65,
+      "fechaNacimiento": "1958-03-21",
       "ciudad_origen": "Londres, Reino Unido",
       "imagen": "https://es.web.img2.acsta.net/pictures/16/03/18/16/03/398105.jpg"
     },
@@ -391,7 +391,7 @@
       "id": "AC005",
       "nombre": "Michael Gambon",
       "descripcion": "Actor británico conocido por interpretar a Albus Dumbledore en las películas de 'Harry Potter' desde la tercera entrega en adelante.",
-      "edad": 82,
+      "fechaNacimiento": "1940-10-19",
       "ciudad_origen": "Dublín, Irlanda",
       "imagen": "https://static.wikia.nocookie.net/esharrypotter/images/4/45/Michael_Gambon.jpg/revision/latest?cb=20120217213409"
     },
@@ -399,7 +399,7 @@
       "id": "AC006",
       "nombre": "Ralph Fiennes",
       "descripcion": "Actor británico conocido por interpretar a Lord Voldemort en la saga de 'Harry Potter'.",
-      "edad": 62,
+      "fechaNacimiento": "1962-12-22",
       "ciudad_origen": "Ipswich, Suffolk, Reino Unido",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/27/Ralph_Fiennes_2024.jpg"
     },
@@ -407,7 +407,7 @@
       "id": "AC007",
       "nombre": "Marlon Brando",
       "descripcion": "Actor estadounidense considerado uno de los mejores actores de todos los tiempos, conocido por su papel como Vito Corleone en 'El Padrino'.",
-      "edad": 80,
+      "fechaNacimiento": "1924-04-03",
       "ciudad_origen": "Omaha, Nebraska, Estados Unidos",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/53/Marlon_Brando_publicity_for_One-Eyed_Jacks.png"
     },
@@ -415,7 +415,7 @@
       "id": "AC008",
       "nombre": "Al Pacino",
       "descripcion": "Actor estadounidense conocido por interpretar a Michael Corleone en la trilogía de 'El Padrino' y Tony Montana en 'Scarface'.",
-      "edad": 85,
+      "fechaNacimiento": "1940-04-25",
       "ciudad_origen": "Nueva York, Nueva York, Estados Unidos",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Al_Pacino.jpg/250px-Al_Pacino.jpg"
     },
@@ -423,7 +423,7 @@
       "id": "AC009",
       "nombre": "Robert De Niro",
       "descripcion": "Actor estadounidense conocido por sus papeles en 'El Padrino II', 'Taxi Driver' y 'Goodfellas'.",
-      "edad": 81,
+      "fechaNacimiento": "1943-08-17",
       "ciudad_origen": "Nueva York, Nueva York, Estados Unidos",
       "imagen": "https://www.lavanguardia.com/peliculas-series/images/profile/1943/8/w1280/cT8htcckIuyI1Lqwt1CvD02ynTh.jpg"
     },
@@ -431,7 +431,7 @@
       "id": "AC010",
       "nombre": "Diane Keaton",
       "descripcion": "Actriz estadounidense conocida por su papel como Kay Adams en la trilogía de 'El Padrino' y su trabajo en comedias románticas como 'Annie Hall'.",
-      "edad": 79,
+      "fechaNacimiento": "1946-01-05",
       "ciudad_origen": "Los Ángeles, California, Estados Unidos",
       "imagen": "https://cdn.britannica.com/90/205790-050-2C5E5478/Diane-Keaton-2007.jpg"
     },
@@ -439,7 +439,7 @@
       "id": "AC011",
       "nombre": "Christian Bale",
       "descripcion": "Actor británico conocido por interpretar a Bruce Wayne/Batman en la trilogía de 'El Caballero de la Noche'.",
-      "edad": 51,
+      "fechaNacimiento": "1974-01-30",
       "ciudad_origen": "Haverfordwest, Gales, Reino Unido",
       "imagen": "https://cdn.shopify.com/s/files/1/1475/0992/files/BRuce_Wayne_haircut_600x600.jpg?v=1641393766"
     },
@@ -447,7 +447,7 @@
       "id": "AC012",
       "nombre": "Michael Caine",
       "descripcion": "Actor británico conocido por su papel como Alfred Pennyworth en la trilogía de 'El Caballero de la Noche'.",
-      "edad": 90,
+      "fechaNacimiento": "1933-03-14",
       "ciudad_origen": "Londres, Reino Unido",
       "imagen": "https://media.themoviedb.org/t/p/w500/bVZRMlpjTAO2pJK6v90buFgVbSW.jpg"
     },
@@ -455,7 +455,7 @@
       "id": "AC013",
       "nombre": "Heath Ledger",
       "descripcion": "Actor australiano conocido por su interpretación icónica como el Joker en 'El Caballero de la Noche'.",
-      "edad": 28,
+      "fechaNacimiento": "1979-04-04",
       "ciudad_origen": "Perth, Australia",
       "imagen": "https://m.media-amazon.com/images/M/MV5BMTI2NTY0NzA4MF5BMl5BanBnXkFtZTYwMjE1MDE0._V1_FMjpg_UX1000_.jpg"
     },
@@ -463,7 +463,7 @@
       "id": "AC014",
       "nombre": "Tom Hardy",
       "descripcion": "Actor británico conocido por su papel como Bane en 'El Caballero de la Noche Asciende'.",
-      "edad": 47,
+      "fechaNacimiento": "1977-09-15",
       "ciudad_origen": "Hammersmith, Londres, Reino Unido",
       "imagen": "https://hips.hearstapps.com/hmg-prod/images/tom-hardy-attends-the-sentebale-audi-concert-at-hampton-news-photo-1585580334.jpg?crop=0.605xw:1.00xh;0.120xw,0&resize=1200:*"
     },
@@ -471,7 +471,7 @@
       "id": "AC015",
       "nombre": "Timothée Chalamet",
       "descripcion": "Actor estadounidense conocido por su papel como Paul Atreides en 'Dune' y por su actuación en 'Call Me by Your Name'.",
-      "edad": 29,
+      "fechaNacimiento": "1995-12-27",
       "ciudad_origen": "Nueva York, Nueva York, Estados Unidos",
       "imagen": "https://media.vogue.mx/photos/61ae54524e8164be2c15aa6f/2:3/w_2560%2Cc_limit/GettyImages-1347362857.jpg"
     },
@@ -479,7 +479,7 @@
       "id": "AC016",
       "nombre": "Zendaya",
       "descripcion": "Actriz estadounidense conocida por su papel como Chani en 'Dune' y como MJ en las películas de 'Spider-Man' del MCU.",
-      "edad": 28,
+      "fechaNacimiento": "1996-09-01",
       "ciudad_origen": "Oakland, California, Estados Unidos",
       "imagen": "https://es.web.img2.acsta.net/c_310_420/pictures/19/12/26/23/19/0993801.jpg"
     },
@@ -487,7 +487,7 @@
       "id": "AC017",
       "nombre": "Matthew McConaughey",
       "descripcion": "Actor estadounidense conocido por su papel como Cooper en 'Interstellar' y por películas como 'Dallas Buyers Club' y 'True Detective'.",
-      "edad": 55,
+      "fechaNacimiento": "1969-11-04",
       "ciudad_origen": "Uvalde, Texas, Estados Unidos",
       "imagen": "https://m.media-amazon.com/images/M/MV5BMTg0MDc3ODUwOV5BMl5BanBnXkFtZTcwMTk2NjY4Nw@@._V1_FMjpg_UX1000_.jpg"
     },
@@ -495,7 +495,7 @@
       "id": "AC018",
       "nombre": "Anne Hathaway",
       "descripcion": "Actriz estadounidense conocida por su papel como Amelia Brand en 'Interstellar' y por películas como 'The Devil Wears Prada' y 'Les Misérables'.",
-      "edad": 42,
+      "fechaNacimiento": "1982-11-12",
       "ciudad_origen": "Brooklyn, Nueva York, Estados Unidos",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Anne_Hathaway_2014_%28cropped%29.jpg/250px-Anne_Hathaway_2014_%28cropped%29.jpg"
     },
@@ -503,7 +503,7 @@
       "id": "AC019",
       "nombre": "Miles Teller",
       "descripcion": "Actor estadounidense conocido por su papel como Andrew Neiman en 'Whiplash' y por películas como 'Top Gun: Maverick' y 'Fantastic Four'.",
-      "edad": 38,
+      "fechaNacimiento": "1987-02-20",
       "ciudad_origen": "Downingtown, Pensilvania, Estados Unidos",
       "imagen": "https://cdn-images.dzcdn.net/images/artist/120c3fe12a07412eb0300387edc0da34/1900x1900-000000-80-0-0.jpg"
     },
@@ -511,7 +511,7 @@
       "id": "AC020",
       "nombre": "J.K. Simmons",
       "descripcion": "Actor estadounidense conocido por su papel como Terence Fletcher en 'Whiplash' y por su interpretación de J. Jonah Jameson en las películas de 'Spider-Man'.",
-      "edad": 70,
+      "fechaNacimiento": "1955-01-09",
       "ciudad_origen": "Grosse Pointe, Míchigan, Estados Unidos",
       "imagen": "https://es.web.img2.acsta.net/c_310_420/pictures/16/01/05/15/02/175725.jpg"
     },
@@ -519,7 +519,7 @@
       "id": "AC021",
       "nombre": "Cillian Murphy",
       "descripcion": "Actor irlandés conocido por su papel como J. Robert Oppenheimer en 'Oppenheimer' y por su interpretación de Thomas Shelby en 'Peaky Blinders'.",
-      "edad": 49,
+      "fechaNacimiento": "1976-05-25",
       "ciudad_origen": "Douglas, Cork, Irlanda",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Cillian_Murphy-2014.jpg/250px-Cillian_Murphy-2014.jpg"
     },
@@ -527,7 +527,7 @@
       "id": "AC022",
       "nombre": "Emily Blunt",
       "descripcion": "Actriz británica conocida por su papel en 'Oppenheimer' y por películas como 'A Quiet Place' y 'The Devil Wears Prada'.",
-      "edad": 42,
+      "fechaNacimiento": "1983-02-23",
       "ciudad_origen": "Londres, Reino Unido",
       "imagen": "https://cdn.britannica.com/16/189516-050-E05AC3FA/Emily-Blunt-2013.jpg"
     },
@@ -535,7 +535,7 @@
       "id": "AC023",
       "nombre": "Joaquin Phoenix",
       "descripcion": "Actor estadounidense conocido por su papel como Arthur Fleck / Joker en 'Joker' y por películas como 'Gladiator' y 'Her'.",
-      "edad": 50,
+      "fechaNacimiento": "1974-10-28",
       "ciudad_origen": "San Juan, Puerto Rico",
       "imagen": "https://www.bekia.es/images/galeria/0000/538_joaquin-phoenix.jpg"
     },
@@ -543,7 +543,7 @@
       "id": "AC024",
       "nombre": "Robert Pattinson",
       "descripcion": "Actor británico conocido por su papel como Bruce Wayne / Batman en 'The Batman' y por su actuación en la saga 'Crepúsculo'.",
-      "edad": 39,
+      "fechaNacimiento": "1986-05-13",
       "ciudad_origen": "Londres, Reino Unido",
       "imagen": "https://m.media-amazon.com/images/M/MV5BNzk0MDQ5OTUxMV5BMl5BanBnXkFtZTcwMDM5ODk5Mg@@._V1_FMjpg_UX1000_.jpg"
     },
@@ -551,7 +551,7 @@
       "id": "AC025",
       "nombre": "Brad Pitt",
       "descripcion": "Actor estadounidense conocido por su papel como Tyler Durden en 'Fight Club' y por películas como 'Inglourious Basterds', 'Once Upon a Time in Hollywood' y 'Se7en'.",
-      "edad": 61,
+      "fechaNacimiento": "1963-12-18",
       "ciudad_origen": "Shawnee, Oklahoma, Estados Unidos",
       "imagen": "https://i.redd.it/henry-cavill-vs-brad-pitt-young-who-do-you-find-more-v0-40bbqhcji3mb1.jpg?width=2165&format=pjpg&auto=webp&s=c52bbc815839fadb5b2a1ebc1ae31c9b5d4f2249"
     },
@@ -559,7 +559,7 @@
       "id": "AC026",
       "nombre": "Edward Norton",
       "descripcion": "Actor estadounidense conocido por su papel como el Narrador en 'Fight Club' y por películas como 'American History X' y 'Birdman'.",
-      "edad": 56,
+      "fechaNacimiento": "1969-08-18",
       "ciudad_origen": "Boston, Massachusetts, Estados Unidos",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Ed_Norton_Shankbone_Metropolitan_Opera_2009.jpg/250px-Ed_Norton_Shankbone_Metropolitan_Opera_2009.jpg"
     },
@@ -567,7 +567,7 @@
       "id": "AC027",
       "nombre": "Steven Yeun",
       "descripcion": "Actor surcoreano-estadounidense conocido por su papel como Glenn Rhee en 'The Walking Dead' y por películas como 'Burning' y 'Minari'.",
-      "edad": 41,
+      "fechaNacimiento": "1983-12-21",
       "ciudad_origen": "Seúl, Corea del Sur",
       "imagen": "https://m.media-amazon.com/images/M/MV5BZTdkZDYwNzQtNmJhOC00NGRkLWJmOTgtZDM1NGE0ZDFmYTdmXkEyXkFqcGc@._V1_.jpg"
     },
@@ -575,7 +575,7 @@
       "id": "AC028",
       "nombre": "Mikey Madison",
       "descripcion": "Actriz estadounidense conocida por su papel en 'Anora' y por interpretar a Sadie en 'Once Upon a Time in Hollywood'.",
-      "edad": 25,
+      "fechaNacimiento": "1999-03-25",
       "ciudad_origen": "Los Ángeles, California, Estados Unidos",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Mikey_Madison_at_the_2024_New_York_Film_Festival_2_%28cropped_3%29.jpg"
     },
@@ -583,7 +583,7 @@
       "id": "AC029",
       "nombre": "Mark Eydelshteyn",
       "descripcion": "Actor estadounidense conocido por su papel en 'Anora'.",
-      "edad": 35,
+      "fechaNacimiento": "1989-06-01",
       "ciudad_origen": "Nueva York, Nueva York, Estados Unidos",
       "imagen": "https://ntvb.tmsimg.com/assets/assets/2143705_v9_aa.jpg"
     },
@@ -591,7 +591,7 @@
       "id": "AC030",
       "nombre": "Bob Odenkirk",
       "descripcion": "Actor estadounidense conocido por interpretar a Saul Goodman en 'Better Call Saul' y 'Breaking Bad'.",
-      "edad": 62,
+      "fechaNacimiento": "1962-10-22",
       "ciudad_origen": "Berwyn, Illinois, Estados Unidos",
       "imagen": "https://m.media-amazon.com/images/M/MV5BNjc1MDBkMWEtMzNmYy00NjFjLWFmZDktMzRlYThhMGQxZDYwXkEyXkFqcGc@._V1_.jpg"
     },
@@ -599,7 +599,7 @@
       "id": "AC031",
       "nombre": "Emilia Clarke",
       "descripcion": "Actriz británica conocida por su papel de Daenerys Targaryen en 'Game of Thrones'.",
-      "edad": 38,
+      "fechaNacimiento": "1986-10-23",
       "ciudad_origen": "Londres, Reino Unido",
       "imagen": "https://m.media-amazon.com/images/M/MV5BNjg3OTg4MDczMl5BMl5BanBnXkFtZTgwODc0NzUwNjE@._V1_FMjpg_UX1000_.jpg"
     },
@@ -607,7 +607,7 @@
       "id": "AC032",
       "nombre": "Matt Smith",
       "descripcion": "Actor británico conocido por su papel de Daemon Targaryen en 'House of the Dragon' y como el undécimo Doctor en 'Doctor Who'.",
-      "edad": 42,
+      "fechaNacimiento": "1982-10-28",
       "ciudad_origen": "Northampton, Reino Unido",
       "imagen": "https://www.lavanguardia.com/peliculas-series/images/profile/1982/10/w300/xr2GSp8Pm6fT5VGm0I9tsWVcZ8q.jpg"
     },
@@ -615,7 +615,7 @@
       "id": "AC033",
       "nombre": "Millie Bobby Brown",
       "descripcion": "Actriz británica conocida por interpretar a Eleven en 'Stranger Things'.",
-      "edad": 21,
+      "fechaNacimiento": "2004-02-19",
       "ciudad_origen": "Marbella, España",
       "imagen": "https://cdn-3.expansion.mx/dims4/default/3fb2f8a/2147483647/strip/true/crop/1200x1623+0+0/resize/1200x1623!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F19%2F8e%2F5770740546538c439659f532bb6d%2Fmillie-bobby-brown.jpg"
     },
@@ -623,7 +623,7 @@
       "id": "AC034",
       "nombre": "Karl Urban",
       "descripcion": "Actor neozelandés conocido por su papel de Billy Butcher en 'The Boys' y como Éomer en 'El Señor de los Anillos'.",
-      "edad": 52,
+      "fechaNacimiento": "1972-06-07",
       "ciudad_origen": "Wellington, Nueva Zelanda",
       "imagen": "https://www.lavanguardia.com/peliculas-series/images/profile/1972/6/w1280/bsAnEFgVm5kn8DbBZKfnlLNll89.jpg"
     },
@@ -631,7 +631,7 @@
       "id": "AC035",
       "nombre": "Henry Cavill",
       "descripcion": "Actor británico conocido por su interpretación de Geralt de Rivia en 'The Witcher' y como Superman en el universo DC.",
-      "edad": 42,
+      "fechaNacimiento": "1983-05-05",
       "ciudad_origen": "Saint Helier, Jersey, Reino Unido",
       "imagen": "https://www.lavanguardia.com/peliculas-series/images/all/profile/1983/5/73968/w1280/kN3A5oLgtKYAxa9lAkpsIGYKYVo.jpg"
     },
@@ -639,7 +639,7 @@
       "id": "AC041",
       "nombre": "Penn Badgley",
       "descripcion": "Actor estadounidense conocido por su interpretación de Joe Goldberg en 'You' y como Dan Humphrey en 'Gossip Girl'.",
-      "edad": 39,
+      "fechaNacimiento": "1986-11-01",
       "ciudad_origen": "Baltimore, Maryland, Estados Unidos",
       "imagen": "https://www.lavanguardia.com/peliculas-series/images/profile/1986/11/w1280/cWvqsJyD8wLZ9GXs2DqqepBIfdD.jpg"
     },
@@ -647,7 +647,7 @@
       "id": "AC037",
       "nombre": "Pedro Pascal",
       "descripcion": "Actor chileno-estadounidense conocido por su papel de Din Djarin en 'The Mandalorian' y como Oberyn Martell en 'Game of Thrones'.",
-      "edad": 50,
+      "fechaNacimiento": "1975-04-02",
       "ciudad_origen": "Santiago, Chile",
       "imagen": "https://www.usmagazine.com/wp-content/uploads/2024/11/Pedro-Pascal-Comes-From-a-Large-Family-Meet-the-Actors-Parents-and-Siblings.jpg?quality=86&strip=all"
     },
@@ -655,7 +655,7 @@
       "id": "AC038",
       "nombre": "Matthew McConaughey",
       "descripcion": "Actor estadounidense conocido por su interpretación de Rust Cohle en 'True Detective' y por películas como 'Dallas Buyers Club' y 'Interstellar'.",
-      "edad": 55,
+      "fechaNacimiento": "1969-11-04",
       "ciudad_origen": "Uvalde, Texas, Estados Unidos",
       "imagen": "https://m.media-amazon.com/images/M/MV5BMTg0MDc3ODUwOV5BMl5BanBnXkFtZTcwMTk2NjY4Nw@@._V1_FMjpg_UX1000_.jpg"
     },
@@ -663,7 +663,7 @@
       "id": "AC039",
       "nombre": "Rami Malek",
       "descripcion": "Actor estadounidense conocido por su papel de Elliot Alderson en 'Mr. Robot' y por interpretar a Freddie Mercury en 'Bohemian Rhapsody'.",
-      "edad": 44,
+      "fechaNacimiento": "1981-05-12",
       "ciudad_origen": "Los Ángeles, California, Estados Unidos",
       "imagen": "https://m.media-amazon.com/images/M/MV5BODA3OTM4ODU0MV5BMl5BanBnXkFtZTgwNjQ5Njg3NjM@._V1_FMjpg_UX1000_.jpg"
     },
@@ -671,7 +671,7 @@
       "id": "AC040",
       "nombre": "Jeremy Allen White",
       "descripcion": "Actor estadounidense conocido por interpretar a Carmen 'Carmy' Berzatto en 'The Bear' y por su papel en 'Shameless'.",
-      "edad": 33,
+      "fechaNacimiento": "1991-02-17",
       "ciudad_origen": "Brooklyn, Nueva York, Estados Unidos",
       "imagen": "https://tomatazos.buscafs.com/2018/03/jeremy-allen-white.jpg"
     },
@@ -679,7 +679,7 @@
       "id": "AC041",
       "nombre": "Penn Badgley",
       "descripcion": "Actor estadounidense conocido por su interpretación de Joe Goldberg en 'You' y como Dan Humphrey en 'Gossip Girl'.",
-      "edad": 39,
+      "fechaNacimiento": "1986-11-01",
       "ciudad_origen": "Baltimore, Maryland, Estados Unidos",
       "imagen": "https://www.lavanguardia.com/peliculas-series/images/profile/1986/11/w1280/cWvqsJyD8wLZ9GXs2DqqepBIfdD.jpg"
     },
@@ -687,7 +687,7 @@
       "id": "AC042",
       "nombre": "Álvaro Rico",
       "descripcion": "Actor español conocido por su papel de Elmer en 'El Jardinero (2025)' y como Polo en 'Élite'.",
-      "edad": 28,
+      "fechaNacimiento": "1996-08-13",
       "ciudad_origen": "La Puebla de Montalbán, Toledo, España",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/74/%C3%81lvaro_Rico_%282021%29_%28cropped_bis%29.jpg"
     },
@@ -695,7 +695,7 @@
       "id": "AC043",
       "nombre": "Bryan Cranston",
       "descripcion": "Actor estadounidense conocido por su papel de Walter White en 'Breaking Bad' y como Hal en 'Malcolm in the Middle'.",
-      "edad": 69,
+      "fechaNacimiento": "1956-03-07",
       "ciudad_origen": "Hollywood, California, Estados Unidos",
       "imagen": "https://m.media-amazon.com/images/M/MV5BMTA2NjEyMTY4MTVeQTJeQWpwZ15BbWU3MDQ5NDAzNDc@._V1_.jpg"
     },
@@ -703,7 +703,7 @@
       "id": "AC044",
       "nombre": "Aaron Paul",
       "descripcion": "Actor estadounidense conocido por su interpretación de Jesse Pinkman en 'Breaking Bad' y por su participación en 'BoJack Horseman' y 'Westworld'.",
-      "edad": 45,
+      "fechaNacimiento": "1979-08-27",
       "ciudad_origen": "Emmett, Idaho, Estados Unidos",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Aaron_Paul%2C_May_2009_%282%29_%28cropped%29.jpg/250px-Aaron_Paul%2C_May_2009_%282%29_%28cropped%29.jpg"
     },
@@ -711,7 +711,7 @@
       "id": "AC045",
       "nombre": "Taylor Russell",
       "descripcion": "Actriz canadiense reconocida por su papel en 'Bones and All' y 'Waves'.",
-      "edad": 29,
+      "fechaNacimiento": "1994-07-18",
       "ciudad_origen": "Vancouver, Canadá",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Taylor_Russell-64289.jpg"
     }
@@ -721,7 +721,7 @@
       "id": "AU002",
       "nombre": "Aldous Huxley",
       "descripcion": "Escritor británico conocido por su novela distópica 'Brave New World' (1932) y otros trabajos como 'Island' y 'The Doors of Perception'.",
-      "edad": 69,
+      "fechaNacimiento": "1894-07-26",
       "ciudad_origen": "Godalming, Surrey, Reino Unido",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Aldous_Huxley_1947.png"
     },
@@ -729,7 +729,7 @@
       "id": "AU003",
       "nombre": "Ray Bradbury",
       "descripcion": "Escritor estadounidense conocido por su novela 'Fahrenheit 451' (1953) y colecciones de cuentos como 'The Martian Chronicles' y 'Something Wicked This Way Comes'.",
-      "edad": 91,
+      "fechaNacimiento": "1920-08-22",
       "ciudad_origen": "Waukegan, Illinois, Estados Unidos",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/69/Ray_Bradbury_%281975%29_-cropped-.jpg"
     },
@@ -737,7 +737,7 @@
       "id": "AU004",
       "nombre": "J.R.R. Tolkien",
       "descripcion": "Escritor británico conocido por crear el universo de la Tierra Media en obras como 'The Silmarillion', 'The Hobbit' y 'The Lord of the Rings'.",
-      "edad": 81,
+      "fechaNacimiento": "1892-01-03",
       "ciudad_origen": "Bloemfontein, Estado Libre de Orange (actual Sudáfrica)",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Tolkien-color.png"
     },
@@ -745,7 +745,7 @@
       "id": "AU005",
       "nombre": "Frank Herbert",
       "descripcion": "Escritor estadounidense conocido principalmente por su saga de ciencia ficción 'Dune', considerada una de las obras más influyentes del género.",
-      "edad": 65,
+      "fechaNacimiento": "1920-10-08",
       "ciudad_origen": "Tacoma, Washington, Estados Unidos",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Frank_Herbert_1984_%28square%29.jpg/640px-Frank_Herbert_1984_%28square%29.jpg"
     },
@@ -753,7 +753,7 @@
       "id": "AU006",
       "nombre": "Fyodor Dostoevsky",
       "descripcion": "Escritor ruso considerado uno de los más grandes novelistas de todos los tiempos, conocido por obras como 'Crime and Punishment', 'The Brothers Karamazov' y 'The Idiot'.",
-      "edad": 59,
+      "fechaNacimiento": "1821-11-11",
       "ciudad_origen": "Moscú, Imperio Ruso",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/78/Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg"
     },
@@ -761,7 +761,7 @@
       "id": "AU007",
       "nombre": "Alexandre Dumas",
       "descripcion": "Escritor francés conocido por sus novelas de aventuras como 'The Count of Monte Cristo', 'The Three Musketeers' y 'Twenty Years After'.",
-      "edad": 68,
+      "fechaNacimiento": "1802-07-24",
       "ciudad_origen": "Villers-Cotterêts, Francia",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Alexander_Dumas_p%C3%A8re_par_Nadar_-_Google_Art_Project.jpg/1200px-Alexander_Dumas_p%C3%A8re_par_Nadar_-_Google_Art_Project.jpg"
     },
@@ -769,7 +769,7 @@
       "id": "AU008",
       "nombre": "Antoine de Saint-Exupéry",
       "descripcion": "Escritor y aviador francés conocido por su obra 'The Little Prince', una de las novelas más traducidas y leídas del mundo.",
-      "edad": 44,
+      "fechaNacimiento": "1900-06-29",
       "ciudad_origen": "Lyon, Francia",
       "imagen": "https://cdn.prod.website-files.com/6034d7d1f3e0f52c50b2adee/67a355f7410050f6a099f53c_gJH0Gi5JPlz2OzbbwlfdvW5p-OC2zTvGuPqpSFDPwos.jpeg"
     },
@@ -777,7 +777,7 @@
       "id": "AU009",
       "nombre": "Alan Moore",
       "descripcion": "Escritor británico de cómics conocido por obras influyentes como 'Watchmen', 'Batman: The Killing Joke' y 'V for Vendetta'.",
-      "edad": 71,
+      "fechaNacimiento": "1953-11-18",
       "ciudad_origen": "Northampton, Inglaterra",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Alan_Moore_%282%29.jpg/1200px-Alan_Moore_%282%29.jpg"
     },
@@ -785,7 +785,7 @@
       "id": "AU010",
       "nombre": "Art Spiegelman",
       "descripcion": "Caricaturista y escritor estadounidense conocido principalmente por 'Maus', una novela gráfica que relata la experiencia de su padre como sobreviviente del Holocausto.",
-      "edad": 75,
+      "fechaNacimiento": "1948-02-15",
       "ciudad_origen": "Estocolmo, Suecia",
       "imagen": "https://www.laimprentacg.com/wp-content/uploads/2023/03/art-spiegelman-02.jpg"
     },
@@ -793,7 +793,7 @@
       "id": "AU011",
       "nombre": "Kentaro Miura",
       "descripcion": "Mangaka japonés conocido por crear la serie 'Berserk', una de las obras más influyentes y aclamadas del manga moderno.",
-      "edad": 54,
+      "fechaNacimiento": "1966-07-11",
       "ciudad_origen": "Chiba, Japón",
       "imagen": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Kentaro_Miura_in_2020.jpg/250px-Kentaro_Miura_in_2020.jpg"
     },
@@ -801,7 +801,7 @@
       "id": "AU012",
       "nombre": "Hajime Isayama",
       "descripcion": "Mangaka japonés conocido por crear 'Attack on Titan', una de las series de manga más populares a nivel mundial.",
-      "edad": 37,
+      "fechaNacimiento": "1986-08-29",
       "ciudad_origen": "Ōyama, Japón",
       "imagen": "https://upload.wikimedia.org/wikipedia/commons/e/e9/FIBD2023HajimeIsayama_01.jpg"
     },
@@ -809,7 +809,7 @@
       "id": "AU013",
       "nombre": "Takehiko Inoue",
       "descripcion": "Mangaka japonés conocido por 'Vagabond' y 'Slam Dunk', dos de los mangas más vendidos y aclamados de todos los tiempos.",
-      "edad": 56,
+      "fechaNacimiento": "1967-01-12",
       "ciudad_origen": "Okuchi, Kagoshima, Japón",
       "imagen": "https://ramenparados.com/wp-content/uploads/2015/09/TakehikoInoue.jpg"
     },
@@ -817,7 +817,7 @@
       "id": "AU014",
       "nombre": "Sui Ishida",
       "descripcion": "Mangaka japonés conocido por crear 'Tokyo Ghoul', una serie que ha ganado popularidad mundial por su narrativa oscura y personajes complejos.",
-      "edad": 34,
+      "fechaNacimiento": "1986-12-28",
       "ciudad_origen": "Fukuoka, Japón",
       "imagen": "https://static.zerochan.net/Ishida.Sui.full.2908555.jpg"
     },
@@ -825,7 +825,7 @@
       "id": "AU015",
       "nombre": "Tsugumi Ohba",
       "descripcion": "Mangaka japonés conocido por ser el escritor de 'Death Note' y 'Bakuman', reconocidos por su narrativa intensa y personajes psicológicamente complejos.",
-      "edad": 60,
+      "fechaNacimiento": "1964-08-17",
       "ciudad_origen": "Tokio, Japón",
       "imagen": "https://pm1.aminoapps.com/7247/c67070b86ab943e8325bb78fa9994754839cbfb7r1-320-316v2_uhq.jpg"
     },
@@ -833,7 +833,7 @@
       "id": "AU016",
       "nombre": "Paulo Coelho",
       "descripcion": "Escritor brasileño conocido por 'El Alquimista', una de las novelas más traducidas y leídas en todo el mundo.",
-      "edad": 77,
+      "fechaNacimiento": "1947-08-24",
       "ciudad_origen": "Río de Janeiro, Brasil",
       "imagen": "https://www.excelencia.com/wp-content/uploads/2021/11/Captura-de-pantalla-2017-02-23-a-las-22.06.57-600x652-1.png"
     },
@@ -841,7 +841,7 @@
       "id": "AU017",
       "nombre": "Katsuhiro Otomo",
       "descripcion": "Mangaka, director y guionista japonés conocido por crear 'Akira', una de las obras más influyentes del manga y la animación moderna.",
-      "edad": 71,
+      "fechaNacimiento": "1954-04-14",
       "ciudad_origen": "Tome, Miyagi, Japón",
       "imagen": "https://www.akiracomics.com/imagenes/poridentidad?identidad=86b7b06e-0eb5-4fec-9b52-5f7edbfb71aa&ancho=850&alto="
     }
