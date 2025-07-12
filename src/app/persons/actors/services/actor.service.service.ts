@@ -19,7 +19,7 @@ export class ActorService {
   }
 
   getActorsByIds(ids: string[]): Observable<any[]> {
-    const queryString = ids.map(id => `id=${id}`).join('&');
+    const queryString = ids.map(id => `/${id}`).join('&');
     const url = `${this.baseUrl}?${queryString}`;
     return this.http.get<any[]>(url);
   }

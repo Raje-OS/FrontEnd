@@ -18,7 +18,7 @@ export class ListService extends BaseService<UserListEntity> {
   }
 
   getListsByUserId(userId: string): Observable<UserListEntity[]> {
-    const url = `${environment.serverBaseUrl}${this.resourceEndpoint}?userId=${userId}`;
+    const url = `${environment.serverBaseUrl}${this.resourceEndpoint}/${userId}`;
     return this.http.get<UserListEntity[]>(url);
   }
 }

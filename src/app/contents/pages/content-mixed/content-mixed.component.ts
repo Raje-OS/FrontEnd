@@ -53,16 +53,20 @@ export class ContentMixedComponent implements OnInit {
     const user = this.authService.getCurrentUser();
     if (!user) return;
 
-    this.userDetailService.getAll().subscribe(details => {
-      const userDetail = details.find(d => d.userId === user.id);
-      if (!userDetail) return;
-
-      this.favoriteIds = userDetail.favorites || [];
-      this.viewedIds = userDetail.viewed || [];
-
-      this.loadContent();
+    this.userDetailService.getByUserId(user.id).subscribe({
+      next: userDetail => {
+        this.favoriteIds = userDetail.favorites || [];
+        this.viewedIds = userDetail.viewed || [];
+        this.loadContent();
+      },
+      error: error => {
+        console.error('No se pudo cargar el UserDetail:', error);
+        // Puedes decidir cargar contenido igual si es necesario:
+        // this.loadContent();
+      }
     });
   }
+
 
   loadContent(): void {
     this.movieService.getMovies().subscribe(movies => {

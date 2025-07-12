@@ -15,7 +15,7 @@ export class AuthorService {
   constructor(private http: HttpClient) {}
 
   getAuthorById(id: string): Observable<Author> {
-    return this.http.get<any[]>(`${this.baseUrl}?id=${id}`).pipe(
+    return this.http.get<any[]>(`${this.baseUrl}/{id}`).pipe(
       map(authors => new Author(authors[0] || {}))
     );
   }

@@ -20,6 +20,10 @@ export class ListService extends BaseService<ListEntity> {
     return this.http.get<ListEntity[]>(`${this.resourcePath()}?userId=${userId}`, this.httpOptions);
   }
 
+  override create(resource: ListEntity): Observable<ListEntity> {
+    return this.http.post<ListEntity>(this.resourcePath(), resource, this.httpOptions);
+  }
+
   /** Agrega contenido (ID) a una lista */
   addContentToList(list: ListEntity, contenidoId: string): Observable<ListEntity> {
     const updatedList = {

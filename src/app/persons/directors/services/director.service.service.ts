@@ -18,7 +18,7 @@ export class DirectorService {
 
   getDirectorById(id: string): Observable<any> {
     // Esto devuelve solo el primer director que coincida con el ID
-    return this.http.get<any[]>(`${this.baseUrl}?id=${id}`).pipe(
+    return this.http.get<any[]>(`${this.baseUrl}/${id}`).pipe(
       map(directors => directors[0] || {})
     );
   }

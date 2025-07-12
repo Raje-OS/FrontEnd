@@ -11,7 +11,7 @@ export const environment = {
   bookEndpointPath: '/books',
   serieEndpointPath: '/series',
   reviewEndPointPath: '/reviews',
-  userDetailEndpointPath: '/userDetails',
+  userDetailEndpointPath: '/userdetails',
   listEndpointPath: '/lists',
   libraryEndpointPath: '/libraries',
 };
