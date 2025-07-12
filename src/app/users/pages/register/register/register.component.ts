@@ -71,7 +71,6 @@ export class RegisterComponent {
           email: this.email,
           password: this.password,
           platforms: [],
-          list: [],
           images: 'https://i.pinimg.com/236x/09/02/86/090286be7ffa5bc199ad0bb34af40d68.jpg'
         };
 

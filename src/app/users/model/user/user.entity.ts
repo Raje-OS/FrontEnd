@@ -6,7 +6,6 @@ export class User {
   email: string;
   password: string;
   platforms: string[];
-  list: { title: string; image: string }[];
   images: string;
 
   constructor(user: {
@@ -17,7 +16,6 @@ export class User {
     email?: string,
     password?: string,
     platforms?: string[],
-    list?: { title: string; image: string }[],
     images?: string
   }) {
     this.id = user.id || '';
@@ -27,7 +25,6 @@ export class User {
     this.email = user.email || '';
     this.password = user.password || '';
     this.platforms = user.platforms || [];
-    this.list = user.list || [];
     this.images = user.images || 'https://i.pinimg.com/236x/09/02/86/090286be7ffa5bc199ad0bb34af40d68.jpg';
   }
 }

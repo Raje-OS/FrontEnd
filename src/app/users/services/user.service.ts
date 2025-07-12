@@ -20,12 +20,6 @@ export class UserService extends BaseService<User>{
     return this.create(user);
   }
 
-  getByEmail(email: string): Observable<User | undefined> {
-    return this.getAll().pipe(
-      map(users => users.find(user => user.email === email))
-    );
-  }
-
   getUserById(userId: string): Observable<User> {
     const url = `${environment.serverBaseUrl}${environment.userEndpointPath}?id=${userId}`;
     console.log("User URL:", url);
@@ -37,7 +31,7 @@ export class UserService extends BaseService<User>{
           return users[0];
         }
         console.warn("No user found for ID:", userId);
-        return {} as User;  // Retorna un usuario vacío si no se encuentra
+        return {} as User;
       })
     );
   }

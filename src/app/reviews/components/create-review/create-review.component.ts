@@ -135,7 +135,7 @@ export class CreateReviewComponent implements OnInit {
             alert('No se pudo enviar la reseña.');
             this.loading = false;
           }
-        });
+        }); 
         window.location.reload();
       },
       error: err => {

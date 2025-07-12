@@ -899,7 +899,7 @@
         "PL003",
         "PL005"
       ],
-      "calificacion": 4.5,
+      "calificacion": 5,
       "sinopsis": "Harry regresa para su segundo año en Hogwarts, donde debe enfrentarse a un misterio oscuro y antiguo que amenaza a los estudiantes de la escuela.",
       "imagen": "https://m.media-amazon.com/images/M/MV5BNGJhM2M2MWYtZjIzMC00MDZmLThkY2EtOWViMDhhYjRhMzk4XkEyXkFqcGc@.V1_FMjpg_UX1000.jpg"
     },
@@ -1221,7 +1221,6 @@
       "plataformas_id": [
         "PL004",
         "PL002",
-        "PL003",
         "PL006"
       ],
       "calificacion": 5,
@@ -1405,7 +1404,8 @@
       "pais_origen": "Estados Unidos",
       "plataformas_id": [
         "PL001",
-        "PL004"
+        "PL004",
+        "PL003"
       ],
       "calificacion": 4.8,
       "sinopsis": "Una mujer común se ve envuelta en una aventura épica a través de múltiples universos para salvar a su familia y a la existencia misma.",
@@ -1943,7 +1943,7 @@
         "PL003",
         "PL005"
       ],
-      "calificacion": 4.3,
+      "calificacion": 5,
       "sinopsis": "Antes de convertirse en el infame abogado Saul Goodman, Jimmy McGill lucha por abrirse camino en el mundo legal de Albuquerque. Con un corazón noble pero métodos cuestionables, se enfrenta a desafíos éticos y morales que lo empujan lentamente hacia el lado oscuro, mientras intenta dejar atrás su pasado como un estafador y convertirse en un respetado abogado. La serie explora su complicada relación con su hermano Chuck y su evolución hacia el criminal sin escrúpulos que conocemos en Breaking Bad.",
       "imagen": "https://es.web.img2.acsta.net/pictures/18/07/02/14/12/5660762.jpg"
     },
@@ -2347,7 +2347,8 @@
         "PL007",
         "PL002",
         "PL005",
-        "PL006"
+        "PL006",
+        "PL003"
       ],
       "calificacion": 3.5,
       "sinopsis": "En un futuro postapocalíptico, la humanidad enfrenta la amenaza de seres gigantescos conocidos como Ángeles. Para combatir esta amenaza, los pilotos adolescentes son seleccionados para controlar gigantescos mechas llamados Evangelions. Shinji Ikari, un joven introvertido y traumatizado, debe enfrentar sus propios demonios internos mientras lucha por salvar a la humanidad.",
@@ -2506,24 +2507,6 @@
         "Amazon Prime",
         "Disney+"
       ],
-      "list": [
-        {
-          "title": "Mickey 17",
-          "image": "https://via.placeholder.com/150"
-        },
-        {
-          "title": "Ancora",
-          "image": "https://via.placeholder.com/150"
-        },
-        {
-          "title": "Dune",
-          "image": "https://via.placeholder.com/150"
-        },
-        {
-          "title": "Adolescencia",
-          "image": "https://via.placeholder.com/150"
-        }
-      ],
       "images": "https://content.imageresizer.com/images/memes/Discord-mod-meme-6.jpg",
       "apiId": "v1"
     },
@@ -2538,24 +2521,6 @@
         "Amazon Prime",
         "Disney+"
       ],
-      "list": [
-        {
-          "title": "Mickey 17",
-          "image": "https://via.placeholder.com/150"
-        },
-        {
-          "title": "Ancora",
-          "image": "https://via.placeholder.com/150"
-        },
-        {
-          "title": "Dune",
-          "image": "https://via.placeholder.com/150"
-        },
-        {
-          "title": "Adolescencia",
-          "image": "https://via.placeholder.com/150"
-        }
-      ],
       "images": "https://images.wikidexcdn.net/mwuploads/wikidex/6/64/latest/20230215185049/EP1231_Snivy_de_Ash.png",
       "apiId": "v1",
       "lastName": "Riveros"
@@ -2568,7 +2533,6 @@
       "email": "antugaturra@gmail.com",
       "password": "secure1234",
       "platforms": [],
-      "list": [],
       "images": "https://images.squarespace-cdn.com/content/v1/6670add926f2a64cd00fb0e7/d2f9b9c1-ab9c-4fe2-a793-d6a8634ac920/character+chii.png",
       "apiId": "v1"
     },
@@ -2580,7 +2544,6 @@
       "email": "sarmientoloreley@gmail.com",
       "password": "secure1234",
       "platforms": [],
-      "list": [],
       "images": "https://i.pinimg.com/736x/00/a7/7c/00a77c069db2fe875178d8af03619418.jpg",
       "apiId": "v1"
     },
@@ -2592,7 +2555,6 @@
       "email": "mateocab@gmail.com",
       "password": "secure1234",
       "platforms": [],
-      "list": [],
       "images": "https://dthezntil550i.cloudfront.net/15/latest/151609101734452410001379220/1280_960/3dd025ca-2a9d-433a-b0f8-7df93964ce7f.png",
       "apiId": "v1"
     },
@@ -2604,7 +2566,6 @@
       "email": "alvarito@gmail.com",
       "password": "secure1234",
       "platforms": [],
-      "list": [],
       "images": "https://tm.ibxk.com.br/2023/08/08/08142450075192.jpg",
       "apiId": "v1"
     },
@@ -2616,7 +2577,6 @@
       "email": "anana@gmail.com",
       "password": "louis",
       "platforms": [],
-      "list": [],
       "images": "https://upload.wikimedia.org/wikipedia/commons/5/59/Louis_Tomlinson_2019_MTV.png",
       "apiId": "v1"
     },
@@ -2628,7 +2588,6 @@
       "email": "rubberren@gmail.com",
       "password": "secure1234",
       "platforms": [],
-      "list": [],
       "images": "https://i.pinimg.com/236x/09/02/86/090286be7ffa5bc199ad0bb34af40d68.jpg",
       "apiId": "v1"
     },
@@ -2640,7 +2599,6 @@
       "email": "okami@gmail.com",
       "password": "secure1234",
       "platforms": [],
-      "list": [],
       "images": "https://i.pinimg.com/236x/09/02/86/090286be7ffa5bc199ad0bb34af40d68.jpg",
       "apiId": "v1"
     },
@@ -2652,7 +2610,6 @@
       "email": "chomihater@gmail.com",
       "password": "chomi",
       "platforms": [],
-      "list": [],
       "images": "https://i.ibb.co/7N2HxgXj/chomi2.jpg"
     },
     {
@@ -2662,10 +2619,7 @@
       "userName": "dieboz",
       "email": "dieboz@gmail.com",
       "password": "lulu",
-      "platforms": [
-        "Crunchyroll"
-      ],
-      "list": [],
+      "platforms": [],
       "images": "https://i.pinimg.com/736x/9c/59/60/9c5960168322513653370f5eaeec6393.jpg"
     },
     {
@@ -2676,7 +2630,6 @@
       "email": "mateocab100@gmail.com",
       "password": "hola",
       "platforms": [],
-      "list": [],
       "images": "https://i.pinimg.com/236x/09/02/86/090286be7ffa5bc199ad0bb34af40d68.jpg"
     },
     {
@@ -2687,7 +2640,6 @@
       "email": "canelito@gmail.com",
       "password": "canelito",
       "platforms": [],
-      "list": [],
       "images": "https://www.egames.news/img/2021/11/19/missbricosplay_en_su_propia_versixn_de_vi_de_arcanex_la_serie_de_netflix.jpg?__scale=w:1200,h:1200,t:2"
     },
     {
@@ -2698,7 +2650,6 @@
       "email": "gonzalo1924@gmail.com",
       "password": "hola",
       "platforms": [],
-      "list": [],
       "images": "https://i.pinimg.com/236x/09/02/86/090286be7ffa5bc199ad0bb34af40d68.jpg"
     }
   ],
@@ -3016,38 +2967,6 @@
       "createdAt": "2025-07-10T00:43:29.957Z"
     },
     {
-      "id": "RV043",
-      "userId": "US003",
-      "contenidoId": "SR003",
-      "rating": 5,
-      "text": "",
-      "createdAt": "2025-07-10T00:45:36.346Z"
-    },
-    {
-      "id": "RV044",
-      "userId": "US003",
-      "contenidoId": "SR003",
-      "rating": 5,
-      "text": "",
-      "createdAt": "2025-07-10T00:45:37.971Z"
-    },
-    {
-      "id": "RV045",
-      "userId": "US003",
-      "contenidoId": "SR003",
-      "rating": 5,
-      "text": "",
-      "createdAt": "2025-07-10T00:45:40.614Z"
-    },
-    {
-      "id": "RV046",
-      "userId": "US003",
-      "contenidoId": "SR002",
-      "rating": 3,
-      "text": "",
-      "createdAt": "2025-07-10T00:45:54.666Z"
-    },
-    {
       "id": "RV047",
       "userId": "US003",
       "contenidoId": "MV022",
@@ -3062,30 +2981,6 @@
       "rating": 3,
       "text": "no ogti",
       "createdAt": "2025-07-10T03:17:15.704Z"
-    },
-    {
-      "id": "RV049",
-      "userId": "US003",
-      "contenidoId": "MV014",
-      "rating": 5,
-      "text": "cine",
-      "createdAt": "2025-07-10T03:20:19.261Z"
-    },
-    {
-      "id": "RV050",
-      "userId": "US003",
-      "contenidoId": "MV002",
-      "rating": 4,
-      "text": "ola",
-      "createdAt": "2025-07-10T03:21:20.718Z"
-    },
-    {
-      "id": "RV051",
-      "userId": "US003",
-      "contenidoId": "SR003",
-      "rating": 1,
-      "text": "zzz",
-      "createdAt": "2025-07-10T03:21:31.746Z"
     }
   ],
   "userDetails": [
