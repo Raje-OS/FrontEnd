@@ -10,6 +10,7 @@ import {DirectorCardComponent} from '../../../../persons/directors/components/di
 import {ReviewService} from '../../../../reviews/services/review.service';
 import {SerieService} from '../../services/serie.service.service';
 import {Router} from '@angular/router';
+import {Movie} from '../../../movies/model/movie.entity';
 
 
 @Component({
@@ -46,7 +47,7 @@ export class SerieDetailComponent implements OnInit {
     if (this.serie) {
       this.loadDirector(this.serie.directorId);
       this.loadActores();
-      this.loadPlataformas();
+      this.loadPlatforms(this.serie.plataformasId)
       this.actualizarCalificacionPromedioSerie();
       this.redondearCalificacion();
     }
@@ -83,14 +84,11 @@ export class SerieDetailComponent implements OnInit {
     }
   }
 
-  loadPlataformas(): void {
-    if (this.serie?.plataformas_id.length) {
-      this.platformService.getPlatformsByIds(this.serie.plataformas_id).subscribe(
-        (plataformas) => {
-          this.plataformas = plataformas;
-        },
-        (error) => console.error("Error loading platforms:", error)
-      );
+  loadPlatforms(platformIds: string[]): void {
+    if (platformIds?.length > 0) {
+      this.platformService.getPlatformsByIds(platformIds).subscribe(plataformas => {
+        this.plataformas = plataformas;
+      });
     }
   }
 

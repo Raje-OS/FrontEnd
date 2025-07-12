@@ -9,7 +9,7 @@ export class Serie {
   fecha_lanzamiento: string;
   idioma_original: string;
   pais_origen: string;
-  plataformas_id: string[];
+  plataformasId: string[];
   calificacion: number = 0; // Default value for rating
   sinopsis: string;
   imagen: string;
@@ -25,7 +25,7 @@ export class Serie {
     this.fecha_lanzamiento = serie.fecha_lanzamiento || '';
     this.idioma_original = serie.idioma_original || '';
     this.pais_origen = serie.pais_origen || '';
-    this.plataformas_id = serie.plataformas_id || [];
+    this.plataformasId = serie.plataformasId || [];
     this.calificacion= serie.calificacion || 0;
     this.sinopsis = serie.sinopsis || '';
     this.imagen = serie.imagen || '';

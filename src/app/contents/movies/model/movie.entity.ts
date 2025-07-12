@@ -8,7 +8,7 @@ export class Movie {
   fecha_lanzamiento: string;
   idioma_original: string;
   pais_origen: string;
-  plataformas_id: string[];
+  plataformasId: string[];
   calificacion: number = 0; // Default value for rating
   sinopsis: string;
   imagen: string;
@@ -23,7 +23,7 @@ export class Movie {
     fecha_lanzamiento?: string,
     idioma_original?: string,
     pais_origen?: string,
-    plataformas_id?: string[],
+    plataformasId?: string[],
     calificacion?: number,
     sinopsis?: string,
     imagen?: string
@@ -37,7 +37,7 @@ export class Movie {
     this.fecha_lanzamiento = movie.fecha_lanzamiento || '';
     this.idioma_original = movie.idioma_original || '';
     this.pais_origen = movie.pais_origen || '';
-    this.plataformas_id = movie.plataformas_id || [];
+    this.plataformasId = movie.plataformasId || [];
     this.calificacion=movie.calificacion || 0;
     this.sinopsis = movie.sinopsis || '';
     this.imagen = movie.imagen || '';

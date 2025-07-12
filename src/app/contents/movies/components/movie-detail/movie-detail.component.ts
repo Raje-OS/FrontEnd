@@ -64,7 +64,7 @@ export class MovieDetailComponent implements OnInit {
     if (!movie) return;
     this.loadDirector(movie.directorId);
     this.loadActors(movie.actoresId);
-    this.loadPlatforms(movie.plataformas_id);
+    this.loadPlatforms(movie.plataformasId);
   }
 
   actualizarCalificacionPromedio() {
