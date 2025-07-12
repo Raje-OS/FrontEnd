@@ -44,7 +44,7 @@ export class SerieDetailComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.serie) {
-      this.loadDirector();
+      this.loadDirector(this.serie.directorId);
       this.loadActores();
       this.loadPlataformas();
       this.actualizarCalificacionPromedioSerie();
@@ -52,25 +52,34 @@ export class SerieDetailComponent implements OnInit {
     }
   }
 
-  loadDirector(): void {
-    if (this.serie?.director_id) {
-      this.directorService.getDirectorById(this.serie.director_id).subscribe(
-        (director) => {
-          this.director = director;
-        },
-        (error) => console.error("Error loading director:", error)
-      );
-    }
-  }
 
+
+  loadDirector(directorId: string): void {
+    this.directorService.getDirectorById(directorId).subscribe(director => {
+      this.director = director;
+    });
+  }
   loadActores(): void {
-    if (this.serie?.actores_id.length) {
-      this.actorService.getActorsByIds(this.serie.actores_id).subscribe(
+    // Asegúrate de que 'this.serie.actoresId' no sea vacío y sea un array
+    if (Array.isArray(this.serie?.actoresId) && this.serie.actoresId.length > 0) {
+      this.actorService.getActorsByIds(this.serie.actoresId).subscribe(
         (actores) => {
-          this.actores = actores;
+          // Verifica si los actores llegaron correctamente y asigna la respuesta
+          if (Array.isArray(actores) && actores.length > 0) {
+            this.actores = actores;
+          } else {
+            console.warn("No se encontraron actores");
+            this.actores = [];  // Vacía la lista de actores si no se encontraron
+          }
         },
-        (error) => console.error("Error loading actors:", error)
+        (error) => {
+          console.error("Error loading actors:", error);
+          this.actores = [];  // En caso de error, vacía la lista de actores
+        }
       );
+    } else {
+      console.warn("No hay actoresId disponibles o no es un array");
+      this.actores = [];  // Vacía la lista si no hay IDs de actores
     }
   }
 

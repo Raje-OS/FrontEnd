@@ -1,7 +1,7 @@
 export class Book {
   id: string;
   titulo: string;
-  autor_id: string;
+  autorId: string;
   genero: string[];
   num_paginas: number;
   fecha_publicacion: string;
@@ -17,7 +17,7 @@ export class Book {
   constructor(book: Partial<Book>) {
     this.id = book.id || '';
     this.titulo = book.titulo || '';
-    this.autor_id = book.autor_id || '';
+    this.autorId = book.autorId || '';
     this.genero = book.genero || [];
     this.num_paginas = book.num_paginas || 0;
     this.fecha_publicacion = book.fecha_publicacion || '';

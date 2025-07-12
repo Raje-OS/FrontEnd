@@ -6,6 +6,7 @@ import {map, switchMap} from 'rxjs/operators';
 import {Movie} from '../model/movie.entity';
 import {ReviewService} from '../../../reviews/services/review.service';
 import {Book} from '../../books/model/book.entity';
+import {Serie} from '../../series/model/serie.entity';
 
 
 @Injectable({
@@ -21,10 +22,9 @@ export class MovieService {
   }
 
   getMovieById(id: string): Observable<any> {
-    return this.http.get<any[]>(`${this.baseUrl}?id=${id}`).pipe(
-      map(movies => movies[0] || {})  // <-- Esto devuelve el primer objeto del array
-    );
+    return this.http.get<Movie>(`${environment.serverBaseUrl}/movies/${id}`)
   }
+
   updateMovie(movie: Movie): Observable<Movie> {
     return this.http.put<Movie>(`${this.baseUrl}/${movie.id}`, movie);
   }

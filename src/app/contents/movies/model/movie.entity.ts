@@ -1,8 +1,8 @@
 export class Movie {
   id: string;
   titulo: string;
-  director_id: string;
-  actores_id: string[];
+  directorId: string;
+  actoresId: string[];
   genero: string[];
   duracion: number;
   fecha_lanzamiento: string;
@@ -30,8 +30,8 @@ export class Movie {
   }) {
     this.id = movie.id || '';
     this.titulo = movie.titulo || '';
-    this.director_id = movie.director_id || '';
-    this.actores_id = movie.actores_id || [];
+    this.directorId = movie.director_id || '';
+    this.actoresId = movie.actores_id || [];
     this.genero = movie.genero || [];
     this.duracion = movie.duracion && Number.isInteger(movie.duracion) ? movie.duracion : 0;
     this.fecha_lanzamiento = movie.fecha_lanzamiento || '';

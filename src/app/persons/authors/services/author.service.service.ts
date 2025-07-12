@@ -5,6 +5,7 @@ import { environment } from '../../../../environments/environment';
 
 import { map } from 'rxjs/operators';
 import {Author} from '../model/author.entity';
+import {Serie} from '../../../contents/series/model/serie.entity';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,7 @@ export class AuthorService {
   constructor(private http: HttpClient) {}
 
   getAuthorById(id: string): Observable<Author> {
-    return this.http.get<any[]>(`${this.baseUrl}/{id}`).pipe(
-      map(authors => new Author(authors[0] || {}))
-    );
+    return this.http.get<Author>(`${environment.serverBaseUrl}/authors/${id}`);
   }
+
 }

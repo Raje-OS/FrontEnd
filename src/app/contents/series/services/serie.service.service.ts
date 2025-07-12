@@ -21,9 +21,7 @@ export class SerieService {
 
   // Obtener una serie por su ID
   getSerieById(id: string): Observable<Serie> {
-    return this.http.get<any[]>(`${this.baseUrl}?id=${id}`).pipe(
-      map(series => series[0] || {})
-    );
+    return this.http.get<Serie>(`${environment.serverBaseUrl}/series/${id}`);
   }
 
   updateSerie(serie: Serie): Observable<Serie> {

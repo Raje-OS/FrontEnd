@@ -33,7 +33,7 @@ export class BookDetailComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.book) {
-      this.loadAuthor(this.book.autor_id);
+      this.loadAuthor(this.book.autorId);
       this.actualizarCalificacionPromedio();
       this.redondearCalificacion();
       // ✅ corregido: this.book en vez de book

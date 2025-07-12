@@ -125,7 +125,7 @@ export class ContentMixedComponent implements OnInit {
       .filter(item => this.favoriteIds.includes(item.id) || this.viewedIds.includes(item.id))
       .forEach(item => {
         item.genero?.forEach(g => genres.add(g));
-        item.actores_id?.forEach(a => actors.add(a));
+        item.actoresId?.forEach(a => actors.add(a));
       });
 
     return { genres, actors };
@@ -137,7 +137,7 @@ export class ContentMixedComponent implements OnInit {
 
     // --- PELÍCULAS ---
     const unseenMovies = movies.filter(m => !this.favoriteIds.includes(m.id) && !this.viewedIds.includes(m.id));
-    const recoMoviesByActors = unseenMovies.filter(m => m.actores_id?.some(a => actors.has(a))).map(m => new Movie(m));
+    const recoMoviesByActors = unseenMovies.filter(m => m.actoresId?.some(a => actors.has(a))).map(m => new Movie(m));
     const recoMoviesByGenres = unseenMovies
       .filter(m => !recoMoviesByActors.includes(m) && m.genero?.some(g => genres.has(g)))
       .map(m => new Movie(m));
@@ -147,7 +147,7 @@ export class ContentMixedComponent implements OnInit {
 
     // --- SERIES ---
     const unseenSeries = series.filter(s => !this.favoriteIds.includes(s.id) && !this.viewedIds.includes(s.id));
-    const recoSeriesByActors = unseenSeries.filter(s => s.actores_id?.some(a => actors.has(a))).map(s => new Serie(s));
+    const recoSeriesByActors = unseenSeries.filter(s => s.actoresId?.some(a => actors.has(a))).map(s => new Serie(s));
     const recoSeriesByGenres = unseenSeries
       .filter(s => !recoSeriesByActors.includes(s) && s.genero?.some(g => genres.has(g)))
       .map(s => new Serie(s));

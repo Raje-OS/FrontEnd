@@ -62,8 +62,8 @@ export class MovieDetailComponent implements OnInit {
 
   loadDetails(movie: any): void {
     if (!movie) return;
-    this.loadDirector(movie.director_id);
-    this.loadActors(movie.actores_id);
+    this.loadDirector(movie.directorId);
+    this.loadActors(movie.actoresId);
     this.loadPlatforms(movie.plataformas_id);
   }
 

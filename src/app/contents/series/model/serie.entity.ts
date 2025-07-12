@@ -1,8 +1,8 @@
 export class Serie {
   id: string;
   titulo: string;
-  director_id: string;
-  actores_id: string[];
+  directorId: string;
+  actoresId: string[];
   genero: string[];
   num_temporadas: number;
   num_episodios: number;
@@ -17,8 +17,8 @@ export class Serie {
   constructor(serie: Partial<Serie>) {
     this.id = serie.id || '';
     this.titulo = serie.titulo || '';
-    this.director_id = serie.director_id || '';
-    this.actores_id = serie.actores_id || [];
+    this.directorId = serie.directorId || '';
+    this.actoresId = serie.actoresId || [];
     this.genero = serie.genero || [];
     this.num_temporadas = serie.num_temporadas || 0;
     this.num_episodios = serie.num_episodios || 0;

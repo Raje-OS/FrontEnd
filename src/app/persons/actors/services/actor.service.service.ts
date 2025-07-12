@@ -18,16 +18,19 @@ export class ActorService {
     return this.http.get<any[]>(this.baseUrl);
   }
 
-  getActorsByIds(ids: string[]): Observable<any[]> {
-    const queryString = ids.map(id => `/${id}`).join('&');
-    const url = `${this.baseUrl}?${queryString}`;
-    return this.http.get<any[]>(url);
+// Obtener actores por múltiples IDs (utilizando parámetros de consulta)
+  getActorsByIds(ids: string[]): Observable<Actor[]> {
+    const queryString = ids.map(id => `ids=${id}`).join('&');  // Creando la cadena de consulta
+    const url = `${environment.serverBaseUrl}/series/${queryString}`;  // Llamada HTTP con los parámetros de consulta
+    return this.http.get<Actor[]>(url);  // Retorna un observable de actores
   }
 
-
+// Obtener un actor por ID (utilizando una ruta con un parámetro dinámico)
   getActorById(id: string): Observable<Actor | null> {
-    return this.getActorsByIds([id]).pipe(
-      map(actors => actors.length > 0 ? new Actor(actors[0]) : null)
+    const url = `${environment.serverBaseUrl}/series/${id}`;  // Ruta con el ID como parte de la URL
+    return this.http.get<Actor>(url).pipe(
+      map(actor => actor ? new Actor(actor) : null)  // Mapea la respuesta a un objeto Actor, o null si no se encuentra
     );
   }
+
 }

@@ -6,6 +6,7 @@ import { environment } from '../../../../environments/environment';
 import { map } from 'rxjs/operators';
 import {Book} from '../model/book.entity';
 import {ReviewService} from '../../../reviews/services/review.service';
+import {Serie} from '../../series/model/serie.entity';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,7 @@ export class BookService {
   }
 
   getBookById(id: string): Observable<Book> {
-    return this.http.get<any[]>(`${this.baseUrl}?id=${id}`).pipe(
-      map(books => new Book(books[0] || {}))
-    );
+    return this.http.get<Book>(`${environment.serverBaseUrl}/books/${id}`);
   }
 
   updateBook(book: Book): Observable<Book> {
