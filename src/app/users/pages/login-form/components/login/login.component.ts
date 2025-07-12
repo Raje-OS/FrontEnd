@@ -7,9 +7,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
-import {SignInRequest} from '../../../../../iam/model/sign-in.request';
-import {SignInResponse} from '../../../../../iam/model/sign-in.response';
-import {AuthenticationService} from '../../../../../iam/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -31,23 +28,16 @@ export class LoginComponent {
   email: string = '';
   loginMode: 'user' | 'platform' | 'library' = 'user';
 
-  constructor(private authService: AuthService,  private authenticationService: AuthenticationService,
-              private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   login() {
     if (this.loginMode === 'user') {
-      this.authenticationService.signIn({
-        username: this.username,
-        password: this.password
-      }).subscribe({
-        next: (response: SignInResponse) => {
-          localStorage.setItem('token', response.token);
-          this.router.navigate(['/tendencies']);
-        }
-        ,
-        error: () => {
-          alert('Usuario o contraseña incorrectos');
-        }
+      this.authService.login(this.username, this.password).subscribe({
+        next: user => {
+          if (user) this.router.navigate(['/tendencies']);
+          else alert('Usuario o contraseña incorrectos');
+        },
+        error: err => console.error(err)
       });
 
     } else if (this.loginMode === 'platform') {
@@ -70,9 +60,9 @@ export class LoginComponent {
         },
         error: (error) => console.error(error)
       });
+
     }
   }
-
 
 
   register() {
