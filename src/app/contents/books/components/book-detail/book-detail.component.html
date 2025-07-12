@@ -5,6 +5,15 @@
 
   <div class="info-container">
     <h2>{{book.titulo}}</h2>
+    <div class="rating-container">
+      <span class="stars">
+    <img *ngFor="let i of [0,1,2,3,4]"
+         [src]="i < roundedRating ? 'assets/star.png' : 'assets/starnorellena.png'"
+         alt="Estrella"
+         class="star-icon" />
+  </span>
+      <span class="calificacion-text"> {{ book.calificacion }}/5</span>
+    </div>
     <p>{{book.sinopsis}}</p>
 
     <div class="book-info">

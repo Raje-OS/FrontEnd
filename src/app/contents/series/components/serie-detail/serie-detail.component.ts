@@ -40,12 +40,15 @@ export class SerieDetailComponent implements OnInit {
     private router: Router
   ) {}
 
+  roundedRating = 0;
+
   ngOnInit(): void {
     if (this.serie) {
       this.loadDirector();
       this.loadActores();
       this.loadPlataformas();
       this.actualizarCalificacionPromedioSerie();
+      this.redondearCalificacion();
     }
   }
 
@@ -99,6 +102,12 @@ export class SerieDetailComponent implements OnInit {
         });
       }
     });
+  }
+
+  redondearCalificacion(): void {
+    if (this.serie?.calificacion != null) {
+      this.roundedRating = Math.round(this.serie.calificacion);
+    }
   }
 
 }

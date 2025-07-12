@@ -29,11 +29,13 @@ export class BookDetailComponent implements OnInit {
     private libraryService: LibraryService
   ) {}
 
+  roundedRating = 0;
+
   ngOnInit(): void {
     if (this.book) {
       this.loadAuthor(this.book.autor_id);
       this.actualizarCalificacionPromedio();
-
+      this.redondearCalificacion();
       // ✅ corregido: this.book en vez de book
       if (this.book.librerias_id?.length > 0) {
         this.libraryService.getAll().subscribe(allLibs => {
@@ -69,6 +71,12 @@ export class BookDetailComponent implements OnInit {
   }
   goToLibraryDetail(id: string): void {
     this.router.navigate(['/libraries', id]);
+  }
+
+  redondearCalificacion(): void {
+    if (this.book?.calificacion != null) {
+      this.roundedRating = Math.round(this.book.calificacion);
+    }
   }
 
 }

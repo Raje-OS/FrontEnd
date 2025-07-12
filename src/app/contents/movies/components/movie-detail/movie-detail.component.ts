@@ -38,12 +38,14 @@ export class MovieDetailComponent implements OnInit {
     private platformService: PlatformService,
     private router: Router
   ) {}
+  roundedRating = 0;
 
   ngOnInit(): void {
     if (this.movie) {
       // Usado desde componente padre
       this.loadDetails(this.movie);
       this.actualizarCalificacionPromedio();
+      this.redondearCalificacion();
     } else {
       // Usado como página desde ruta /movies/:id
       this.actualizarCalificacionPromedio();
@@ -52,6 +54,7 @@ export class MovieDetailComponent implements OnInit {
         this.movieService.getMovieById(id).subscribe(movie => {
           this.movie = movie;
           this.loadDetails(movie);
+          this.redondearCalificacion();
         });
       }
     }
@@ -104,5 +107,12 @@ export class MovieDetailComponent implements OnInit {
       });
     }
   }
+
+  redondearCalificacion(): void {
+    if (this.movie?.calificacion != null) {
+      this.roundedRating = Math.round(this.movie.calificacion);
+    }
+  }
+
 
 }

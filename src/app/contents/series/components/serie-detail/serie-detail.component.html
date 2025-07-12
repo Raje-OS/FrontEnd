@@ -7,6 +7,15 @@
 
   <div class="info-container">
     <h2>{{serie.titulo}}</h2>
+    <div class="rating-container">
+      <span class="stars">
+    <img *ngFor="let i of [0,1,2,3,4]"
+         [src]="i < roundedRating ? 'assets/star.png' : 'assets/starnorellena.png'"
+         alt="Estrella"
+         class="star-icon" />
+  </span>
+      <span class="calificacion-text"> {{ serie.calificacion }}/5</span>
+    </div>
     <p>{{serie.sinopsis}}</p>
 
     <div class="serie-info">
