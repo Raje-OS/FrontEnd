@@ -1,61 +1,33 @@
 import { Injectable } from '@angular/core';
-import {User} from '../../../model/user/user.entity';
 import { HttpClient } from '@angular/common/http';
-import {environment} from '../../../../../environments/environment';
+import { environment } from '../../../../../environments/environment';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Platform } from '../../../../contents/platforms/model/platform.entity';
-import {Library} from '../../../../contents/libraries/model/library.entity';
-import { LibraryService } from '../../../../contents/libraries/services/library.service'; // Asegúrate que el path sea correcto
+import { Library } from '../../../../contents/libraries/model/library.entity';
+import { LibraryService } from '../../../../contents/libraries/services/library.service';
+import { User } from '../../../model/user/user.entity';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private usersUrl = `${environment.serverBaseUrl}${environment.userEndpointPath}`;
   private platformsUrl = `${environment.serverBaseUrl}${environment.platformEndpointPath}`;
 
-  constructor(private http: HttpClient, private libraryService: LibraryService) {}
+  constructor(
+    private http: HttpClient,
+    private libraryService: LibraryService
+  ) {}
 
-  login(username: string, password: string): Observable<User | null> {
-    return this.http.get<User[]>(this.usersUrl).pipe(
-      map(users => {
-        const trimmedUsername = username.trim();
-        const trimmedPassword = password.trim();
-
-        const user = users.find(u =>
-          u.userName.trim() === trimmedUsername &&
-          u.password.trim() === trimmedPassword
-        );
-
-        if (user) {
-          // Almacenar el usuario actual
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          return user;
-        }
-        return null;
-      }),
-      catchError(error => {
-        console.error('Login failed', error);
-        return throwError(() => new Error('Login failed'));
-      })
-    );
-  }
-
-  logout() {
-    localStorage.removeItem('currentUser');
-  }
-
-
+  // 🔓 GETTER para mantener compatibilidad con componentes antiguos
   getCurrentUser(): User | null {
     const userJson = localStorage.getItem('currentUser');
-    return userJson ? JSON.parse(userJson) : null;
+    return userJson ? JSON.parse(userJson) as User : null;
   }
 
-  isLoggedIn(): boolean {
-    return localStorage.getItem('currentUser') !== null || localStorage.getItem('currentPlatform') !== null;
-  }
 
+
+  // ✅ PLATFORM LOGIN
   platformLogin(email: string, password: string): Observable<Platform | null> {
     return this.http.get<Platform[]>(this.platformsUrl).pipe(
       map(platforms => {
@@ -68,7 +40,6 @@ export class AuthService {
         );
 
         if (platform) {
-          // Almacenar la plataforma actual
           localStorage.setItem('currentPlatform', JSON.stringify(platform));
           return platform;
         }
@@ -94,7 +65,7 @@ export class AuthService {
     localStorage.removeItem('currentPlatform');
   }
 
-  //LIBRERIAS
+  // ✅ LIBRARY LOGIN
   libraryLogin(email: string, password: string): Observable<Library | null> {
     return this.libraryService.getByEmail(email).pipe(
       map(library => {
@@ -111,7 +82,6 @@ export class AuthService {
     );
   }
 
-
   getCurrentLibrary(): Library | null {
     const lib = localStorage.getItem('currentLibrary');
     return lib ? JSON.parse(lib) : null;
@@ -122,6 +92,23 @@ export class AuthService {
   }
 
   libraryLogout() {
+    localStorage.removeItem('currentLibrary');
+  }
+
+  // 🔓 Usado por el toolbar y vista inicial
+  isAnyUserLoggedIn(): boolean {
+    return (
+      !!localStorage.getItem('token') || // usuario con token
+      !!localStorage.getItem('currentPlatform') ||
+      !!localStorage.getItem('currentLibrary')
+    );
+  }
+
+  // 🔐 Compatibilidad para toolbar y logout global
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('currentPlatform');
     localStorage.removeItem('currentLibrary');
   }
 }

@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   // Server Base URL for Rest API
-  serverBaseUrl: 'http://localhost:3000',
+  serverBaseUrl: 'https://backend-qatk.onrender.com/api/v1',
   userEndpointPath: '/users',
   platformEndpointPath: '/platforms',
   directorEndpointPath: '/directors',

@@ -46,6 +46,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
+    return localStorage.getItem('token') !== null;
   }
+
 }

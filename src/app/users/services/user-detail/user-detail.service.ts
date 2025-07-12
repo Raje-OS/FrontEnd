@@ -16,13 +16,14 @@ export class UserDetailService extends BaseService<UserDetail> {
     this.resourceEndpoint = userDetailEndpoint;
   }
   // user-detail.service.ts
-  getByUserId(userId: string): Observable<UserDetail> {
+  getByUserId(userId: string | number): Observable<UserDetail> {
     return this.http.get<UserDetail[]>(`${this.resourcePath()}?userId=${userId}`, this.httpOptions)
       .pipe(
-        map(details => details[0]), // primero que coincida
+        map(details => details[0]),
         catchError(this.handleError)
       );
   }
+
   updateUserDetails(userDetail: UserDetail): Observable<UserDetail> {
     // Se asume que el backend espera la URL con el id del libro
     return this.http.put<UserDetail>(`${this.resourcePath()}/${userDetail.id}`, userDetail);

@@ -10,6 +10,7 @@ import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-to
 
   ],
   templateUrl: './language-switcher.component.html',
+  standalone: true,
   styleUrl: './language-switcher.component.css'
 })
 export class LanguageSwitcherComponent {

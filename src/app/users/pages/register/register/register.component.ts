@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {SignUpRequest} from '../../../../iam/model/sign-up.request';
+import {AuthenticationService} from '../../../../iam/services/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -36,7 +38,8 @@ export class RegisterComponent {
     private userService: UserService,
     private userDetailService: UserDetailService,
     private router: Router,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private authenticationService: AuthenticationService
   ) {}
 
   register() {
@@ -52,73 +55,75 @@ export class RegisterComponent {
     this.userService.getAll().subscribe({
       next: (users) => {
         const userIds = users.map(user => user.id.replace("US", "")).map(Number);
-        const nextId = Math.max(...userIds) + 1;
+        const nextId = Math.max(...userIds, 0) + 1;
         const newUserId = `US${String(nextId).padStart(3, '0')}`;
+
         const exists = users.some(user => user.email === this.email);
         if (exists) {
-          console.log('Correo ya existe');
           this.emailExists = true;
-          this.cdr.detectChanges(); // ← Forzar detección de cambios
+          this.cdr.detectChanges();
           return;
         }
+
         this.emailExists = false;
 
-        const newUser: User = {
-          id: newUserId,
-          firstName: firstName,
-          lastName: lastName,
-          userName: this.username,
-          email: this.email,
-          password: this.password,
-          platforms: [],
-          images: 'https://i.pinimg.com/236x/09/02/86/090286be7ffa5bc199ad0bb34af40d68.jpg'
-        };
+        const signUpRequest = new SignUpRequest(
+          newUserId,
+          firstName,
+          lastName,
+          this.username,
+          this.email,
+          this.password,
+          [], // platforms
+          'https://i.pinimg.com/236x/09/02/86/090286be7ffa5bc199ad0bb34af40d68.jpg' // imagen
+        );
 
-        this.userService.registerUser(newUser).subscribe({
-          next: () => {
-            // Obtener todos los userDetails para generar el nuevo ID
+        this.authenticationService.signUp(signUpRequest).subscribe({
+          next: (signUpResponse) => {
+            localStorage.setItem('token', signUpResponse.token);
+            const userDetail: UserDetail = {
+              id: '',
+              userId: signUpResponse.id,
+              favorites: [],
+              viewed: []
+            };
+
             this.userDetailService.getAll().subscribe({
               next: (details) => {
                 const detailIds = details.map(detail => detail.id.replace("UD", "")).map(Number);
                 const nextDetailId = Math.max(...detailIds, 0) + 1;
-                const newDetailId = `UD${String(nextDetailId).padStart(3, '0')}`;
-
-                const userDetail: UserDetail = {
-                  id: newDetailId,
-                  userId: newUserId,
-                  favorites: [],
-                  viewed: []
-                };
+                userDetail.id = `UD${String(nextDetailId).padStart(3, '0')}`;
 
                 this.userDetailService.create(userDetail).subscribe({
                   next: () => {
                     console.log('UserDetail creado');
-                    this.router.navigate(['/login']);
+                    this.router.navigate(['/tendencies']);
                   },
                   error: err => {
                     console.error('Error creando UserDetail:', err);
-                    this.router.navigate(['/login']);
+                    this.router.navigate(['/tendencies']);
                   }
                 });
               },
               error: err => {
                 console.error('Error obteniendo userDetails:', err);
-                this.router.navigate(['/login']);
+                this.router.navigate(['/tendencies']);
               }
             });
           },
-          error: (err) => {
-            console.error(err);
-            this.errorMessage = 'Error al registrar el usuario';
+          error: err => {
+            console.error('Error en registro:', err);
+            this.errorMessage = 'Error al registrar usuario.';
           }
         });
       },
-      error: (err) => {
+      error: err => {
         console.error(err);
-        this.errorMessage = 'Error al cargar los usuarios';
+        this.errorMessage = 'Error al cargar usuarios';
       }
     });
   }
+
 
   goBack() {
     this.router.navigate(['/login']);

@@ -1,25 +1,25 @@
-import { Component } from '@angular/core';
-import {Router, RouterOutlet} from '@angular/router';
-import {AuthService} from './users/pages/login-form/services/auth.service';
+import { Component, computed, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { AuthenticationService } from './iam/services/authentication.service';
 import { ToolbarComponent } from './public/components/toolbar/toolbar.component';
-import {NgIf} from '@angular/common';
+import { NgIf, AsyncPipe } from '@angular/common';
+
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [RouterOutlet, ToolbarComponent, NgIf]
+  imports: [RouterOutlet, ToolbarComponent, NgIf, AsyncPipe]
 })
 export class AppComponent {
-  title = '';
+  private router = inject(Router);
+  private authService = inject(AuthenticationService);
 
-  constructor(private authService: AuthService, private router: Router) {}
+  protected readonly isLoggedIn = this.authService.isSignedIn;
+  protected readonly currentUrl = computed(() => this.router.url);
 
-  get isLoggedIn(): boolean {
+  shouldShowToolbar() {
     const noToolbarRoutes = ['/login', '/register'];
-    return (
-      this.authService.getCurrentUser() !== null &&
-      !noToolbarRoutes.includes(this.router.url)
-    );
+    return this.isLoggedIn && !noToolbarRoutes.includes(this.router.url);
   }
 }
