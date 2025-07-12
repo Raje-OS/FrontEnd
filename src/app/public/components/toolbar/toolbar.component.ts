@@ -6,6 +6,8 @@ import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
 import { MatToolbar } from '@angular/material/toolbar';
 import { NgIf } from '@angular/common';
+import {LanguageSwitcherComponent} from '../language-switcher/language-switcher.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -21,7 +23,9 @@ import { NgIf } from '@angular/common';
     RouterLink,
     MatIconButton,
     MatMenuItem,
-    NgIf
+    NgIf,
+    LanguageSwitcherComponent,
+    TranslatePipe
   ]
 })
 export class ToolbarComponent implements OnInit {

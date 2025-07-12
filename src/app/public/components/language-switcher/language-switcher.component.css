@@ -1,0 +1,35 @@
+/* Estilo general del grupo */
+::ng-deep mat-button-toggle-group[name="language"] {
+  background-color: #cc5a5a; /* tono intermedio al rojo #992020 */
+  border-radius: 10px;
+  padding: 4px;
+  font-family: 'Lexend Mega', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 42px;
+}
+
+/* Botones del selector */
+::ng-deep mat-button-toggle {
+  color: #000;
+  background: transparent;
+  font-family: 'Lexend Mega', sans-serif;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Botón seleccionado */
+::ng-deep mat-button-toggle.mat-button-toggle-checked {
+  background-color: #ffffff;
+  color: #992020;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover */
+::ng-deep mat-button-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}

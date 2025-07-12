@@ -8,12 +8,13 @@
 
   <!-- Sección Central (Navegación) -->
   <nav class="toolbar-nav">
-    <button mat-button routerLink="/tendencies">TENDENCIAS</button>
-    <button mat-button routerLink="/foryou">PARA TI</button>
-    <button mat-button routerLink="/favorites">FAVORITOS</button>
+    <button mat-button routerLink="/tendencies">{{ 'tendencies' | translate }}</button>
+    <button mat-button routerLink="/foryou">{{ 'foryou' | translate }}</button>
+    <button mat-button routerLink="/favorites">{{ 'favorites' | translate }}</button>
   </nav>
 
   <!-- Sección Derecha (Iconos y Perfil) -->
+  <app-language-switcher></app-language-switcher>
   <div class="toolbar-right">
     <div class="icon-group">
       <button mat-button routerLink="/busqueda">
