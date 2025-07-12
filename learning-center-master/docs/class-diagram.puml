@@ -1,0 +1,148 @@
+@startuml Learning Center Class Diagram
+
+' Style settings
+skinparam classFontSize 14
+skinparam classFontName Arial
+skinparam classAttributeFontSize 12
+skinparam classAttributeFontName Arial
+skinparam packageStyle rectangle
+
+' Core services and interfaces
+package "shared" {
+  package "services" {
+  abstract class BaseService<T> {
+      #resourceEndpoint: string
+      +getAll(): Observable<T[]>
+      +getById(id: number): Observable<T>
+      +create(entity: T): Observable<T>
+      +update(id: number, entity: T): Observable<T>
+      +delete(id: number): Observable<void>
+    }
+  }
+  package "components" {
+  class BaseFormComponent <<Component>> {
+      #isInvalidControl(form: FormGroup, controlName: string): boolean
+      #errorMessagesForControl(form: FormGroup, controlName: string): string
+      -errorMessageForControl(controlName: string, errorKey: string): string
+    }
+  }
+
+}
+
+' Learning module components and services
+package "learning" {
+  package "model" {
+    class Course <<Entity>> {
+      -id: number
+      -title: string
+      -description: string
+      +constructor(course: {id?: number, title?: string, description?: string})
+    }
+  }
+
+  package "services" {
+    class CourseService <<Service>> extends shared.services.BaseService<learning.model.Course>  {
+      -resourceEndpoint: string
+      +constructor()
+    }
+  }
+
+  package "pages" {
+    class CourseManagementComponent <<Component>> implements OnInit, AfterViewInit {
+      #courseData: Course
+      #columnsToDisplay: string[]
+      #paginator: MatPaginator
+      #sort: MatSort
+      #editMode: boolean
+      #dataSource: MatTableDataSource<Course>
+      -courseService: CourseService
+
+      +constructor()
+      +ngOnInit(): void
+      +ngAfterViewInit(): void
+      #onEditItem(item: Course): void
+      #onDeleteItem(item: Course): void
+      #onCancelRequested(): void
+      #onCourseAddRequested(item: Course): void
+      #onCourseUpdateRequested(item: Course): void
+      -resetEditState(): void
+      -getAllCourses(): void
+      -createCourse(): void
+      -updateCourse(): void
+      -deleteCourse(id: number): void
+    }
+  }
+
+  package "components" {
+    class CourseCreateAndEditComponent <<Component>> extends shared.components.BaseFormComponent {
+      @Input() course: Course
+      @Input() editMode: boolean = false
+      @Output() courseAddRequested: EventEmitter<Course>
+      @Output() courseUpdateRequested: EventEmitter<Course>
+      @Output() cancelRequested: EventEmitter<void>
+      @ViewChild('courseForm') courseForm: NgForm
+
+      +constructor()
+      -resetEditState(): void
+      -isValid(): boolean
+      #isEditMode(): boolean
+      #onSubmit(): void
+      #onCancel(): void
+    }
+  }
+}
+
+' Public module components
+package "public" {
+  package "components" {
+    class LanguageSwitcherComponent <<Component>> {
+      #currentLang: string
+      #languages: string[]
+      -translate: TranslateService
+
+      +constructor(translate: TranslateService)
+      +useLanguage(language: string): void
+    }
+
+    class FooterContentComponent <<Component>> {
+      +constructor()
+    }
+  }
+  package "pages" {
+    class HomeComponent <<Component>> {
+      +constructor()
+    }
+    class AboutComponent <<Component>> {
+      +constructor()
+    }
+    class PageNotFoundComponent <<Component>> {
+      +constructor()
+    }
+  }
+}
+
+' App root component
+package "app" {
+  class AppComponent <<Component>>{
+    +title: string
+  }
+}
+
+' Relationships
+learning.pages.CourseManagementComponent --> learning.components.CourseCreateAndEditComponent: contains
+learning.pages.CourseManagementComponent --> learning.model.Course: manages
+learning.components.CourseCreateAndEditComponent --> learning.model.Course: manages
+learning.pages.CourseManagementComponent ..> learning.services.CourseService: injects
+AppComponent --> learning.pages.CourseManagementComponent: uses
+AppComponent --> public.components.LanguageSwitcherComponent: contains
+AppComponent --> public.components.FooterContentComponent: contains
+AppComponent ..> TranslateService: uses
+AppComponent ..> public.pages.HomeComponent: uses
+AppComponent ..> public.pages.AboutComponent: uses
+AppComponent ..> public.pages.PageNotFoundComponent: uses
+
+' Event relationships
+learning.components.CourseCreateAndEditComponent ..> learning.pages.CourseManagementComponent: emits events
+public.components.LanguageSwitcherComponent ..> TranslateService: uses
+
+@enduml

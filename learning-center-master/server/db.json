@@ -1,0 +1,25 @@
+{
+  "profiles": [],
+  "users": [],
+  "students": [],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Sample",
+      "description": "Sample Course"
+    },
+    {
+      "id": 2,
+      "title": "Vue Foundation",
+      "description": "Vue Introductory Course"
+    },
+    {
+      "id": 3,
+      "title": "ASP.NET Core for Web Apps",
+      "description": "Web Development with ASP.NET Core"
+    }
+  ],
+  "enrollments": [],
+  "progress-record-items": [],
+  "learning-path-items": []
+}
